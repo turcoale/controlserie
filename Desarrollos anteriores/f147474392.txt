@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 7d85f0e9ffa764119d12a7998e3b7cd69218e9b8 Amid Ale <amid@lenovog550debian> 1448456683 -0300	clone: from git@github.com:turcoale/switcher.git
+7d85f0e9ffa764119d12a7998e3b7cd69218e9b8 e2cbad6278d4a0d40799760c978e206af94f5ed0 turcoale <root@lenovog550debian> 1448464139 -0300	commit: cambio relay

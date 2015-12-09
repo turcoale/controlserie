@@ -1,0 +1,14 @@
+ :: 		}
+L_interrupt35:
+;control de entradas v2.c,266 :: 		}
+L_interrupt34:
+;control de entradas v2.c,268 :: 		if ( ContFallasEA1 > 0) // hubo alguna falla en EA1 ?
+0x00AE	0x082A      	MOVF       _ContFallasEA1, 0
+0x00AF	0x3C00      	SUBLW      0
+0x00B0	0x1803      	BTFSC      STATUS, 0
+0x00B1	0x28C5      	GOTO       L_interrupt36
+;control de entradas v2.c,270 :: 		SegFallaEA1 ++; // sumo un segundo al cont
+0x00B2	0x0ABA      	INCF       _SegFallaEA1, 1
+0x00B3	0x1903      	BTFSC      STATUS, 2
+0x00B4	0x0ABB      	INCF       _SegFallaEA1+1, 1
+;control de entradas v2.c,271 :: 		if ( SegFallaEA1 > SegCantFallasMax ) // pas

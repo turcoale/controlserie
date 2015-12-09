@@ -1,0 +1,113 @@
+<gfxBlacklistEntry  blockID="g202">      <os>Darwin 12</os>      <vendor>0x10de</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g204">      <os>Darwin 10</os>      <vendor>0x8086</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g206">      <os>Darwin 11</os>      <vendor>0x8086</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g208">      <os>Darwin 12</os>      <vendor>0x8086</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g230">      <os>Darwin 10</os>      <vendor>0x1002</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g232">      <os>Darwin 11</os>      <vendor>0x1002</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g234">      <os>Darwin 12</os>      <vendor>0x1002</vendor>            <feature>WEBGL_MSAA</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g278">      <os>WINNT 6.1</os>      <vendor>0x1002</vendor>              <devices>
+                      <device>0x9802</device>
+                      <device>0x9803</device>
+                      <device>0x9803</device>
+                      <device>0x9804</device>
+                      <device>0x9805</device>
+                      <device>0x9806</device>
+                      <device>0x9807</device>
+                  </devices>
+            <feature>DIRECT2D</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g280">      <os>WINNT 6.1</os>      <vendor>0x1002</vendor>              <devices>
+                      <device>0x9802</device>
+                      <device>0x9803</device>
+                      <device>0x9803</device>
+                      <device>0x9804</device>
+                      <device>0x9805</device>
+                      <device>0x9806</device>
+                      <device>0x9807</device>
+                  </devices>
+            <feature>DIRECT3D_9_LAYERS</feature>      <featureStatus>BLOCKED_DEVICE</featureStatus>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g511">      <os>WINNT 5.1</os>      <vendor>0x8086</vendor>            <feature>DIRECT3D_9_LAYERS</feature>      <featureStatus>BLOCKED_DRIVER_VERSION</featureStatus>      <driverVersion>6.14.10.5218</driverVersion>      <driverVersionComparator>LESS_THAN</driverVersionComparator>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g974">      <os>WINNT 10.0</os>      <vendor>0x1002</vendor>              <devices>
+                      <device>0x6920</device>
+                      <device>0x6921</device>
+                      <device>0x6928</device>
+                      <device>0x6929</device>
+                      <device>0x692b</device>
+                      <device>0x692f</device>
+                      <device>0x6930</device>
+                      <device>0x6938</device>
+                      <device>0x6939</device>
+                      <device>0x6900</device>
+                      <device>0x6901</device>
+                      <device>0x6902</device>
+                      <device>0x6903</device>
+                      <device>0x6907</device>
+                      <device>0x7300</device>
+                      <device>0x9870</device>
+                      <device>0x9874</device>
+                      <device>0x9875</device>
+                      <device>0x9876</device>
+                      <device>0x9877</device>
+                  </devices>
+            <feature>DIRECT2D</feature>      <featureStatus>BLOCKED_DRIVER_VERSION</featureStatus>      <driverVersion>15.201.1151.0</driverVersion>      <driverVersionComparator>LESS_THAN</driverVersionComparator>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g984">      <os>All</os>      <vendor>0x8086</vendor>            <feature>DIRECT2D</feature>      <featureStatus>BLOCKED_DRIVER_VERSION</featureStatus>      <driverVersion>8.15.10.2413</driverVersion>      <driverVersionComparator>LESS_THAN_OR_EQUAL</driverVersionComparator>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g992">      <os>WINNT 8.1</os>      <vendor>0x1002</vendor>              <devices>
+                      <device>0x6920</device>
+                      <device>0x6921</device>
+                      <device>0x6928</device>
+                      <device>0x6929</device>
+                      <device>0x692b</device>
+                      <device>0x692f</device>
+                      <device>0x6930</device>
+                      <device>0x6938</device>
+                      <device>0x6939</device>
+                      <device>0x6900</device>
+                      <device>0x6901</device>
+                      <device>0x6902</device>
+                      <device>0x6903</device>
+                      <device>0x6907</device>
+                      <device>0x7300</device>
+                      <device>0x9870</device>
+                      <device>0x9874</device>
+                      <device>0x9875</device>
+                      <device>0x9876</device>
+                      <device>0x9877</device>
+                  </devices>
+            <feature>DIRECT2D</feature>      <featureStatus>BLOCKED_DRIVER_VERSION</featureStatus>      <driverVersion>15.201.1151.0</driverVersion>      <driverVersionComparator>LESS_THAN</driverVersionComparator>    </gfxBlacklistEntry>
+    <gfxBlacklistEntry  blockID="g1057">      <os>WINNT 5.1</os>      <vendor>0x8086</vendor>            <feature>WEBGL_ANGLE</feature>      <featureStatus>BLOCKED_DRIVER_VERSION</featureStatus>      <driverVersion>6.14.10.5218</driverVersion>      <driverVersionComparator>LESS_THAN</driverVersionComparator>    </gfxBlacklistEntry>
+    </gfxItems>
+
+  <certItems>
+        <certItem issuerName="MIGQMQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxmb3JkMRowGAYDVQQKExFDT01PRE8gQ0EgTGltaXRlZDE2MDQGA1UEAxMtQ09NT0RPIFJTQSBEb21haW4gVmFsaWRhdGlvbiBTZWN1cmUgU2VydmVyIENB">
+      <serialNumber>D9UltDPl4XVfSSqQOvdiwQ==</serialNumber>
+    </certItem>
+        <certItem issuerName="MDIxCzAJBgNVBAYTAkNOMQ4wDAYDVQQKEwVDTk5JQzETMBEGA1UEAxMKQ05OSUMgUk9PVA==">
+      <serialNumber>STMAjg==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIGQMQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxmb3JkMRowGAYDVQQKExFDT01PRE8gQ0EgTGltaXRlZDE2MDQGA1UEAxMtQ09NT0RPIFJTQSBEb21haW4gVmFsaWRhdGlvbiBTZWN1cmUgU2VydmVyIENB">
+      <serialNumber>UoRGnb96CUDTxIqVry6LBg==</serialNumber>
+    </certItem>
+        <certItem issuerName="MHExCzAJBgNVBAYTAkRFMRwwGgYDVQQKExNEZXV0c2NoZSBUZWxla29tIEFHMR8wHQYDVQQLExZULVRlbGVTZWMgVHJ1c3QgQ2VudGVyMSMwIQYDVQQDExpEZXV0c2NoZSBUZWxla29tIFJvb3QgQ0EgMg==">
+      <serialNumber>ARQ=</serialNumber>
+    </certItem>
+        <certItem issuerName="MGcxCzAJBgNVBAYTAkRFMRMwEQYDVQQKEwpGcmF1bmhvZmVyMSEwHwYDVQQLExhGcmF1bmhvZmVyIENvcnBvcmF0ZSBQS0kxIDAeBgNVBAMTF0ZyYXVuaG9mZXIgUm9vdCBDQSAyMDA3">
+      <serialNumber>YR3YYQAAAAAABA==</serialNumber>
+    </certItem>
+        <certItem issuerName="MGExCzAJBgNVBAYTAk5MMR4wHAYDVQQKDBVTdGFhdCBkZXIgTmVkZXJsYW5kZW4xMjAwBgNVBAMMKVN0YWF0IGRlciBOZWRlcmxhbmRlbiBPcmdhbmlzYXRpZSBDQSAtIEcy">
+      <serialNumber>ATE0vw==</serialNumber>
+    </certItem>
+        <certItem issuerName="MFkxCzAJBgNVBAYTAk5MMR4wHAYDVQQKExVTdGFhdCBkZXIgTmVkZXJsYW5kZW4xKjAoBgNVBAMTIVN0YWF0IGRlciBOZWRlcmxhbmRlbiBPdmVyaGVpZCBDQQ">
+      <serialNumber>ATFpsA==</serialNumber>
+    </certItem>
+        <certItem issuerName="MFkxCzAJBgNVBAYTAk5MMR4wHAYDVQQKExVTdGFhdCBkZXIgTmVkZXJsYW5kZW4xKjAoBgNVBAMTIVN0YWF0IGRlciBOZWRlcmxhbmRlbiBPdmVyaGVpZCBDQQ">
+      <serialNumber>ATFEdg==</serialNumber>
+    </certItem>
+        <certItem issuerName="MDcxJDAiBgNVBAMTG1JDUyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEPMA0GA1UEChMGSFQgc3Js">
+      <serialNumber>AN9bfYOvlR1t</serialNumber>
+    </certItem>
+        <certItem issuerName="MEQxCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwx0aGF3dGUsIEluYy4xHjAcBgNVBAMTFXRoYXd0ZSBFViBTU0wgQ0EgLSBHMw==">
+      <serialNumber>CrTHPEE6AZSfI3jysin2bA==</serialNumber>
+    </certItem>
+      </certItems>
+
+
+</blocklist>

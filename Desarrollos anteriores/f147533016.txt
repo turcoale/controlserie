@@ -1,0 +1,1312 @@
+17 :: 		TrisE = 0b00000001; // 1: entrada, 0: salida
+0x037B	0x3001      	MOVLW      1
+0x037C	0x1683      	BSF        STATUS, 5
+0x037D	0x0089      	MOVWF      TRISE
+;control de entradas v2.c,121 :: 		OPTION_REG.T0CS = 0; // bit 5  TMR0 Clock Source Select bit...0 = Internal Clock (CLKO) 1 = Transition on T0CKI pin
+0x037E	0x1281      	BCF        OPTION_REG, 5
+;control de entradas v2.c,122 :: 		OPTION_REG.T0SE = 0; // bit 4 TMR0 Source Edge Select bit 0 = low/high 1 = high/low
+0x037F	0x1201      	BCF        OPTION_REG, 4
+;control de entradas v2.c,123 :: 		OPTION_REG.PSA = 0; // bit 3  Prescaler Assignment bit...0 = Prescaler is assigned to the Timer0
+0x0380	0x1181      	BCF        OPTION_REG, 3
+;control de entradas v2.c,124 :: 		OPTION_REG.PS2 = 1; // bits 2-0  PS2:PS0: Prescaler Rate Select bits
+0x0381	0x1501      	BSF        OPTION_REG, 2
+;control de entradas v2.c,125 :: 		OPTION_REG.PS1 = 1;
+0x0382	0x1481      	BSF        OPTION_REG, 1
+;control de entradas v2.c,126 :: 		OPTION_REG.PS0 = 1;
+0x0383	0x1401      	BSF        OPTION_REG, 0
+;control de entradas v2.c,127 :: 		TMR0 = 177; // preset for timer register
+0x0384	0x30B1      	MOVLW      177
+0x0385	0x1283      	BCF        STATUS, 5
+0x0386	0x0081      	MOVWF      TMR0
+;control de entradas v2.c,130 :: 		INTCON = 0;           // clear the interrpt control register
+0x0387	0x018B      	CLRF       INTCON
+;control de entradas v2.c,131 :: 		INTCON.TMR0IE = 1;        // bit5 TMR0 Overflow Interrupt Enable bit...1 = Enables the TMR0 interrupt
+0x0388	0x168B      	BSF        INTCON, 5
+;control de entradas v2.c,132 :: 		INTCON.TMR0IF = 0;        // bit2 clear timer 0 interrupt flag
+0x0389	0x110B      	BCF        INTCON, 2
+;control de entradas v2.c,133 :: 		INTCON.GIE = 1;           // bit7 global interrupt enable
+0x038A	0x178B      	BSF        INTCON, 7
+;control de entradas v2.c,134 :: 		}
+L_end_Config:
+0x038B	0x0008      	RETURN
+; end of _Config
+_main:
+0x038C	0x30B4      	MOVLW      180
+0x038D	0x1283      	BCF        STATUS, 5
+0x038E	0x1303      	BCF        STATUS, 6
+0x038F	0x00A1      	MOVWF      _SegMaqParada
+0x0390	0x302D      	MOVLW      45
+0x0391	0x00A2      	MOVWF      _SegPumpDown
+0x0392	0x3002      	MOVLW      2
+0x0393	0x00A3      	MOVWF      _SegFalla
+0x0394	0x3010      	MOVLW      16
+0x0395	0x00A4      	MOVWF      _SegCantFallasMax
+0x0396	0x300E      	MOVLW      14
+0x0397	0x00A5      	MOVWF      37
+0x0398	0x3006      	MOVLW      6
+0x0399	0x00A6      	MOVWF      _CantMaxFallas
+;control de entradas v2.c,423 :: 		void main()
+;control de entradas v2.c,428 :: 		Config();
+0x039A	0x2359      	CALL       _Config
+;control de entradas v2.c,430 :: 		PortA = 0;
+0x039B	0x0185      	CLRF       PORTA
+;control de entradas v2.c,431 :: 		TrisA = 0b00000001; // 1: entrada, 0: salida
+0x039C	0x3001      	MOVLW      1
+0x039D	0x1683      	BSF        STATUS, 5
+0x039E	0x0085      	MOVWF      TRISA
+;control de entradas v2.c,432 :: 		PortB = 0;
+0x039F	0x1283      	BCF        STATUS, 5
+0x03A0	0x0186      	CLRF       PORTB
+;control de entradas v2.c,433 :: 		TrisB = 0b00111111; // 1: entrada, 0: salida
+0x03A1	0x303F      	MOVLW      63
+0x03A2	0x1683      	BSF        STATUS, 5
+0x03A3	0x0086      	MOVWF      TRISB
+;control de entradas v2.c,434 :: 		PortC = 0;
+0x03A4	0x1283      	BCF        STATUS, 5
+0x03A5	0x0187      	CLRF       PORTC
+;control de entradas v2.c,435 :: 		TrisC = 0b10000000; // 1: entrada, 0: salida
+0x03A6	0x3080      	MOVLW      128
+0x03A7	0x1683      	BSF        STATUS, 5
+0x03A8	0x0087      	MOVWF      TRISC
+;control de entradas v2.c,436 :: 		PortE = 0;
+0x03A9	0x1283      	BCF        STATUS, 5
+0x03AA	0x0189      	CLRF       PORTE
+;control de entradas v2.c,437 :: 		TrisE = 0b00000001; // 1: entrada, 0: salida
+0x03AB	0x3001      	MOVLW      1
+0x03AC	0x1683      	BSF        STATUS, 5
+0x03AD	0x0089      	MOVWF      TRISE
+;control de entradas v2.c,439 :: 		Ini();
+0x03AE	0x211F      	CALL       _Ini
+;control de entradas v2.c,440 :: 		primeravez = 1;
+0x03AF	0x3001      	MOVLW      1
+0x03B0	0x00C4      	MOVWF      main_primeravez_L0
+;control de entradas v2.c,442 :: 		Bienvenida ();
+0x03B1	0x22D2      	CALL       _Bienvenida
+;control de entradas v2.c,444 :: 		while (1)
+L_main106:
+;control de entradas v2.c,447 :: 		cont = 0;
+0x03B2	0x01C2      	CLRF       main_cont_L0
+0x03B3	0x01C3      	CLRF       main_cont_L0+1
+;control de entradas v2.c,448 :: 		while ((cont < 15) && (ED1 == 1)) // veo si en ED1 hay 220V
+L_main108:
+0x03B4	0x3080      	MOVLW      128
+0x03B5	0x0643      	XORWF      main_cont_L0+1, 0
+0x03B6	0x00F0      	MOVWF      R0
+0x03B7	0x3080      	MOVLW      128
+0x03B8	0x0270      	SUBWF      R0, 0
+0x03B9	0x1D03      	BTFSS      STATUS, 2
+0x03BA	0x2BBD      	GOTO       L__main224
+0x03BB	0x300F      	MOVLW      15
+0x03BC	0x0242      	SUBWF      main_cont_L0, 0
+L__main224:
+0x03BD	0x1803      	BTFSC      STATUS, 0
+0x03BE	0x2BCE      	GOTO       L_main109
+0x03BF	0x1C06      	BTFSS      PORTB, 0
+0x03C0	0x2BCE      	GOTO       L_main109
+L__main186:
+;control de entradas v2.c,450 :: 		cont ++;
+0x03C1	0x0AC2      	INCF       main_cont_L0, 1
+0x03C2	0x1903      	BTFSC      STATUS, 2
+0x03C3	0x0AC3      	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,451 :: 		delay_ms(2); // delay 2 mSeg
+0x03C4	0x3006      	MOVLW      6
+0x03C5	0x00FC      	MOVWF      R12
+0x03C6	0x3030      	MOVLW      48
+0x03C7	0x00FD      	MOVWF      R13
+L_main112:
+0x03C8	0x0BFD      	DECFSZ     R13, 1
+0x03C9	0x2BC8      	GOTO       L_main112
+0x03CA	0x0BFC      	DECFSZ     R12, 1
+0x03CB	0x2BC8      	GOTO       L_main112
+0x03CC	0x0000      	NOP
+;control de entradas v2.c,452 :: 		}
+0x03CD	0x2BB4      	GOTO       L_main108
+L_main109:
+;control de entradas v2.c,453 :: 		if (cont < 15) // hay 220V? = ED1 cerrada?
+0x03CE	0x3080      	MOVLW      128
+0x03CF	0x0643      	XORWF      main_cont_L0+1, 0
+0x03D0	0x00F0      	MOVWF      R0
+0x03D1	0x3080      	MOVLW      128
+0x03D2	0x0270      	SUBWF      R0, 0
+0x03D3	0x1D03      	BTFSS      STATUS, 2
+0x03D4	0x2BD7      	GOTO       L__main225
+0x03D5	0x300F      	MOVLW      15
+0x03D6	0x0242      	SUBWF      main_cont_L0, 0
+L__main225:
+0x03D7	0x1803      	BTFSC      STATUS, 0
+0x03D8	0x2CA8      	GOTO       L_main113
+;control de entradas v2.c,455 :: 		LED1 = 1; // prendo LED1
+0x03D9	0x1607      	BSF        PORTC, 4
+;control de entradas v2.c,456 :: 		if (Pump == 0) // con Pump Down?
+0x03DA	0x1805      	BTFSC      PORTA, 0
+0x03DB	0x2C47      	GOTO       L_main114
+;control de entradas v2.c,458 :: 		if (primeravez == 1)
+0x03DC	0x0844      	MOVF       main_primeravez_L0, 0
+0x03DD	0x3A01      	XORLW      1
+0x03DE	0x1D03      	BTFSS      STATUS, 2
+0x03DF	0x2C46      	GOTO       L_main115
+;control de entradas v2.c,460 :: 		SD2 = 1;
+0x03E0	0x1587      	BSF        PORTC, 3
+;control de entradas v2.c,461 :: 		if (ED2 == 1)
+0x03E1	0x1C86      	BTFSS      PORTB, 1
+0x03E2	0x2BE5      	GOTO       L_main116
+;control de entradas v2.c,462 :: 		SD1 = 1;
+0x03E3	0x1507      	BSF        PORTC, 2
+0x03E4	0x2BE6      	GOTO       L_main117
+L_main116:
+;control de entradas v2.c,464 :: 		SD1 = 0;
+0x03E5	0x1107      	BCF        PORTC, 2
+L_main117:
+;control de entradas v2.c,465 :: 		cont = 0;
+0x03E6	0x01C2      	CLRF       main_cont_L0
+0x03E7	0x01C3      	CLRF       main_cont_L0+1
+;control de entradas v2.c,466 :: 		while ((cont < SegPumpDown) && (ED2 == 0)) // espero 45 Seg o que se cierre ED2
+L_main118:
+0x03E8	0x3080      	MOVLW      128
+0x03E9	0x0643      	XORWF      main_cont_L0+1, 0
+0x03EA	0x00F0      	MOVWF      R0
+0x03EB	0x3080      	MOVLW      128
+0x03EC	0x0270      	SUBWF      R0, 0
+0x03ED	0x1D03      	BTFSS      STATUS, 2
+0x03EE	0x2BF1      	GOTO       L__main226
+0x03EF	0x0822      	MOVF       _SegPumpDown, 0
+0x03F0	0x0242      	SUBWF      main_cont_L0, 0
+L__main226:
+0x03F1	0x1803      	BTFSC      STATUS, 0
+0x03F2	0x2C07      	GOTO       L_main119
+0x03F3	0x1886      	BTFSC      PORTB, 1
+0x03F4	0x2C07      	GOTO       L_main119
+L__main185:
+;control de entradas v2.c,468 :: 		cont ++;
+0x03F5	0x0AC2      	INCF       main_cont_L0, 1
+0x03F6	0x1903      	BTFSC      STATUS, 2
+0x03F7	0x0AC3      	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,469 :: 		delay_ms (1000);
+0x03F8	0x300B      	MOVLW      11
+0x03F9	0x00FB      	MOVWF      R11
+0x03FA	0x3026      	MOVLW      38
+0x03FB	0x00FC      	MOVWF      R12
+0x03FC	0x305D      	MOVLW      93
+0x03FD	0x00FD      	MOVWF      R13
+L_main122:
+0x03FE	0x0BFD      	DECFSZ     R13, 1
+0x03FF	0x2BFE      	GOTO       L_main122
+0x0400	0x0BFC      	DECFSZ     R12, 1
+0x0401	0x2BFE      	GOTO       L_main122
+0x0402	0x0BFB      	DECFSZ     R11, 1
+0x0403	0x2BFE      	GOTO       L_main122
+0x0404	0x0000      	NOP
+0x0405	0x0000      	NOP
+;control de entradas v2.c,470 :: 		}
+0x0406	0x2BE8      	GOTO       L_main118
+L_main119:
+;control de entradas v2.c,471 :: 		if (cont < SegPumpDown && ED2 == 1)
+0x0407	0x3080      	MOVLW      128
+0x0408	0x0643      	XORWF      main_cont_L0+1, 0
+0x0409	0x00F0      	MOVWF      R0
+0x040A	0x3080      	MOVLW      128
+0x040B	0x0270      	SUBWF      R0, 0
+0x040C	0x1D03      	BTFSS      STATUS, 2
+0x040D	0x2C10      	GOTO       L__main227
+0x040E	0x0822      	MOVF       _SegPumpDown, 0
+0x040F	0x0242      	SUBWF      main_cont_L0, 0
+L__main227:
+0x0410	0x1803      	BTFSC      STATUS, 0
+0x0411	0x2C15      	GOTO       L_main125
+0x0412	0x1C86      	BTFSS      PORTB, 1
+0x0413	0x2C15      	GOTO       L_main125
+L__main184:
+;control de entradas v2.c,472 :: 		SD1 = 1;
+0x0414	0x1507      	BSF        PORTC, 2
+L_main125:
+;control de entradas v2.c,473 :: 		if (cont == SegPumpDown) // pasaron 45 Seg y ED2 sigue abierta?
+0x0415	0x3000      	MOVLW      0
+0x0416	0x0643      	XORWF      main_cont_L0+1, 0
+0x0417	0x1D03      	BTFSS      STATUS, 2
+0x0418	0x2C1B      	GOTO       L__main228
+0x0419	0x0822      	MOVF       _SegPumpDown, 0
+0x041A	0x0642      	XORWF      main_cont_L0, 0
+L__main228:
+0x041B	0x1D03      	BTFSS      STATUS, 2
+0x041C	0x2C46      	GOTO       L_main126
+;control de entradas v2.c,475 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+0x041D	0x1187      	BCF        PORTC, 3
+0x041E	0x1987      	BTFSC      PORTC, 3
+0x041F	0x2C22      	GOTO       L__main229
+0x0420	0x1107      	BCF        PORTC, 2
+0x0421	0x2C23      	GOTO       L__main230
+L__main229:
+0x0422	0x1507      	BSF        PORTC, 2
+L__main230:
+;control de entradas v2.c,476 :: 		LED1 = 0;
+0x0423	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,477 :: 		BUZ = 1; // cierro SD3 Alarma
+0x0424	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,478 :: 		while (1) // titla LED1 hasta Reset Manual: 1 Destello, 2 Seg Apagado
+L_main127:
+;control de entradas v2.c,480 :: 		LED1 = 1;
+0x0425	0x1607      	BSF        PORTC, 4
+;control de entradas v2.c,481 :: 		BUZ = 1; // cierro SD3 Alarma
+0x0426	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,482 :: 		delay_ms (250);
+0x0427	0x3003      	MOVLW      3
+0x0428	0x00FB      	MOVWF      R11
+0x0429	0x308A      	MOVLW      138
+0x042A	0x00FC      	MOVWF      R12
+0x042B	0x3055      	MOVLW      85
+0x042C	0x00FD      	MOVWF      R13
+L_main129:
+0x042D	0x0BFD      	DECFSZ     R13, 1
+0x042E	0x2C2D      	GOTO       L_main129
+0x042F	0x0BFC      	DECFSZ     R12, 1
+0x0430	0x2C2D      	GOTO       L_main129
+0x0431	0x0BFB      	DECFSZ     R11, 1
+0x0432	0x2C2D      	GOTO       L_main129
+0x0433	0x0000      	NOP
+0x0434	0x0000      	NOP
+;control de entradas v2.c,483 :: 		LED1 = 0;
+0x0435	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,484 :: 		BUZ = 1; // cierro SD3 Alarma
+0x0436	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,485 :: 		delay_ms (1000);
+0x0437	0x300B      	MOVLW      11
+0x0438	0x00FB      	MOVWF      R11
+0x0439	0x3026      	MOVLW      38
+0x043A	0x00FC      	MOVWF      R12
+0x043B	0x305D      	MOVLW      93
+0x043C	0x00FD      	MOVWF      R13
+L_main130:
+0x043D	0x0BFD      	DECFSZ     R13, 1
+0x043E	0x2C3D      	GOTO       L_main130
+0x043F	0x0BFC      	DECFSZ     R12, 1
+0x0440	0x2C3D      	GOTO       L_main130
+0x0441	0x0BFB      	DECFSZ     R11, 1
+0x0442	0x2C3D      	GOTO       L_main130
+0x0443	0x0000      	NOP
+0x0444	0x0000      	NOP
+;control de entradas v2.c,486 :: 		}
+0x0445	0x2C25      	GOTO       L_main127
+;control de entradas v2.c,487 :: 		}
+L_main126:
+;control de entradas v2.c,488 :: 		}
+L_main115:
+;control de entradas v2.c,489 :: 		primeravez = 0;
+0x0446	0x01C4      	CLRF       main_primeravez_L0
+;control de entradas v2.c,490 :: 		}
+L_main114:
+;control de entradas v2.c,493 :: 		if ( ContSegParada >= SegMaqParada ) // estuvo parada más de 3 Min?
+0x0447	0x0821      	MOVF       _SegMaqParada, 0
+0x0448	0x0235      	SUBWF      _ContSegParada, 0
+0x0449	0x1C03      	BTFSS      STATUS, 0
+0x044A	0x2C53      	GOTO       L_main131
+;control de entradas v2.c,495 :: 		SD1 = SD2 = 1; // cierro SD1
+0x044B	0x1587      	BSF        PORTC, 3
+0x044C	0x1987      	BTFSC      PORTC, 3
+0x044D	0x2C50      	GOTO       L__main231
+0x044E	0x1107      	BCF        PORTC, 2
+0x044F	0x2C51      	GOTO       L__main232
+L__main231:
+0x0450	0x1507      	BSF        PORTC, 2
+L__main232:
+;control de entradas v2.c,496 :: 		ContSegParada = 200; // Reset contador
+0x0451	0x30C8      	MOVLW      200
+0x0452	0x00B5      	MOVWF      _ContSegParada
+;control de entradas v2.c,497 :: 		}
+L_main131:
+;control de entradas v2.c,499 :: 		if (ED2 == 0) // ED2 abierta?
+0x0453	0x1886      	BTFSC      PORTB, 1
+0x0454	0x2CA6      	GOTO       L_main132
+;control de entradas v2.c,501 :: 		LED2 = 1; // enciendo LED2
+0x0455	0x1687      	BSF        PORTC, 5
+;control de entradas v2.c,502 :: 		cont = 0;
+0x0456	0x01C2      	CLRF       main_cont_L0
+0x0457	0x01C3      	CLRF       main_cont_L0+1
+;control de entradas v2.c,503 :: 		while ((cont < SegFalla) && (ED2 == 0)) // espero 10 Seg o que se cierre ED2
+L_main133:
+0x0458	0x3080      	MOVLW      128
+0x0459	0x0643      	XORWF      main_cont_L0+1, 0
+0x045A	0x00F0      	MOVWF      R0
+0x045B	0x3080      	MOVLW      128
+0x045C	0x0270      	SUBWF      R0, 0
+0x045D	0x1D03      	BTFSS      STATUS, 2
+0x045E	0x2C61      	GOTO       L__main233
+0x045F	0x0823      	MOVF       _SegFalla, 0
+0x0460	0x0242      	SUBWF      main_cont_L0, 0
+L__main233:
+0x0461	0x1803      	BTFSC      STATUS, 0
+0x0462	0x2C77      	GOTO       L_main134
+0x0463	0x1886      	BTFSC      PORTB, 1
+0x0464	0x2C77      	GOTO       L_main134
+L__main183:
+;control de entradas v2.c,505 :: 		cont ++;
+0x0465	0x0AC2      	INCF       main_cont_L0, 1
+0x0466	0x1903      	BTFSC      STATUS, 2
+0x0467	0x0AC3      	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,506 :: 		delay_ms (1000);
+0x0468	0x300B      	MOVLW      11
+0x0469	0x00FB      	MOVWF      R11
+0x046A	0x3026      	MOVLW      38
+0x046B	0x00FC      	MOVWF      R12
+0x046C	0x305D      	MOVLW      93
+0x046D	0x00FD      	MOVWF      R13
+L_main137:
+0x046E	0x0BFD      	DECFSZ     R13, 1
+0x046F	0x2C6E      	GOTO       L_main137
+0x0470	0x0BFC      	DECFSZ     R12, 1
+0x0471	0x2C6E      	GOTO       L_main137
+0x0472	0x0BFB      	DECFSZ     R11, 1
+0x0473	0x2C6E      	GOTO       L_main137
+0x0474	0x0000      	NOP
+0x0475	0x0000      	NOP
+;control de entradas v2.c,507 :: 		}
+0x0476	0x2C58      	GOTO       L_main133
+L_main134:
+;control de entradas v2.c,508 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+0x0477	0x3000      	MOVLW      0
+0x0478	0x0643      	XORWF      main_cont_L0+1, 0
+0x0479	0x1D03      	BTFSS      STATUS, 2
+0x047A	0x2C7D      	GOTO       L__main234
+0x047B	0x0823      	MOVF       _SegFalla, 0
+0x047C	0x0642      	XORWF      main_cont_L0, 0
+L__main234:
+0x047D	0x1D03      	BTFSS      STATUS, 2
+0x047E	0x2C83      	GOTO       L_main138
+;control de entradas v2.c,510 :: 		SD1 = 0; // abro SD1
+0x047F	0x1107      	BCF        PORTC, 2
+;control de entradas v2.c,511 :: 		SD2 = 0;
+0x0480	0x1187      	BCF        PORTC, 3
+;control de entradas v2.c,512 :: 		ContFallasED2 ++; // sumo 1 falla de ED2
+0x0481	0x0AB1      	INCF       _ContFallasED2, 1
+;control de entradas v2.c,513 :: 		}
+0x0482	0x2C84      	GOTO       L_main139
+L_main138:
+;control de entradas v2.c,515 :: 		LED2 = 0; // apago LED2 por falsa falla
+0x0483	0x1287      	BCF        PORTC, 5
+L_main139:
+;control de entradas v2.c,516 :: 		while ((ED2 == 0) && (ContFallasED2 < CantMaxFallas)); // espero que pase la falla de ED2 o no sea la última
+L_main140:
+0x0484	0x1886      	BTFSC      PORTB, 1
+0x0485	0x2C8B      	GOTO       L_main141
+0x0486	0x0826      	MOVF       _CantMaxFallas, 0
+0x0487	0x0231      	SUBWF      _ContFallasED2, 0
+0x0488	0x1803      	BTFSC      STATUS, 0
+0x0489	0x2C8B      	GOTO       L_main141
+L__main182:
+0x048A	0x2C84      	GOTO       L_main140
+L_main141:
+;control de entradas v2.c,517 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+0x048B	0x01B5      	CLRF       _ContSegParada
+;control de entradas v2.c,518 :: 		if ( ( ContFallasED2 == CantMaxFallas ) && ( SegFallaED2 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+0x048C	0x0831      	MOVF       _ContFallasED2, 0
+0x048D	0x0626      	XORWF      _CantMaxFallas, 0
+0x048E	0x1D03      	BTFSS      STATUS, 2
+0x048F	0x2CA6      	GOTO       L_main146
+0x0490	0x3080      	MOVLW      128
+0x0491	0x0625      	XORWF      _SegCantFallasMax+1, 0
+0x0492	0x00F0      	MOVWF      R0
+0x0493	0x3080      	MOVLW      128
+0x0494	0x062E      	XORWF      _SegFallaED2+1, 0
+0x0495	0x0270      	SUBWF      R0, 0
+0x0496	0x1D03      	BTFSS      STATUS, 2
+0x0497	0x2C9A      	GOTO       L__main235
+0x0498	0x082D      	MOVF       _SegFallaED2, 0
+0x0499	0x0224      	SUBWF      _SegCantFallasMax, 0
+L__main235:
+0x049A	0x1C03      	BTFSS      STATUS, 0
+0x049B	0x2CA6      	GOTO       L_main146
+L__main181:
+;control de entradas v2.c,520 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+0x049C	0x1187      	BCF        PORTC, 3
+0x049D	0x1987      	BTFSC      PORTC, 3
+0x049E	0x2CA1      	GOTO       L__main236
+0x049F	0x1107      	BCF        PORTC, 2
+0x04A0	0x2CA2      	GOTO       L__main237
+L__main236:
+0x04A1	0x1507      	BSF        PORTC, 2
+L__main237:
+;control de entradas v2.c,521 :: 		ApagoFalsaFalla ();
+0x04A2	0x20FC      	CALL       _ApagoFalsaFalla
+;control de entradas v2.c,522 :: 		while (1)
+L_main147:
+;control de entradas v2.c,524 :: 		LED2 = 1; // enciende LED2 hasta Reset manual
+0x04A3	0x1687      	BSF        PORTC, 5
+;control de entradas v2.c,525 :: 		BUZ = 1; // cierro SD3 Alarma
+0x04A4	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,526 :: 		}
+0x04A5	0x2CA3      	GOTO       L_main147
+;control de entradas v2.c,527 :: 		}
+L_main146:
+;control de entradas v2.c,528 :: 		}
+L_main132:
+;control de entradas v2.c,530 :: 		BuscoFalla3 (); // reviso desde ED3 a EA1 por Fallas
+0x04A6	0x2141      	CALL       _BuscoFalla3
+;control de entradas v2.c,532 :: 		}
+0x04A7	0x2D0F      	GOTO       L_main149
+L_main113:
+;control de entradas v2.c,535 :: 		primeravez = 1;
+0x04A8	0x3001      	MOVLW      1
+0x04A9	0x00C4      	MOVWF      main_primeravez_L0
+;control de entradas v2.c,536 :: 		LED1 = 0;
+0x04AA	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,537 :: 		if (Pump == 0) // con Pump Down?
+0x04AB	0x1805      	BTFSC      PORTA, 0
+0x04AC	0x2D0D      	GOTO       L_main150
+;control de entradas v2.c,539 :: 		SD2 = 0; // abro SD2
+0x04AD	0x1187      	BCF        PORTC, 3
+;control de entradas v2.c,540 :: 		if (ED2 == 1) // ED2 cerrada?
+0x04AE	0x1C86      	BTFSS      PORTB, 1
+0x04AF	0x2D0A      	GOTO       L_main151
+;control de entradas v2.c,542 :: 		cont45seg = 0;
+0x04B0	0x01B4      	CLRF       _cont45seg
+;control de entradas v2.c,543 :: 		while ((cont45seg < SegPumpDown) && (ED2 == 1)) // espero 45 Seg o que se abra ED2
+L_main152:
+0x04B1	0x0822      	MOVF       _SegPumpDown, 0
+0x04B2	0x0234      	SUBWF      _cont45seg, 0
+0x04B3	0x1803      	BTFSC      STATUS, 0
+0x04B4	0x2CBC      	GOTO       L_main153
+0x04B5	0x1C86      	BTFSS      PORTB, 1
+0x04B6	0x2CBC      	GOTO       L_main153
+L__main180:
+;control de entradas v2.c,545 :: 		BuscoFalla3(); // reviso desde ED3 a EA1 por fallas
+0x04B7	0x2141      	CALL       _BuscoFalla3
+;control de entradas v2.c,546 :: 		if (ED1 == 0)
+0x04B8	0x1806      	BTFSC      PORTB, 0
+0x04B9	0x2CBB      	GOTO       L_main156
+;control de entradas v2.c,548 :: 		break;
+0x04BA	0x2CBC      	GOTO       L_main153
+;control de entradas v2.c,549 :: 		}
+L_main156:
+;control de entradas v2.c,550 :: 		}
+0x04BB	0x2CB1      	GOTO       L_main152
+L_main153:
+;control de entradas v2.c,551 :: 		if ((cont45seg == SegPumpDown) && (ED2 == 1)) // pasaron 45 Seg y ED2 sigue cerrada?
+0x04BC	0x0834      	MOVF       _cont45seg, 0
+0x04BD	0x0622      	XORWF      _SegPumpDown, 0
+0x04BE	0x1D03      	BTFSS      STATUS, 2
+0x04BF	0x2D0A      	GOTO       L_main159
+0x04C0	0x1C86      	BTFSS      PORTB, 1
+0x04C1	0x2D0A      	GOTO       L_main159
+L__main179:
+;control de entradas v2.c,554 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+0x04C2	0x1187      	BCF        PORTC, 3
+0x04C3	0x1987      	BTFSC      PORTC, 3
+0x04C4	0x2CC7      	GOTO       L__main238
+0x04C5	0x1107      	BCF        PORTC, 2
+0x04C6	0x2CC8      	GOTO       L__main239
+L__main238:
+0x04C7	0x1507      	BSF        PORTC, 2
+L__main239:
+;control de entradas v2.c,555 :: 		LED1 = 0;
+0x04C8	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,556 :: 		BUZ = 1; // cierro SD3 Alarma*/
+0x04C9	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,557 :: 		while (1) // titila LED1 hasta Reset Manual: 2 Destellos, 2 Seg Apagado
+L_main160:
+;control de entradas v2.c,559 :: 		LED1 = 1;
+0x04CA	0x1607      	BSF        PORTC, 4
+;control de entradas v2.c,560 :: 		BUZ = 1; // cierro SD3 Alarma
+0x04CB	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,561 :: 		delay_ms (250);
+0x04CC	0x3003      	MOVLW      3
+0x04CD	0x00FB      	MOVWF      R11
+0x04CE	0x308A      	MOVLW      138
+0x04CF	0x00FC      	MOVWF      R12
+0x04D0	0x3055      	MOVLW      85
+0x04D1	0x00FD      	MOVWF      R13
+L_main162:
+0x04D2	0x0BFD      	DECFSZ     R13, 1
+0x04D3	0x2CD2      	GOTO       L_main162
+0x04D4	0x0BFC      	DECFSZ     R12, 1
+0x04D5	0x2CD2      	GOTO       L_main162
+0x04D6	0x0BFB      	DECFSZ     R11, 1
+0x04D7	0x2CD2      	GOTO       L_main162
+0x04D8	0x0000      	NOP
+0x04D9	0x0000      	NOP
+;control de entradas v2.c,562 :: 		LED1 = 0;
+0x04DA	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,563 :: 		BUZ = 1; // cierro SD3 Alarma
+0x04DB	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,564 :: 		delay_ms (250);
+0x04DC	0x3003      	MOVLW      3
+0x04DD	0x00FB      	MOVWF      R11
+0x04DE	0x308A      	MOVLW      138
+0x04DF	0x00FC      	MOVWF      R12
+0x04E0	0x3055      	MOVLW      85
+0x04E1	0x00FD      	MOVWF      R13
+L_main163:
+0x04E2	0x0BFD      	DECFSZ     R13, 1
+0x04E3	0x2CE2      	GOTO       L_main163
+0x04E4	0x0BFC      	DECFSZ     R12, 1
+0x04E5	0x2CE2      	GOTO       L_main163
+0x04E6	0x0BFB      	DECFSZ     R11, 1
+0x04E7	0x2CE2      	GOTO       L_main163
+0x04E8	0x0000      	NOP
+0x04E9	0x0000      	NOP
+;control de entradas v2.c,565 :: 		LED1 = 1;
+0x04EA	0x1607      	BSF        PORTC, 4
+;control de entradas v2.c,566 :: 		BUZ = 1; // cierro SD3 Alarma
+0x04EB	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,567 :: 		delay_ms (250);
+0x04EC	0x3003      	MOVLW      3
+0x04ED	0x00FB      	MOVWF      R11
+0x04EE	0x308A      	MOVLW      138
+0x04EF	0x00FC      	MOVWF      R12
+0x04F0	0x3055      	MOVLW      85
+0x04F1	0x00FD      	MOVWF      R13
+L_main164:
+0x04F2	0x0BFD      	DECFSZ     R13, 1
+0x04F3	0x2CF2      	GOTO       L_main164
+0x04F4	0x0BFC      	DECFSZ     R12, 1
+0x04F5	0x2CF2      	GOTO       L_main164
+0x04F6	0x0BFB      	DECFSZ     R11, 1
+0x04F7	0x2CF2      	GOTO       L_main164
+0x04F8	0x0000      	NOP
+0x04F9	0x0000      	NOP
+;control de entradas v2.c,568 :: 		LED1 = 0;
+0x04FA	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,569 :: 		BUZ = 1; // cierro SD3 Alarma
+0x04FB	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,570 :: 		delay_ms (2000);
+0x04FC	0x3015      	MOVLW      21
+0x04FD	0x00FB      	MOVWF      R11
+0x04FE	0x304B      	MOVLW      75
+0x04FF	0x00FC      	MOVWF      R12
+0x0500	0x30BE      	MOVLW      190
+0x0501	0x00FD      	MOVWF      R13
+L_main165:
+0x0502	0x0BFD      	DECFSZ     R13, 1
+0x0503	0x2D02      	GOTO       L_main165
+0x0504	0x0BFC      	DECFSZ     R12, 1
+0x0505	0x2D02      	GOTO       L_main165
+0x0506	0x0BFB      	DECFSZ     R11, 1
+0x0507	0x2D02      	GOTO       L_main165
+0x0508	0x0000      	NOP
+;control de entradas v2.c,571 :: 		}
+0x0509	0x2CCA      	GOTO       L_main160
+;control de entradas v2.c,572 :: 		}
+L_main159:
+;control de entradas v2.c,573 :: 		}
+L_main151:
+;control de entradas v2.c,574 :: 		SD1 = 0;
+0x050A	0x1107      	BCF        PORTC, 2
+;control de entradas v2.c,575 :: 		ContSegParada = 0;
+0x050B	0x01B5      	CLRF       _ContSegParada
+;control de entradas v2.c,576 :: 		}
+0x050C	0x2D0F      	GOTO       L_main166
+L_main150:
+;control de entradas v2.c,579 :: 		SD1 = 0;
+0x050D	0x1107      	BCF        PORTC, 2
+;control de entradas v2.c,580 :: 		ContSegParada = 0;
+0x050E	0x01B5      	CLRF       _ContSegParada
+;control de entradas v2.c,581 :: 		}
+L_main166:
+;control de entradas v2.c,582 :: 		}
+L_main149:
+;control de entradas v2.c,583 :: 		}
+0x050F	0x2BB2      	GOTO       L_main106
+;control de entradas v2.c,584 :: 		}
+L_end_main:
+0x0510	0x2D10      	GOTO       $+0
+; end of _main
+Symbol List:
+//** Routines locations **
+//ADDRESS    SIZE    PROCEDURE
+//----------------------------------------------
+0x0004     [206]    _interrupt
+0x00D2       [8]    _Delay_22us
+0x00DA      [34]    _ADC_Read
+0x00FC      [28]    _ApagoFalsaFalla
+0x0118       [7]    _____DoICP
+0x011F      [34]    _Ini
+0x0141     [389]    _BuscoFalla3
+0x02C6      [12]    ___CC2DW
+0x02D2     [135]    _Bienvenida
+0x0359      [51]    _Config
+0x038C     [389]    _main
+//** Variables locations ** 
+//ADDRESS    SIZE    VARIABLE
+//----------------------------------------------
+0x0000       [1]    INDF
+0x0001       [1]    TMR0
+0x0002       [1]    PCL
+0x0003       [1]    STATUS
+0x0004       [1]    FSR
+0x0005       [0]    Pump
+0x0005       [1]    PORTA
+0x0005       [0]    LED3
+0x0005       [0]    LED4
+0x0006       [0]    LED5
+0x0006       [0]    LEA1
+0x0006       [0]    ED3
+0x0006       [0]    ED4
+0x0006       [0]    ED1
+0x0006       [0]    ED2
+0x0006       [0]    ED5
+0x0006       [1]    PORTB
+0x0007       [1]    PORTC
+0x0007       [0]    LED2
+0x0007       [0]    LED1
+0x0007       [0]    BUZ
+0x0007       [0]    SD2
+0x0007       [0]    SD1
+0x0009       [1]    PORTE
+0x000A       [1]    PCLATH
+0x000B       [1]    INTCON
+0x001E       [1]    ADRESH
+0x001F       [1]    ADCON0
+0x0021       [1]    _SegMaqParada
+0x0022       [1]    _SegPumpDown
+0x0023       [1]    _SegFalla
+0x0024       [2]    _SegCantFallasMax
+0x0026       [1]    _CantMaxFallas
+0x0027       [1]    _ContFallasED5
+0x0028       [1]    _ContFallasED4
+0x0029       [1]    _ContFallasED3
+0x002A       [1]    _ContFallasEA1
+0x002B       [2]    _SegFallaED3
+0x002D       [2]    _SegFallaED2
+0x002F       [2]    _SegFallaED1
+0x0031       [1]    _ContFallasED2
+0x0032       [1]    _ContmSeg
+0x0033       [1]    _ContFallasED1
+0x0034       [1]    _cont45seg
+0x0035       [1]    _ContSegParada
+0x0036       [2]    _SegFallaED4
+0x0038       [2]    _AD
+0x003A       [2]    _SegFallaEA1
+0x003C       [2]    _SegFallaED5
+0x003E       [2]    ___DoICPAddr
+0x0040       [1]    ___savePCLATH
+0x0041       [1]    ___saveSTATUS
+0x0042       [2]    main_cont_L0
+0x0044       [1]    main_primeravez_L0
+0x0045       [2]    BuscoFalla3_cont_L0
+0x0047       [1]    FARG_ADC_Read_channel
+0x0070       [1]    R0
+0x0071       [1]    R1
+0x0072       [1]    R2
+0x0073       [1]    R3
+0x0074       [1]    R4
+0x0075       [1]    R5
+0x0076       [1]    R6
+0x0077       [1]    R7
+0x0078       [1]    R8
+0x0079       [1]    R9
+0x007A       [1]    R10
+0x007B       [1]    R11
+0x007C       [1]    R12
+0x007D       [1]    R13
+0x007E       [1]    R14
+0x007F       [1]    R15
+0x0081       [1]    OPTION_REG
+0x0085       [1]    TRISA
+0x0086       [1]    TRISB
+0x0087       [1]    TRISC
+0x0089       [1]    TRISE
+0x008F       [1]    OSCCON
+0x0095       [1]    WPUB
+0x0096       [1]    IOCB
+0x0097       [1]    VRCON
+0x009E       [1]    ADRESL
+0x009F       [1]    ADCON1
+0x0107       [1]    CM1CON0
+0x0108       [1]    CM2CON0
+0x0188       [1]    ANSEL
+0x0189       [1]    ANSELH
+//** Label List: ** 
+//----------------------------------------------
+  L_Bienvenida0
+  L_Bienvenida1
+  L_Bienvenida2
+  L_Bienvenida3
+  L_Bienvenida4
+  L_Bienvenida5
+  L_Bienvenida6
+  L_Bienvenida7
+  L_Bienvenida8
+  L_Bienvenida9
+  L_Bienvenida10
+  L_Bienvenida11
+  L_ApagoFalsaFalla12
+  L_ApagoFalsaFalla13
+  L_ApagoFalsaFalla14
+  L_ApagoFalsaFalla15
+  L_ApagoFalsaFalla16
+  L_interrupt17
+  L_interrupt18
+  L_interrupt19
+  L_interrupt20
+  L_interrupt21
+  L_interrupt22
+  L_interrupt23
+  L_interrupt24
+  L_interrupt25
+  L_interrupt26
+  L_interrupt27
+  L_interrupt28
+  L_interrupt29
+  L_interrupt30
+  L_interrupt31
+  L_interrupt32
+  L_interrupt33
+  L_interrupt34
+  L_interrupt35
+  L_interrupt36
+  L_interrupt37
+  L_BuscoFalla338
+  L_BuscoFalla339
+  L_BuscoFalla340
+  L_BuscoFalla341
+  L_BuscoFalla342
+  L_BuscoFalla343
+  L_BuscoFalla344
+  L_BuscoFalla345
+  L_BuscoFalla346
+  L_BuscoFalla347
+  L_BuscoFalla348
+  L_BuscoFalla349
+  L_BuscoFalla350
+  L_BuscoFalla351
+  L_BuscoFalla352
+  L_BuscoFalla353
+  L_BuscoFalla354
+  L_BuscoFalla355
+  L_BuscoFalla356
+  L_BuscoFalla357
+  L_BuscoFalla358
+  L_BuscoFalla359
+  L_BuscoFalla360
+  L_BuscoFalla361
+  L_BuscoFalla362
+  L_BuscoFalla363
+  L_BuscoFalla364
+  L_BuscoFalla365
+  L_BuscoFalla366
+  L_BuscoFalla367
+  L_BuscoFalla368
+  L_BuscoFalla369
+  L_BuscoFalla370
+  L_BuscoFalla371
+  L_BuscoFalla372
+  L_BuscoFalla373
+  L_BuscoFalla374
+  L_BuscoFalla375
+  L_BuscoFalla376
+  L_BuscoFalla377
+  L_BuscoFalla378
+  L_BuscoFalla379
+  L_BuscoFalla380
+  L_BuscoFalla381
+  L_BuscoFalla382
+  L_BuscoFalla383
+  L_BuscoFalla384
+  L_BuscoFalla385
+  L_BuscoFalla386
+  L_BuscoFalla387
+  L_BuscoFalla388
+  L_BuscoFalla389
+  L_BuscoFalla390
+  L_BuscoFalla391
+  L_BuscoFalla392
+  L_BuscoFalla393
+  L_BuscoFalla394
+  L_BuscoFalla395
+  L_BuscoFalla396
+  L_BuscoFalla397
+  L_BuscoFalla398
+  L_BuscoFalla399
+  L_BuscoFalla3100
+  L_BuscoFalla3101
+  L_BuscoFalla3102
+  L_BuscoFalla3103
+  L_BuscoFalla3104
+  L_BuscoFalla3105
+  L_main106
+  L_main107
+  L_main108
+  L_main109
+  L_main110
+  L_main111
+  L_main112
+  L_main113
+  L_main114
+  L_main115
+  L_main116
+  L_main117
+  L_main118
+  L_main119
+  L_main120
+  L_main121
+  L_main122
+  L_main123
+  L_main124
+  L_main125
+  L_main126
+  L_main127
+  L_main128
+  L_main129
+  L_main130
+  L_main131
+  L_main132
+  L_main133
+  L_main134
+  L_main135
+  L_main136
+  L_main137
+  L_main138
+  L_main139
+  L_main140
+  L_main141
+  L_main142
+  L_main143
+  L_main144
+  L_main145
+  L_main146
+  L_main147
+  L_main148
+  L_main149
+  L_main150
+  L_main151
+  L_main152
+  L_main153
+  L_main154
+  L_main155
+  L_main156
+  L_main157
+  L_main158
+  L_main159
+  L_main160
+  L_main161
+  L_main162
+  L_main163
+  L_main164
+  L_main165
+  L_main166
+  L__BuscoFalla3167
+  L__BuscoFalla3168
+  L__BuscoFalla3169
+  L__BuscoFalla3170
+  L__BuscoFalla3171
+  L__BuscoFalla3172
+  L__BuscoFalla3173
+  L__BuscoFalla3174
+  L__BuscoFalla3175
+  L__BuscoFalla3176
+  L__BuscoFalla3177
+  L__BuscoFalla3178
+  L__main179
+  L__main180
+  L__main181
+  L__main182
+  L__main183
+  L__main184
+  L__main185
+  L__main186
+  L_end_Bienvenida
+  _Bienvenida
+  L_end_ApagoFalsaFalla
+  _ApagoFalsaFalla
+  L_end_Config
+  _Config
+  L_end_Ini
+  _Ini
+  L_end_interrupt
+  _interrupt
+  L__interrupt192
+  L__interrupt193
+  L__interrupt194
+  L__interrupt195
+  L__interrupt196
+  L__interrupt197
+  L__interrupt198
+  L_end_BuscoFalla3
+  _BuscoFalla3
+  L__BuscoFalla3200
+  L__BuscoFalla3201
+  L__BuscoFalla3202
+  L__BuscoFalla3203
+  L__BuscoFalla3204
+  L__BuscoFalla3205
+  L__BuscoFalla3206
+  L__BuscoFalla3207
+  L__BuscoFalla3208
+  L__BuscoFalla3209
+  L__BuscoFalla3210
+  L__BuscoFalla3211
+  L__BuscoFalla3212
+  L__BuscoFalla3213
+  L__BuscoFalla3214
+  L__BuscoFalla3215
+  L__BuscoFalla3216
+  L__BuscoFalla3217
+  L__BuscoFalla3218
+  L__BuscoFalla3219
+  L__BuscoFalla3220
+  L__BuscoFalla3221
+  L__BuscoFalla3222
+  L_end_main
+  _main
+  L__main224
+  L__main225
+  L__main226
+  L__main227
+  L__main228
+  L__main229
+  L__main230
+  L__main231
+  L__main232
+  L__main233
+  L__main234
+  L__main235
+  L__main236
+  L__main237
+  L__main238
+  L__main239
+  L_ADC_Get_Sample0
+  L_ADC_Get_Sample1
+  L_ADC_Read2
+  L_ADC_Read3
+  L_end_ADC_Init
+  _ADC_Init
+  L_end_ADC_Get_Sample
+  _ADC_Get_Sample
+  L_end_ADC_Read
+  _ADC_Read
+  L_Delay_10us0
+  L_Delay_22us1
+  L_Delay_50us2
+  L_Delay_80us3
+  L_Delay_500us4
+  L_Delay_5500us5
+  L_Delay_1ms6
+  L_Delay_5ms7
+  L_Delay_8ms8
+  L_Delay_10ms9
+  L_Delay_100ms10
+  L_Delay_1sec11
+  L_boot16_Delay_5ms12
+  L_Delay_Cyc13
+  L_Delay_Cyc14
+  L_VDelay_ms15
+  L_VDelay_ms16
+  L_VDelay_ms17
+  L_VDelay_Advanced_ms18
+  L_VDelay_Advanced_ms19
+  L_VDelay_Advanced_ms20
+  L_end_Get_Fosc_kHz
+  _Get_Fosc_kHz
+  L_end_Delay_1us
+  _Delay_1us
+  L_end_Delay_10us
+  _Delay_10us
+  L_end_Delay_22us
+  _Delay_22us
+  L_end_Delay_50us
+  _Delay_50us
+  L_end_Delay_80us
+  _Delay_80us
+  L_end_Delay_500us
+  _Delay_500us
+  L_end_Delay_5500us
+  _Delay_5500us
+  L_end_Delay_1ms
+  _Delay_1ms
+  L_end_Delay_5ms
+  _Delay_5ms
+  L_end_Delay_8ms
+  _Delay_8ms
+  L_end_Delay_10ms
+  _Delay_10ms
+  L_end_Delay_100ms
+  _Delay_100ms
+  L_end_Delay_1sec
+  _Delay_1sec
+  L_end_boot16_Delay_5ms
+  _boot16_Delay_5ms
+  L_end_Delay_Cyc
+  _Delay_Cyc
+  L_end_VDelay_ms
+  _VDelay_ms
+  L__VDelay_ms38
+  L__VDelay_ms39
+  L__VDelay_ms40
+  L_end_VDelay_Advanced_ms
+  _VDelay_Advanced_ms
+  L__VDelay_Advanced_ms42
+  L__VDelay_Advanced_ms43
+  L__VDelay_Advanced_ms44
+  L_loopCA2AWs
+  L_CA2AWend
+  _CCA2AW_Loop1
+  L_loopCS2Ss
+  L_CS2Send
+  _CCS2S_Loop1
+  L_CCS2Send
+  L_loopFZinSWs
+  L_FZinSend
+  _CC2D_Loop1
+  L_end_____DoICP
+  _____DoICP
+  L_end_____DoIFC
+  _____DoIFC
+  L_end___CA2AW
+  ___CA2AW
+  L_end___CCA2AW
+  ___CCA2AW
+  L_end___CS2S
+  ___CS2S
+  L_end___CCS2S
+  ___CCS2S
+  L_end___FZinS
+  ___FZinS
+  L_end___CC2DW
+  ___CC2DW
+  L_end_Swap
+  _Swap
+  L_Bienvenida0
+  L_Bienvenida1
+  L_Bienvenida2
+  L_Bienvenida3
+  L_Bienvenida4
+  L_Bienvenida5
+  L_Bienvenida6
+  L_Bienvenida7
+  L_Bienvenida8
+  L_Bienvenida9
+  L_Bienvenida10
+  L_Bienvenida11
+  L_ApagoFalsaFalla12
+  L_ApagoFalsaFalla13
+  L_ApagoFalsaFalla14
+  L_ApagoFalsaFalla15
+  L_ApagoFalsaFalla16
+  L_interrupt17
+  L_interrupt18
+  L_interrupt19
+  L_interrupt20
+  L_interrupt21
+  L_interrupt22
+  L_interrupt23
+  L_interrupt24
+  L_interrupt25
+  L_interrupt26
+  L_interrupt27
+  L_interrupt28
+  L_interrupt29
+  L_interrupt30
+  L_interrupt31
+  L_interrupt32
+  L_interrupt33
+  L_interrupt34
+  L_interrupt35
+  L_interrupt36
+  L_interrupt37
+  L_BuscoFalla338
+  L_BuscoFalla339
+  L_BuscoFalla340
+  L_BuscoFalla341
+  L_BuscoFalla342
+  L_BuscoFalla343
+  L_BuscoFalla344
+  L_BuscoFalla345
+  L_BuscoFalla346
+  L_BuscoFalla347
+  L_BuscoFalla348
+  L_BuscoFalla349
+  L_BuscoFalla350
+  L_BuscoFalla351
+  L_BuscoFalla352
+  L_BuscoFalla353
+  L_BuscoFalla354
+  L_BuscoFalla355
+  L_BuscoFalla356
+  L_BuscoFalla357
+  L_BuscoFalla358
+  L_BuscoFalla359
+  L_BuscoFalla360
+  L_BuscoFalla361
+  L_BuscoFalla362
+  L_BuscoFalla363
+  L_BuscoFalla364
+  L_BuscoFalla365
+  L_BuscoFalla366
+  L_BuscoFalla367
+  L_BuscoFalla368
+  L_BuscoFalla369
+  L_BuscoFalla370
+  L_BuscoFalla371
+  L_BuscoFalla372
+  L_BuscoFalla373
+  L_BuscoFalla374
+  L_BuscoFalla375
+  L_BuscoFalla376
+  L_BuscoFalla377
+  L_BuscoFalla378
+  L_BuscoFalla379
+  L_BuscoFalla380
+  L_BuscoFalla381
+  L_BuscoFalla382
+  L_BuscoFalla383
+  L_BuscoFalla384
+  L_BuscoFalla385
+  L_BuscoFalla386
+  L_BuscoFalla387
+  L_BuscoFalla388
+  L_BuscoFalla389
+  L_BuscoFalla390
+  L_BuscoFalla391
+  L_BuscoFalla392
+  L_BuscoFalla393
+  L_BuscoFalla394
+  L_BuscoFalla395
+  L_BuscoFalla396
+  L_BuscoFalla397
+  L_BuscoFalla398
+  L_BuscoFalla399
+  L_BuscoFalla3100
+  L_BuscoFalla3101
+  L_BuscoFalla3102
+  L_BuscoFalla3103
+  L_BuscoFalla3104
+  L_BuscoFalla3105
+  L_main106
+  L_main107
+  L_main108
+  L_main109
+  L_main110
+  L_main111
+  L_main112
+  L_main113
+  L_main114
+  L_main115
+  L_main116
+  L_main117
+  L_main118
+  L_main119
+  L_main120
+  L_main121
+  L_main122
+  L_main123
+  L_main124
+  L_main125
+  L_main126
+  L_main127
+  L_main128
+  L_main129
+  L_main130
+  L_main131
+  L_main132
+  L_main133
+  L_main134
+  L_main135
+  L_main136
+  L_main137
+  L_main138
+  L_main139
+  L_main140
+  L_main141
+  L_main142
+  L_main143
+  L_main144
+  L_main145
+  L_main146
+  L_main147
+  L_main148
+  L_main149
+  L_main150
+  L_main151
+  L_main152
+  L_main153
+  L_main154
+  L_main155
+  L_main156
+  L_main157
+  L_main158
+  L_main159
+  L_main160
+  L_main161
+  L_main162
+  L_main163
+  L_main164
+  L_main165
+  L_main166
+  L__BuscoFalla3167
+  L__BuscoFalla3168
+  L__BuscoFalla3169
+  L__BuscoFalla3170
+  L__BuscoFalla3171
+  L__BuscoFalla3172
+  L__BuscoFalla3173
+  L__BuscoFalla3174
+  L__BuscoFalla3175
+  L__BuscoFalla3176
+  L__BuscoFalla3177
+  L__BuscoFalla3178
+  L__main179
+  L__main180
+  L__main181
+  L__main182
+  L__main183
+  L__main184
+  L__main185
+  L__main186
+  L_end_Bienvenida
+  _Bienvenida
+  L_end_ApagoFalsaFalla
+  _ApagoFalsaFalla
+  L_end_Config
+  _Config
+  L_end_Ini
+  _Ini
+  L_end_interrupt
+  _interrupt
+  L__interrupt192
+  L__interrupt193
+  L__interrupt194
+  L__interrupt195
+  L__interrupt196
+  L__interrupt197
+  L__interrupt198
+  L_end_BuscoFalla3
+  _BuscoFalla3
+  L__BuscoFalla3200
+  L__BuscoFalla3201
+  L__BuscoFalla3202
+  L__BuscoFalla3203
+  L__BuscoFalla3204
+  L__BuscoFalla3205
+  L__BuscoFalla3206
+  L__BuscoFalla3207
+  L__BuscoFalla3208
+  L__BuscoFalla3209
+  L__BuscoFalla3210
+  L__BuscoFalla3211
+  L__BuscoFalla3212
+  L__BuscoFalla3213
+  L__BuscoFalla3214
+  L__BuscoFalla3215
+  L__BuscoFalla3216
+  L__BuscoFalla3217
+  L__BuscoFalla3218
+  L__BuscoFalla3219
+  L__BuscoFalla3220
+  L__BuscoFalla3221
+  L__BuscoFalla3222
+  L_end_main
+  _main
+  L__main224
+  L__main225
+  L__main226
+  L__main227
+  L__main228
+  L__main229
+  L__main230
+  L__main231
+  L__main232
+  L__main233
+  L__main234
+  L__main235
+  L__main236
+  L__main237
+  L__main238
+  L__main239

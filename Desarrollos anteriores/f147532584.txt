@@ -1,0 +1,231 @@
+
+_Bienvenida:
+
+;control de entradas v2.c,54 :: 		void Bienvenida ()
+;control de entradas v2.c,56 :: 		LED1 = 1;
+	BSF        PORTC+0, 4
+;control de entradas v2.c,57 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida0:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida0
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida0
+	NOP
+	NOP
+;control de entradas v2.c,58 :: 		LED2 = 1;
+	BSF        PORTC+0, 5
+;control de entradas v2.c,59 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida1:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida1
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida1
+	NOP
+	NOP
+;control de entradas v2.c,60 :: 		LED3 = 1;
+	BSF        PORTA+0, 7
+;control de entradas v2.c,61 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida2:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida2
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida2
+	NOP
+	NOP
+;control de entradas v2.c,62 :: 		LED4 = 1;
+	BSF        PORTA+0, 6
+;control de entradas v2.c,63 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida3:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida3
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida3
+	NOP
+	NOP
+;control de entradas v2.c,64 :: 		LED5 = 1;
+	BSF        PORTB+0, 6
+;control de entradas v2.c,65 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida4:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida4
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida4
+	NOP
+	NOP
+;control de entradas v2.c,66 :: 		LEA1 = 1;
+	BSF        PORTB+0, 7
+;control de entradas v2.c,67 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida5:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida5
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida5
+	NOP
+	NOP
+;control de entradas v2.c,69 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,70 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida6:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida6
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida6
+	NOP
+	NOP
+;control de entradas v2.c,71 :: 		LED2 = 0;
+	BCF        PORTC+0, 5
+;control de entradas v2.c,72 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida7:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida7
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida7
+	NOP
+	NOP
+;control de entradas v2.c,73 :: 		LED3 = 0;
+	BCF        PORTA+0, 7
+;control de entradas v2.c,74 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida8:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida8
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida8
+	NOP
+	NOP
+;control de entradas v2.c,75 :: 		LED4 = 0;
+	BCF        PORTA+0, 6
+;control de entradas v2.c,76 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida9:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida9
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida9
+	NOP
+	NOP
+;control de entradas v2.c,77 :: 		LED5 = 0;
+	BCF        PORTB+0, 6
+;control de entradas v2.c,78 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida10:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida10
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida10
+	NOP
+	NOP
+;control de entradas v2.c,79 :: 		LEA1 = 0;
+	BCF        PORTB+0, 7
+;control de entradas v2.c,80 :: 		delay_ms(50);
+	MOVLW      130
+	MOVWF      R12+0
+	MOVLW      221
+	MOVWF      R13+0
+L_Bienvenida11:
+	DECFSZ     R13+0, 1
+	GOTO       L_Bienvenida11
+	DECFSZ     R12+0, 1
+	GOTO       L_Bienvenida11
+	NOP
+	NOP
+;control de entradas v2.c,81 :: 		}
+L_end_Bienvenida:
+	RETURN
+; end of _Bienvenida
+
+_ApagoFalsaFalla:
+
+;control de entradas v2.c,84 :: 		void ApagoFalsaFalla ()
+;control de entradas v2.c,86 :: 		if (ContFallasED2 == 0)
+	MOVF       _ContFallasED2+0, 0
+	XORLW      0
+	BTFSS      STATUS+0, 2
+	GOTO       L_ApagoFalsaFalla12
+;control de entradas v2.c,87 :: 		LED2 = 0;
+	BCF        PORTC+0, 5
+L_ApagoFalsaFalla12:
+;control de entradas v2.c,88 :: 		if (ContFallasED3 == 0)
+	MOVF       _ContFallasED3+0, 0
+	XORLW      0
+	BTFSS      STATUS+0, 2
+	GOTO       L_ApagoFalsaFalla13
+;control de entradas v2.c,89 :: 		LED3 = 0;
+	BCF        PORTA+0, 7
+L_ApagoFalsaFalla13:
+;control de entradas v2.c,90 :: 		if (ContFallasED4 == 0)
+	MOVF       _ContFallasED4+0, 0
+	XORLW      0
+	BTFSS      STATUS+0, 2
+	GOTO       L_ApagoFalsaFalla14
+;control de entradas v2.c,91 :: 		LED4 = 0;
+	BCF        PORTA+0, 6
+L_ApagoFalsaFalla14:
+;control de entradas v2.c,92 :: 		if (ContFallasED5 == 0)
+	MOVF       _ContFallasED5+0, 0
+	XORLW      0
+	BTFSS      STATUS+0, 2
+	GOTO       L_ApagoFalsaFalla15
+;control de entradas v2.c,93 :: 		LED5 = 0;
+	BCF        PORTB+0, 6
+L_ApagoFalsaFalla15:
+;control de entradas v2.c,94 :: 		if (ContFallasEA1 == 0)
+	MOVF       _ContFallasEA1+0, 0
+	XORLW      0
+	BTFSS      STATUS+0, 2
+	GOTO       L_ApagoFalsaFalla16
+;control de entradas v2.c,95 :: 		LEA1 = 0;
+	BCF        PORTB+0, 7
+L_ApagoFalsaFalla16:
+;control de entradas v2.c,96 :: 		}
+L_end_ApagoFalsaFalla:
+	RETURN
+; end of _ApagoFalsaFalla
+
+_Config:
+
+;control de entradas v2.c,98 :: 		void Config ()
+;control de entradas v2.c,100 :: 		ANSEL = 0x00;
+	CLRF       ANSEL+0
+;control de entradas v2.c,101 :: 		ANSELH = 0b00100000; // RB5 anal

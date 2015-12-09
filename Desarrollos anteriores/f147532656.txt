@@ -1,0 +1,648 @@
+		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,400 :: 		ContFallasEA1 ++; // sumo 1 falla de EA1
+	INCF       _ContFallasEA1+0, 1
+;control de entradas v2.c,401 :: 		}
+	GOTO       L_BuscoFalla396
+L_BuscoFalla395:
+;control de entradas v2.c,403 :: 		LEA1 = 0; // apago LEA1 por falsa falla
+	BCF        PORTB+0, 7
+L_BuscoFalla396:
+;control de entradas v2.c,404 :: 		while ((AD < 613) && (ContFallasEA1 < CantMaxFallas)) // espero que pase la falla de EA1 o no sea la última
+L_BuscoFalla397:
+	MOVLW      128
+	XORWF      _AD+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORLW      2
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3219
+	MOVLW      101
+	SUBWF      _AD+0, 0
+L__BuscoFalla3219:
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla398
+	MOVF       _CantMaxFallas+0, 0
+	SUBWF      _ContFallasEA1+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla398
+L__BuscoFalla3168:
+;control de entradas v2.c,406 :: 		AD = ADC_Read (13); // leo A/D
+	MOVLW      13
+	MOVWF      FARG_ADC_Read_channel+0
+	CALL       _ADC_Read+0
+	MOVF       R0+0, 0
+	MOVWF      _AD+0
+	MOVF       R0+1, 0
+	MOVWF      _AD+1
+;control de entradas v2.c,407 :: 		}
+	GOTO       L_BuscoFalla397
+L_BuscoFalla398:
+;control de entradas v2.c,408 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,409 :: 		if ( ( ContFallasEA1 == CantMaxFallas ) && ( SegFallaEA1 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+	MOVF       _ContFallasEA1+0, 0
+	XORWF      _CantMaxFallas+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla3103
+	MOVLW      128
+	XORWF      _SegCantFallasMax+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORWF      _SegFallaEA1+1, 0
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3220
+	MOVF       _SegFallaEA1+0, 0
+	SUBWF      _SegCantFallasMax+0, 0
+L__BuscoFalla3220:
+	BTFSS      STATUS+0, 0
+	GOTO       L_BuscoFalla3103
+L__BuscoFalla3167:
+;control de entradas v2.c,411 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__BuscoFalla3221
+	BCF        PORTC+0, 2
+	GOTO       L__BuscoFalla3222
+L__BuscoFalla3221:
+	BSF        PORTC+0, 2
+L__BuscoFalla3222:
+;control de entradas v2.c,412 :: 		ApagoFalsaFalla ();
+	CALL       _ApagoFalsaFalla+0
+;control de entradas v2.c,413 :: 		while (1)
+L_BuscoFalla3104:
+;control de entradas v2.c,415 :: 		LEA1 = 1; // enciende LEA1 hasta Reset manual
+	BSF        PORTB+0, 7
+;control de entradas v2.c,416 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,417 :: 		}
+	GOTO       L_BuscoFalla3104
+;control de entradas v2.c,418 :: 		}
+L_BuscoFalla3103:
+;control de entradas v2.c,419 :: 		}
+L_BuscoFalla389:
+;control de entradas v2.c,420 :: 		}
+L_end_BuscoFalla3:
+	RETURN
+; end of _BuscoFalla3
+
+_main:
+
+;control de entradas v2.c,423 :: 		void main()
+;control de entradas v2.c,428 :: 		Config();
+	CALL       _Config+0
+;control de entradas v2.c,430 :: 		PortA = 0;
+	CLRF       PORTA+0
+;control de entradas v2.c,431 :: 		TrisA = 0b00000001; // 1: entrada, 0: salida
+	MOVLW      1
+	MOVWF      TRISA+0
+;control de entradas v2.c,432 :: 		PortB = 0;
+	CLRF       PORTB+0
+;control de entradas v2.c,433 :: 		TrisB = 0b00111111; // 1: entrada, 0: salida
+	MOVLW      63
+	MOVWF      TRISB+0
+;control de entradas v2.c,434 :: 		PortC = 0;
+	CLRF       PORTC+0
+;control de entradas v2.c,435 :: 		TrisC = 0b10000000; // 1: entrada, 0: salida
+	MOVLW      128
+	MOVWF      TRISC+0
+;control de entradas v2.c,436 :: 		PortE = 0;
+	CLRF       PORTE+0
+;control de entradas v2.c,437 :: 		TrisE = 0b00000001; // 1: entrada, 0: salida
+	MOVLW      1
+	MOVWF      TRISE+0
+;control de entradas v2.c,439 :: 		Ini();
+	CALL       _Ini+0
+;control de entradas v2.c,440 :: 		primeravez = 1;
+	MOVLW      1
+	MOVWF      main_primeravez_L0+0
+;control de entradas v2.c,442 :: 		Bienvenida ();
+	CALL       _Bienvenida+0
+;control de entradas v2.c,444 :: 		while (1)
+L_main106:
+;control de entradas v2.c,447 :: 		cont = 0;
+	CLRF       main_cont_L0+0
+	CLRF       main_cont_L0+1
+;control de entradas v2.c,448 :: 		while ((cont < 15) && (ED1 == 1)) // veo si en ED1 hay 220V
+L_main108:
+	MOVLW      128
+	XORWF      main_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main224
+	MOVLW      15
+	SUBWF      main_cont_L0+0, 0
+L__main224:
+	BTFSC      STATUS+0, 0
+	GOTO       L_main109
+	BTFSS      PORTB+0, 0
+	GOTO       L_main109
+L__main186:
+;control de entradas v2.c,450 :: 		cont ++;
+	INCF       main_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,451 :: 		delay_ms(2); // delay 2 mSeg
+	MOVLW      6
+	MOVWF      R12+0
+	MOVLW      48
+	MOVWF      R13+0
+L_main112:
+	DECFSZ     R13+0, 1
+	GOTO       L_main112
+	DECFSZ     R12+0, 1
+	GOTO       L_main112
+	NOP
+;control de entradas v2.c,452 :: 		}
+	GOTO       L_main108
+L_main109:
+;control de entradas v2.c,453 :: 		if (cont < 15) // hay 220V? = ED1 cerrada?
+	MOVLW      128
+	XORWF      main_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main225
+	MOVLW      15
+	SUBWF      main_cont_L0+0, 0
+L__main225:
+	BTFSC      STATUS+0, 0
+	GOTO       L_main113
+;control de entradas v2.c,455 :: 		LED1 = 1; // prendo LED1
+	BSF        PORTC+0, 4
+;control de entradas v2.c,456 :: 		if (Pump == 0) // con Pump Down?
+	BTFSC      PORTA+0, 0
+	GOTO       L_main114
+;control de entradas v2.c,458 :: 		if (primeravez == 1)
+	MOVF       main_primeravez_L0+0, 0
+	XORLW      1
+	BTFSS      STATUS+0, 2
+	GOTO       L_main115
+;control de entradas v2.c,460 :: 		SD2 = 1;
+	BSF        PORTC+0, 3
+;control de entradas v2.c,461 :: 		if (ED2 == 1)
+	BTFSS      PORTB+0, 1
+	GOTO       L_main116
+;control de entradas v2.c,462 :: 		SD1 = 1;
+	BSF        PORTC+0, 2
+	GOTO       L_main117
+L_main116:
+;control de entradas v2.c,464 :: 		SD1 = 0;
+	BCF        PORTC+0, 2
+L_main117:
+;control de entradas v2.c,465 :: 		cont = 0;
+	CLRF       main_cont_L0+0
+	CLRF       main_cont_L0+1
+;control de entradas v2.c,466 :: 		while ((cont < SegPumpDown) && (ED2 == 0)) // espero 45 Seg o que se cierre ED2
+L_main118:
+	MOVLW      128
+	XORWF      main_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main226
+	MOVF       _SegPumpDown+0, 0
+	SUBWF      main_cont_L0+0, 0
+L__main226:
+	BTFSC      STATUS+0, 0
+	GOTO       L_main119
+	BTFSC      PORTB+0, 1
+	GOTO       L_main119
+L__main185:
+;control de entradas v2.c,468 :: 		cont ++;
+	INCF       main_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,469 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_main122:
+	DECFSZ     R13+0, 1
+	GOTO       L_main122
+	DECFSZ     R12+0, 1
+	GOTO       L_main122
+	DECFSZ     R11+0, 1
+	GOTO       L_main122
+	NOP
+	NOP
+;control de entradas v2.c,470 :: 		}
+	GOTO       L_main118
+L_main119:
+;control de entradas v2.c,471 :: 		if (cont < SegPumpDown && ED2 == 1)
+	MOVLW      128
+	XORWF      main_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main227
+	MOVF       _SegPumpDown+0, 0
+	SUBWF      main_cont_L0+0, 0
+L__main227:
+	BTFSC      STATUS+0, 0
+	GOTO       L_main125
+	BTFSS      PORTB+0, 1
+	GOTO       L_main125
+L__main184:
+;control de entradas v2.c,472 :: 		SD1 = 1;
+	BSF        PORTC+0, 2
+L_main125:
+;control de entradas v2.c,473 :: 		if (cont == SegPumpDown) // pasaron 45 Seg y ED2 sigue abierta?
+	MOVLW      0
+	XORWF      main_cont_L0+1, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main228
+	MOVF       _SegPumpDown+0, 0
+	XORWF      main_cont_L0+0, 0
+L__main228:
+	BTFSS      STATUS+0, 2
+	GOTO       L_main126
+;control de entradas v2.c,475 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__main229
+	BCF        PORTC+0, 2
+	GOTO       L__main230
+L__main229:
+	BSF        PORTC+0, 2
+L__main230:
+;control de entradas v2.c,476 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,477 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,478 :: 		while (1) // titla LED1 hasta Reset Manual: 1 Destello, 2 Seg Apagado
+L_main127:
+;control de entradas v2.c,480 :: 		LED1 = 1;
+	BSF        PORTC+0, 4
+;control de entradas v2.c,481 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,482 :: 		delay_ms (250);
+	MOVLW      3
+	MOVWF      R11+0
+	MOVLW      138
+	MOVWF      R12+0
+	MOVLW      85
+	MOVWF      R13+0
+L_main129:
+	DECFSZ     R13+0, 1
+	GOTO       L_main129
+	DECFSZ     R12+0, 1
+	GOTO       L_main129
+	DECFSZ     R11+0, 1
+	GOTO       L_main129
+	NOP
+	NOP
+;control de entradas v2.c,483 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,484 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,485 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_main130:
+	DECFSZ     R13+0, 1
+	GOTO       L_main130
+	DECFSZ     R12+0, 1
+	GOTO       L_main130
+	DECFSZ     R11+0, 1
+	GOTO       L_main130
+	NOP
+	NOP
+;control de entradas v2.c,486 :: 		}
+	GOTO       L_main127
+;control de entradas v2.c,487 :: 		}
+L_main126:
+;control de entradas v2.c,488 :: 		}
+L_main115:
+;control de entradas v2.c,489 :: 		primeravez = 0;
+	CLRF       main_primeravez_L0+0
+;control de entradas v2.c,490 :: 		}
+L_main114:
+;control de entradas v2.c,493 :: 		if ( ContSegParada >= SegMaqParada ) // estuvo parada más de 3 Min?
+	MOVF       _SegMaqParada+0, 0
+	SUBWF      _ContSegParada+0, 0
+	BTFSS      STATUS+0, 0
+	GOTO       L_main131
+;control de entradas v2.c,495 :: 		SD1 = SD2 = 1; // cierro SD1
+	BSF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__main231
+	BCF        PORTC+0, 2
+	GOTO       L__main232
+L__main231:
+	BSF        PORTC+0, 2
+L__main232:
+;control de entradas v2.c,496 :: 		ContSegParada = 200; // Reset contador
+	MOVLW      200
+	MOVWF      _ContSegParada+0
+;control de entradas v2.c,497 :: 		}
+L_main131:
+;control de entradas v2.c,499 :: 		if (ED2 == 0) // ED2 abierta?
+	BTFSC      PORTB+0, 1
+	GOTO       L_main132
+;control de entradas v2.c,501 :: 		LED2 = 1; // enciendo LED2
+	BSF        PORTC+0, 5
+;control de entradas v2.c,502 :: 		cont = 0;
+	CLRF       main_cont_L0+0
+	CLRF       main_cont_L0+1
+;control de entradas v2.c,503 :: 		while ((cont < SegFalla) && (ED2 == 0)) // espero 10 Seg o que se cierre ED2
+L_main133:
+	MOVLW      128
+	XORWF      main_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main233
+	MOVF       _SegFalla+0, 0
+	SUBWF      main_cont_L0+0, 0
+L__main233:
+	BTFSC      STATUS+0, 0
+	GOTO       L_main134
+	BTFSC      PORTB+0, 1
+	GOTO       L_main134
+L__main183:
+;control de entradas v2.c,505 :: 		cont ++;
+	INCF       main_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       main_cont_L0+1, 1
+;control de entradas v2.c,506 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_main137:
+	DECFSZ     R13+0, 1
+	GOTO       L_main137
+	DECFSZ     R12+0, 1
+	GOTO       L_main137
+	DECFSZ     R11+0, 1
+	GOTO       L_main137
+	NOP
+	NOP
+;control de entradas v2.c,507 :: 		}
+	GOTO       L_main133
+L_main134:
+;control de entradas v2.c,508 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+	MOVLW      0
+	XORWF      main_cont_L0+1, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main234
+	MOVF       _SegFalla+0, 0
+	XORWF      main_cont_L0+0, 0
+L__main234:
+	BTFSS      STATUS+0, 2
+	GOTO       L_main138
+;control de entradas v2.c,510 :: 		SD1 = 0; // abro SD1
+	BCF        PORTC+0, 2
+;control de entradas v2.c,511 :: 		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,512 :: 		ContFallasED2 ++; // sumo 1 falla de ED2
+	INCF       _ContFallasED2+0, 1
+;control de entradas v2.c,513 :: 		}
+	GOTO       L_main139
+L_main138:
+;control de entradas v2.c,515 :: 		LED2 = 0; // apago LED2 por falsa falla
+	BCF        PORTC+0, 5
+L_main139:
+;control de entradas v2.c,516 :: 		while ((ED2 == 0) && (ContFallasED2 < CantMaxFallas)); // espero que pase la falla de ED2 o no sea la última
+L_main140:
+	BTFSC      PORTB+0, 1
+	GOTO       L_main141
+	MOVF       _CantMaxFallas+0, 0
+	SUBWF      _ContFallasED2+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_main141
+L__main182:
+	GOTO       L_main140
+L_main141:
+;control de entradas v2.c,517 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,518 :: 		if ( ( ContFallasED2 == CantMaxFallas ) && ( SegFallaED2 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+	MOVF       _ContFallasED2+0, 0
+	XORWF      _CantMaxFallas+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_main146
+	MOVLW      128
+	XORWF      _SegCantFallasMax+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORWF      _SegFallaED2+1, 0
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__main235
+	MOVF       _SegFallaED2+0, 0
+	SUBWF      _SegCantFallasMax+0, 0
+L__main235:
+	BTFSS      STATUS+0, 0
+	GOTO       L_main146
+L__main181:
+;control de entradas v2.c,520 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__main236
+	BCF        PORTC+0, 2
+	GOTO       L__main237
+L__main236:
+	BSF        PORTC+0, 2
+L__main237:
+;control de entradas v2.c,521 :: 		ApagoFalsaFalla ();
+	CALL       _ApagoFalsaFalla+0
+;control de entradas v2.c,522 :: 		while (1)
+L_main147:
+;control de entradas v2.c,524 :: 		LED2 = 1; // enciende LED2 hasta Reset manual
+	BSF        PORTC+0, 5
+;control de entradas v2.c,525 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,526 :: 		}
+	GOTO       L_main147
+;control de entradas v2.c,527 :: 		}
+L_main146:
+;control de entradas v2.c,528 :: 		}
+L_main132:
+;control de entradas v2.c,530 :: 		BuscoFalla3 (); // reviso desde ED3 a EA1 por Fallas
+	CALL       _BuscoFalla3+0
+;control de entradas v2.c,532 :: 		}
+	GOTO       L_main149
+L_main113:
+;control de entradas v2.c,535 :: 		primeravez = 1;
+	MOVLW      1
+	MOVWF      main_primeravez_L0+0
+;control de entradas v2.c,536 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,537 :: 		if (Pump == 0) // con Pump Down?
+	BTFSC      PORTA+0, 0
+	GOTO       L_main150
+;control de entradas v2.c,539 :: 		SD2 = 0; // abro SD2
+	BCF        PORTC+0, 3
+;control de entradas v2.c,540 :: 		if (ED2 == 1) // ED2 cerrada?
+	BTFSS      PORTB+0, 1
+	GOTO       L_main151
+;control de entradas v2.c,542 :: 		cont45seg = 0;
+	CLRF       _cont45seg+0
+;control de entradas v2.c,543 :: 		while ((cont45seg < SegPumpDown) && (ED2 == 1)) // espero 45 Seg o que se abra ED2
+L_main152:
+	MOVF       _SegPumpDown+0, 0
+	SUBWF      _cont45seg+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_main153
+	BTFSS      PORTB+0, 1
+	GOTO       L_main153
+L__main180:
+;control de entradas v2.c,545 :: 		BuscoFalla3(); // reviso desde ED3 a EA1 por fallas
+	CALL       _BuscoFalla3+0
+;control de entradas v2.c,546 :: 		if (ED1 == 0)
+	BTFSC      PORTB+0, 0
+	GOTO       L_main156
+;control de entradas v2.c,548 :: 		break;
+	GOTO       L_main153
+;control de entradas v2.c,549 :: 		}
+L_main156:
+;control de entradas v2.c,550 :: 		}
+	GOTO       L_main152
+L_main153:
+;control de entradas v2.c,551 :: 		if ((cont45seg == SegPumpDown) && (ED2 == 1)) // pasaron 45 Seg y ED2 sigue cerrada?
+	MOVF       _cont45seg+0, 0
+	XORWF      _SegPumpDown+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_main159
+	BTFSS      PORTB+0, 1
+	GOTO       L_main159
+L__main179:
+;control de entradas v2.c,554 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__main238
+	BCF        PORTC+0, 2
+	GOTO       L__main239
+L__main238:
+	BSF        PORTC+0, 2
+L__main239:
+;control de entradas v2.c,555 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,556 :: 		BUZ = 1; // cierro SD3 Alarma*/
+	BSF        PORTC+0, 0
+;control de entradas v2.c,557 :: 		while (1) // titila LED1 hasta Reset Manual: 2 Destellos, 2 Seg Apagado
+L_main160:
+;control de entradas v2.c,559 :: 		LED1 = 1;
+	BSF        PORTC+0, 4
+;control de entradas v2.c,560 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,561 :: 		delay_ms (250);
+	MOVLW      3
+	MOVWF      R11+0
+	MOVLW      138
+	MOVWF      R12+0
+	MOVLW      85
+	MOVWF      R13+0
+L_main162:
+	DECFSZ     R13+0, 1
+	GOTO       L_main162
+	DECFSZ     R12+0, 1
+	GOTO       L_main162
+	DECFSZ     R11+0, 1
+	GOTO       L_main162
+	NOP
+	NOP
+;control de entradas v2.c,562 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,563 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,564 :: 		delay_ms (250);
+	MOVLW      3
+	MOVWF      R11+0
+	MOVLW      138
+	MOVWF      R12+0
+	MOVLW      85
+	MOVWF      R13+0
+L_main163:
+	DECFSZ     R13+0, 1
+	GOTO       L_main163
+	DECFSZ     R12+0, 1
+	GOTO       L_main163
+	DECFSZ     R11+0, 1
+	GOTO       L_main163
+	NOP
+	NOP
+;control de entradas v2.c,565 :: 		LED1 = 1;
+	BSF        PORTC+0, 4
+;control de entradas v2.c,566 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,567 :: 		delay_ms (250);
+	MOVLW      3
+	MOVWF      R11+0
+	MOVLW      138
+	MOVWF      R12+0
+	MOVLW      85
+	MOVWF      R13+0
+L_main164:
+	DECFSZ     R13+0, 1
+	GOTO       L_main164
+	DECFSZ     R12+0, 1
+	GOTO       L_main164
+	DECFSZ     R11+0, 1
+	GOTO       L_main164
+	NOP
+	NOP
+;control de entradas v2.c,568 :: 		LED1 = 0;
+	BCF        PORTC+0, 4
+;control de entradas v2.c,569 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,570 :: 		delay_ms (2000);
+	MOVLW      21
+	MOVWF      R11+0
+	MOVLW      75
+	MOVWF      R12+0
+	MOVLW      190
+	MOVWF      R13+0
+L_main165:
+	DECFSZ     R13+0, 1
+	GOTO       L_main165
+	DECFSZ     R12+0, 1
+	GOTO       L_main165
+	DECFSZ     R11+0, 1
+	GOTO       L_main165
+	NOP
+;control de entradas v2.c,571 :: 		}
+	GOTO       L_main160
+;control de entradas v2.c,572 :: 		}
+L_main159:
+;control de entradas v2.c,573 :: 		}
+L_main151:
+;control de entradas v2.c,574 :: 		SD1 = 0;
+	BCF        PORTC+0, 2
+;control de entradas v2.c,575 :: 		ContSegParada = 0;
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,576 :: 		}
+	GOTO       L_main166
+L_main150:
+;control de entradas v2.c,579 :: 		SD1 = 0;
+	BCF        PORTC+0, 2
+;control de entradas v2.c,580 :: 		ContSegParada = 0;
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,581 :: 		}
+L_main166:
+;control de entradas v2.c,582 :: 		}
+L_main149:
+;control de entradas v2.c,583 :: 		}
+	GOTO       L_main106
+;control de entradas v2.c,584 :: 		}
+L_end_main:
+	GOTO       $+0
+; end of _main

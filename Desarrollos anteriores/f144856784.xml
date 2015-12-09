@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="eeschema.desktop" open-window-count="0" score="638" last-seen="1448887109"/>
+    <application id="synaptic.desktop" open-window-count="0" score="88" last-seen="1448964620"/>
+    <application id="gnome-calculator.desktop" open-window-count="0" score="40" last-seen="1448972645"/>
+    <application id="iceweasel.desktop" open-window-count="2" score="13603" last-seen="1449183828"/>
+    <application id="org.gnome.Nautilus.desktop" open-window-count="1" score="47" last-seen="1449183827"/>
+    <application id="gnome-klotski.desktop" open-window-count="0" score="11" last-seen="1448846825"/>
+    <application id="gnome-terminal.desktop" open-window-count="0" score="1232" last-seen="1449183415"/>
+    <application id="libreoffice-calc.desktop" open-window-count="0" score="37" last-seen="1448892340"/>
+    <application id="evince.desktop" open-window-count="0" score="22" last-seen="1449183786"/>
+    <application id="pcbnew.desktop" open-window-count="0" score="1842" last-seen="1448998661"/>
+    <application id="kicad.desktop" open-window-count="2" score="3475" last-seen="1449183758"/>
+  </context>
+</application-state>

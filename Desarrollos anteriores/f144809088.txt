@@ -1,0 +1,721 @@
+ools.Modal.modal = null;
+        }
+
+        Drupal.CTools.Modal.currentSettings = settings;
+
+        var resize = function (e) {
+            // When creating the modal, it actually exists only in a theoretical
+            // place that is not in the DOM. But once the modal exists, it is in the
+            // DOM so the context must be set appropriately.
+            var context = e ? document : Drupal.CTools.Modal.modal, width, height;
+
+            if (Drupal.CTools.Modal.currentSettings.modalSize.type === 'scale') {
+                width = $(window).width() * Drupal.CTools.Modal.currentSettings.modalSize.width;
+                height = $(window).height() * Drupal.CTools.Modal.currentSettings.modalSize.height;
+            } else {
+                width = Drupal.CTools.Modal.currentSettings.modalSize.width;
+                height = Drupal.CTools.Modal.currentSettings.modalSize.height;
+            }
+
+            // Use the additionol pixels for creating the width and height.
+            $('div.ctools-modal-content', context).css({
+                'width': width + Drupal.CTools.Modal.currentSettings.modalSize.addWidth + 'px',
+                'height': height + Drupal.CTools.Modal.currentSettings.modalSize.addHeight + 'px'
+            });
+            $('div.ctools-modal-content .modal-content', context).css({
+                'width': (width - Drupal.CTools.Modal.currentSettings.modalSize.contentRight) + 'px',
+                'height': (height - Drupal.CTools.Modal.currentSettings.modalSize.contentBottom) + 'px'
+            });
+        };
+
+        if (!Drupal.CTools.Modal.modal) {
+            Drupal.CTools.Modal.modal = $(Drupal.theme(settings.modalTheme));
+            if (settings.modalSize.type === 'scale') {
+                $(window).bind('resize', resize);
+            }
+        }
+
+        resize();
+
+        $('span.modal-title', Drupal.CTools.Modal.modal).html(Drupal.CTools.Modal.currentSettings.loadingText);
+        Drupal.CTools.Modal.modalContent(Drupal.CTools.Modal.modal, settings.modalOptions, settings.animation, settings.animationSpeed);
+        $('#modalContent .modal-content').html(Drupal.theme(settings.throbberTheme));
+    };
+
+    /**
+     * Hide the modal
+     */
+    Drupal.CTools.Modal.dismiss = function () {
+        if (Drupal.CTools.Modal.modal) {
+            Drupal.CTools.Modal.unmodalContent(Drupal.CTools.Modal.modal);
+        }
+    };
+
+    /**
+     * Provide the HTML to create the modal dialog.
+     */
+    Drupal.theme.prototype.CToolsModalDialog = function () {
+        var html = '';
+        html += '  <div id="ctools-modal">';
+        html += '    <div class="ctools-modal-content">'; // panels-modal-content
+        html += '      <div class="modal-header">';
+        html += '        <a class="close" href="#">';
+        html += Drupal.CTools.Modal.currentSettings.closeText + Drupal.CTools.Modal.currentSettings.closeImage;
+        html += '        </a>';
+        html += '        <span id="modal-title" class="modal-title">&nbsp;</span>';
+        html += '      </div>';
+        html += '      <div id="modal-content" class="modal-content">';
+        html += '      </div>';
+        html += '    </div>';
+        html += '  </div>';
+
+        return html;
+    };
+
+    /**
+     * Provide the HTML to create the throbber.
+     */
+    Drupal.theme.prototype.CToolsModalThrobber = function () {
+        var html = '';
+        html += '  <div id="modal-throbber">';
+        html += '    <div class="modal-throbber-wrapper">';
+        html += Drupal.CTools.Modal.currentSettings.throbber;
+        html += '    </div>';
+        html += '  </div>';
+
+        return html;
+    };
+
+    /**
+     * Figure out what settings string to use to display a modal.
+     */
+    Drupal.CTools.Modal.getSettings = function (object) {
+        var match = $(object).attr('class').match(/ctools-modal-(\S+)/);
+        if (match) {
+            return match[1];
+        }
+    };
+
+    /**
+     * Click function for modals that can be cached.
+     */
+    Drupal.CTools.Modal.clickAjaxCacheLink = function () {
+        Drupal.CTools.Modal.show(Drupal.CTools.Modal.getSettings(this));
+        return Drupal.CTools.AJAX.clickAJAXCacheLink.apply(this);
+    };
+
+    /**
+     * Generic replacement click handler to open the modal with the destination
+     * specified by the href of the link.
+     */
+    Drupal.CTools.Modal.clickAjaxLink = function () {
+        // show the empty dialog right away.
+        Drupal.CTools.Modal.show(Drupal.CTools.Modal.getSettings(this));
+        Drupal.CTools.AJAX.clickAJAXLink.apply(this);
+        if (!$(this).hasClass('ctools-ajaxing')) {
+            Drupal.CTools.Modal.dismiss();
+        }
+
+        return false;
+    };
+
+    /**
+     * Generic replacement click handler to open the modal with the destination
+     * specified by the href of the link.
+     */
+    Drupal.CTools.Modal.clickAjaxButton = function () {
+        if ($(this).hasClass('ctools-ajaxing')) {
+            return false;
+        }
+
+        Drupal.CTools.Modal.show(Drupal.CTools.Modal.getSettings(this));
+        Drupal.CTools.AJAX.clickAJAXButton.apply(this);
+        if (!$(this).hasClass('ctools-ajaxing')) {
+            Drupal.CTools.Modal.dismiss();
+        }
+        return false;
+    };
+
+    /**
+     * Submit responder to do an AJAX submit on all modal forms.
+     */
+    Drupal.CTools.Modal.submitAjaxForm = function (e) {
+        var form = $(this);
+        var url = form.attr('action');
+        if(form.valid()){
+            Drupal.CTools.Modal.showPreLoader();
+            setTimeout(function () {
+                Drupal.CTools.AJAX.ajaxSubmit(form, url);
+            }, 1);
+        } else {
+            Drupal.CTools.Modal.hidePreLoader();
+        }
+        return false;
+    };
+
+    /**
+     * Bind links that will open modals to the appropriate function.
+     */
+    Drupal.behaviors.ZZCToolsModal = function (context) {
+        // Bind links
+        // Note that doing so in this order means that the two classes can be
+        // used together safely.
+        $('a.ctools-use-modal-cache:not(.ctools-use-modal-processed)', context)
+            .addClass('ctools-use-modal-processed')
+            .click(Drupal.CTools.Modal.clickAjaxCacheLink)
+            .each(function () {
+                Drupal.CTools.AJAX.warmCache.apply(this);
+            });
+
+        $('a.ctools-use-modal:not(.ctools-use-modal-processed)', context)
+            .addClass('ctools-use-modal-processed')
+            .click(Drupal.CTools.Modal.clickAjaxLink);
+
+        // Bind buttons
+        $('input.ctools-use-modal:not(.ctools-use-modal-processed), button.ctools-use-modal:not(.ctools-use-modal-processed)', context)
+            .addClass('ctools-use-modal-processed')
+            .click(Drupal.CTools.Modal.clickAjaxButton);
+
+        // Bind submit links in the modal form.
+        $('#modal-content form:not(.ctools-use-modal-processed)', context)
+            .addClass('ctools-use-modal-processed')
+            .submit(Drupal.CTools.Modal.submitAjaxForm)
+            .bind('CToolsAJAXSubmit', Drupal.CTools.AJAX.ajaxSubmit);
+
+        // add click handlers so that we can tell which button was clicked,
+        // because the AJAX submit does not set the values properly.
+
+        $('#modal-content input[type="submit"]:not(.ctools-use-modal-processed), #modal-content button:not(.ctools-use-modal-processed)', context)
+            .addClass('ctools-use-modal-processed')
+            .click(function () {
+                if (Drupal.autocompleteSubmit && !Drupal.autocompleteSubmit()) {
+                    return false;
+                }
+
+                // Make sure it knows our button.
+                if (!$(this.form).hasClass('ctools-ajaxing')) {
+                    this.form.clk = this;
+                }
+            });
+
+    };
+
+    // The following are implementations of AJAX responder commands.
+
+    /**
+     * AJAX responder command to place HTML within the modal.
+     */
+    Drupal.CTools.AJAX.commands.modal_display = function (command) {
+        $('#modal-title').html(command.title);
+        $('#modal-content').html(command.output);
+        Drupal.attachBehaviors();
+    };
+
+    /**
+     * AJAX responder command to dismiss the modal.
+     */
+    Drupal.CTools.AJAX.commands.modal_dismiss = function (command) {
+        Drupal.CTools.Modal.dismiss();
+        $('link.ctools-temporary-css').remove();
+    };
+
+    /**
+     * Display loading
+     */
+    Drupal.CTools.AJAX.commands.modal_loading = function (command) {
+        Drupal.CTools.AJAX.commands.modal_display({
+            output: Drupal.theme(Drupal.CTools.Modal.currentSettings.throbberTheme),
+            title: Drupal.CTools.Modal.currentSettings.loadingText
+        });
+    };
+
+    /**
+     * modalContent
+     * @param content string to display in the content box
+     * @param css obj of css attributes
+     * @param animation (fadeIn, slideDown, show)
+     * @param speed (valid animation speeds slow, medium, fast or # in ms)
+     */
+    Drupal.CTools.Modal.modalContent = function (content, css, animation, speed) {
+        // If our animation isn't set, make it just show/pop
+        if (!animation) {
+            animation = 'show';
+        } else {
+            // If our animation isn't "fadeIn" or "slideDown" then it always is show
+            if (animation !== 'fadeIn' && animation !== 'slideDown') {
+                animation = 'show';
+            }
+        }
+
+        if (!speed) {
+            speed = 'fast';
+        }
+
+        /* Build our base attributes and allow them to be overriden */
+        css = $.extend({
+            position: 'absolute',
+            left: '0px',
+            margin: '0px',
+            background: '#000',
+            opacity: '.55'
+        }, css);
+
+        // Add opacity handling for IE.
+        css.filter = 'alpha(opacity=' + (100 * css.opacity) + ')';
+        content.hide();
+
+        // if we already have a modalContent, remove it
+        var modalBackdrop = $('#modalBackdrop'),
+            modalContent = $('#modalContent');
+        if (modalBackdrop.length) { modalBackdrop.remove();}
+        if (modalContent.length) { modalContent.remove(); }
+        var wt;
+        // position code lifted from http://www.quirksmode.org/viewport/compatibility.html
+        if (window.self.pageYOffset) { // all except Explorer
+            wt = window.self.pageYOffset;
+        } else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+            wt = document.documentElement.scrollTop;
+        } else if (document.body) { // all other Explorers
+            wt = document.body.scrollTop;
+        }
+
+        // Get our dimensions
+
+        // Get the docHeight and (ugly hack) add 50 pixels to make sure we dont have a *visible* border below our div
+        var docHeight = $(document).height() + 50;
+        var docWidth = $(document).width();
+        var winHeight = $(window).height();
+        var winWidth = $(window).width();
+        if (docHeight < winHeight) { docHeight = winHeight; }
+
+        // Create our divs
+        $('body').append('<div id="modalBackdrop" style="z-index: 30000; display: none;"></div><div id="modalContent" style="z-index: 30001; position: absolute;">' + $(content).html() + '</div>');
+
+        // Keyboard and focus event handler ensures focus stays on modal elements only
+        modalEventHandler = function (event) {
+            var target = null;
+            if (event) { //Mozilla
+                target = event.target;
+            } else { //IE
+                event = window.event;
+                target = event.srcElement;
+            }
+            if ($(target).filter('*:visible').parents('#modalContent').size()) {
+                // allow the event only if target is a visible child node of #modalContent
+                return true;
+            }
+            var modalContent = $('#modalContent');
+            if (modalContent.length) { modalContent.get(0).focus(); }
+            return false;
+        };
+        $('body').bind('focus', modalEventHandler)
+            .bind('keypress', modalEventHandler);
+
+        // Create our content div, get the dimensions, and hide it
+        modalContent = $('#modalContent').css('top', '-1000px');
+        var mdcTop = wt + (winHeight / 2) - (modalContent.outerHeight() / 2);
+        var mdcLeft = (winWidth / 2) - (modalContent.outerWidth() / 2);
+        $('#modalBackdrop').css(css).css('top', 0).css('height', docHeight + 'px').css('width', docWidth + 'px').show();
+        // IE9 bug: modalContent may disappear due to width being auto (0px) so we set it explicitly
+        modalContent.css('width', (modalContent.outerWidth() - 10) + 'px');
+        modalContent.css({top: mdcTop + 'px', left: mdcLeft + 'px'}).hide()[animation](speed);
+
+        // Bind a click for closing the modalContent
+        modalContentClose = function () {
+            var form = $('form.ctools-use-modal-processed');
+            close();
+            reloadPisces(form);
+            return false;
+        };
+
+        $('.close').bind('click', modalContentClose);
+
+        // reload the page
+        function reloadPisces(form) {
+            if(form.hasClass('penton_registration_reload_after_close')) {
+                var root = location.protocol + '//' + location.host + "/";
+                if (document.URL == root) {
+                    location.reload();
+                } else {
+                    var link_to_modal = document.URL.indexOf("?modal=true&instance=register");
+                    if (link_to_modal > 0) {
+                        window.location = root;
+                        return false;
+                    }
+                    location.reload();
+                }
+            }
+            return false;
+        }
+
+        // Close the open modal content and backdrop
+        function close() {
+            // Unbind the events
+            $(window).unbind('resize', modalContentResize);
+            $('body').unbind('focus', modalEventHandler)
+                .unbind('keypress', modalEventHandler);
+            $('.close').unbind('click', modalContentClose);
+            $(document).trigger('CToolsDetachBehaviors', $('#modalContent'));
+            // Set our animation parameters and use them
+            if (animation === 'fadeIn') { animation = 'fadeOut'; }
+            if (animation === 'slideDown') { animation = 'slideUp'; }
+            if (animation === 'show') { animation = 'hide'; }
+
+            // Close the content
+            modalContent.hide()[animation](speed);
+
+            // Remove the content and reload the page
+            $('#modalContent').remove();
+            $('#modalBackdrop').remove();
+        }
+
+        // Move and resize the modalBackdrop and modalContent on resize of the window
+        modalContentResize = function () {
+            // Get our heights
+            var docHeight = $(document).height();
+            var docWidth = $(document).width();
+            var winHeight = $(window).height();
+            var winWidth = $(window).width();
+            if (docHeight < winHeight) { docHeight = winHeight; }
+
+            // Get where we should move content to
+            var modalContent = $('#modalContent');
+            var mdcTop = ( winHeight / 2 ) - (  modalContent.outerHeight() / 2);
+            var mdcLeft = ( winWidth / 2 ) - ( modalContent.outerWidth() / 2);
+
+            // Apply the changes
+            $('#modalBackdrop').css('height', docHeight + 'px').css('width', docWidth + 'px').show();
+            modalContent.css('top', mdcTop + 'px').css('left', mdcLeft + 'px').show();
+        };
+        $(window).bind('resize', modalContentResize);
+
+        $('#modalContent').focus();
+    };
+
+    /**
+     * unmodalContent
+     * @param content (The jQuery object to remove)
+     * @param animation (fadeOut, slideUp, show)
+     * @param speed (valid animation speeds slow, medium, fast or # in ms)
+     */
+    Drupal.CTools.Modal.unmodalContent = function (content, animation, speed) {
+        // If our animation isn't set, make it just show/pop
+        if (!animation) {
+            animation = 'show';
+        } else {
+            // If our animation isn't "fade" then it always is show
+            if (( animation !== 'fadeOut' ) && ( animation !== 'slideUp')) { animation = 'show'; }
+        }
+        // Set a speed if we dont have one
+        if (!speed) { speed = 'fast'; }
+
+        // Unbind the events we bound
+        $(window).unbind('resize', modalContentResize);
+        $('body').unbind('focus', modalEventHandler)
+            .unbind('keypress', modalEventHandler);
+        $('.close').unbind('click', modalContentClose);
+        $(document).trigger('CToolsDetachBehaviors', $('#modalContent'));
+
+        // jQuery magic loop through the instances and run the animations or removal.
+        content.each(function () {
+            if (animation === 'fade') {
+                $('#modalContent').fadeOut(speed, function () {
+                    $('#modalBackdrop').fadeOut(speed, function () {
+                        $(this).remove();
+                    });
+                    $(this).remove();
+                });
+            } else {
+                if (animation === 'slide') {
+                    $('#modalContent').slideUp(speed, function () {
+                        $('#modalBackdrop').slideUp(speed, function () {
+                            $(this).remove();
+                        });
+                        $(this).remove();
+                    });
+                } else {
+                    $('#modalContent').remove();
+                    $('#modalBackdrop').remove();
+                }
+            }
+        });
+    };
+
+    Drupal.CTools.Modal.showPreLoader = function() {
+        var spinner = $('#modalContent .penton_registration_spinner_area'),
+            button = $('#modalContent .form-submit');
+        if (spinner.length) {
+            spinner.remove();
+        }
+        if (button.length) {
+            button.hide();
+            $('<div>',{class: 'penton_registration_spinner_area',text:'submitting...'}).insertAfter(button);
+        }
+    };
+
+    Drupal.CTools.Modal.hidePreLoader = function() {
+        var spinner = $('#modalContent .penton_registration_spinner_area'),
+            button = $('#modalContent .form-submit');
+        if (spinner.length) {
+            spinner.remove();
+        }
+        if (button.length) {
+            button.show();
+        }
+
+    };
+
+})(window.jq183);
+;
+/**
+*
+*  Base64 encode / decode
+*  http://www.webtoolkit.info/
+*
+**/
+var Base64 = {
+
+  // private property
+  _keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+  // public method for encoding
+  encode : function (input) {
+    var output = "";
+    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    input = Base64._utf8_encode(input);
+
+    while (i < input.length) {
+
+      chr1 = input.charCodeAt(i++);
+      chr2 = input.charCodeAt(i++);
+      chr3 = input.charCodeAt(i++);
+
+      enc1 = chr1 >> 2;
+      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+      enc4 = chr3 & 63;
+
+      if (isNaN(chr2)) {
+        enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+        enc4 = 64;
+      }
+
+      output = output +
+      this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+      this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+    }
+
+    return output;
+  },
+
+  // public method for decoding
+  decode : function (input) {
+    var output = "";
+    var chr1, chr2, chr3;
+    var enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+    while (i < input.length) {
+
+      enc1 = this._keyStr.indexOf(input.charAt(i++));
+      enc2 = this._keyStr.indexOf(input.charAt(i++));
+      enc3 = this._keyStr.indexOf(input.charAt(i++));
+      enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+      chr1 = (enc1 << 2) | (enc2 >> 4);
+      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+      chr3 = ((enc3 & 3) << 6) | enc4;
+
+      output = output + String.fromCharCode(chr1);
+
+      if (enc3 != 64) {
+        output = output + String.fromCharCode(chr2);
+      }
+      if (enc4 != 64) {
+        output = output + String.fromCharCode(chr3);
+      }
+
+    }
+
+    output = Base64._utf8_decode(output);
+
+    return output;
+
+  },
+
+  // private method for UTF-8 encoding
+  _utf8_encode : function (string) {
+    string = string.replace(/\r\n/g,"\n");
+    var utftext = "";
+
+    for (var n = 0; n < string.length; n++) {
+
+      var c = string.charCodeAt(n);
+
+      if (c < 128) {
+        utftext += String.fromCharCode(c);
+      }
+      else if((c > 127) && (c < 2048)) {
+        utftext += String.fromCharCode((c >> 6) | 192);
+        utftext += String.fromCharCode((c & 63) | 128);
+      }
+      else {
+        utftext += String.fromCharCode((c >> 12) | 224);
+        utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+        utftext += String.fromCharCode((c & 63) | 128);
+      }
+
+    }
+
+    return utftext;
+  },
+
+  // private method for UTF-8 decoding
+  _utf8_decode : function (utftext) {
+    var string = "";
+    var i = 0;
+    var c = c1 = c2 = 0;
+
+    while ( i < utftext.length ) {
+
+      c = utftext.charCodeAt(i);
+
+      if (c < 128) {
+        string += String.fromCharCode(c);
+        i++;
+      }
+      else if((c > 191) && (c < 224)) {
+        c2 = utftext.charCodeAt(i+1);
+        string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+        i += 2;
+      }
+      else {
+        c2 = utftext.charCodeAt(i+1);
+        c3 = utftext.charCodeAt(i+2);
+        string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+        i += 3;
+      }
+
+    }
+
+    return string;
+  }
+
+}
+//***** END ENCRYPTION *****//
+
+//initializing variables
+var scData = {'em':'', 'fn':'', 'ln':'', 'zc':'', 'jt':'', 'cn':'', 'dem1':'', 'dem2':'', 'reg':'', 'ver':''};
+var urlSubstr = location.search.substring(1);
+//regEx for finding yesmail var ymrid, must contain a validly formatted email
+var ymRidExpr = /YM_RID=[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+/g
+var ymrid = urlSubstr.match(ymRidExpr) == undefined ? '' : urlSubstr.match(ymRidExpr)[0].split("=")[1];
+//grabbing and storing decoded values for global use, if exists
+var cData = getSC('ymbcd');
+if(cData!=undefined){
+    for(x in cData){
+        scData[x] = Base64.decode(cData[x]);
+    }
+}
+var emailCheck = scData.em;
+if ( ymrid.length > 1 && (cData == undefined || ( emailCheck != ymrid && scData.reg == 'false' ))) scData.em = ymrid;
+
+//returns a JS Object contianing encoded values
+function getSC(c_name) {
+var i,x,y,cookies=document.cookie.split(";");
+for (i=0;i<cookies.length;i++) {
+  x=cookies[i].substr(0,cookies[i].indexOf("="));
+  y=cookies[i].substr(cookies[i].indexOf("=")+1);
+  x=x.replace(/^\s+|\s+$/g,"");
+  if (x==c_name)
+    {
+    return eval("(" + unescape(y) + ")");
+    }
+  }
+}
+//add conditions for setting cookie to Drupal behaviors
+Drupal.behaviors.scBehavior = function(context) {
+  if ( context === document ) {
+    setSC(ymrid);
+    $("#penton-user-registration-step1 #edit-mail").val(scData.em);
+    $(".enews-signup [name='email']").val(scData.em);
+  }
+
+}
+
+function setSC(email) {
+  var status = jQuery("body").hasClass("logged-in");
+  if ( !status ){
+      if ( email.length > 1 && (cData == undefined || ( emailCheck != email && scData.reg == 'false' ))) {
+          var ymbcd = "{'em':'"+Base64.encode(email)+"','reg':'"+Base64.encode('false')+"'}";
+          jQuery.cookie("ymbcd", ymbcd, { path: '/', expires: 365, domain: document.domain});
+          emailCheck = email;
+      }
+  }
+  else {
+      if ( cData == undefined || scData.reg == 'false' ) {
+          jQuery.post('/user/callback', "anon=false");
+      }
+  }
+}
+
+;
+Drupal.behaviors.profile = function (context) {
+  if(typeof Drupal.settings.is_expert == "undefined"){
+    $('.profile-page .profile:not(processed)').each(function(el){
+      var $this = $(this),
+          max_height = $this.height(),
+          this_height = $('.profile-header', el).outerHeight();
+
+      if (this_height > max_height) {
+        $this.css({'height':max_height, 'max-height': 'none'});
+        $this.append('<div class="more"><span></span><a href="">more about me</a></div>');
+      };
+      $('.more a', el).toggle(function(event) {
+        $(this).text('less');
+        $this.css({'height':this_height}).addClass('open');
+      },function(){
+        $(this).text('more about me');
+        $this.css({'height':max_height}).removeClass('open');
+      });
+    }). addClass('processed');
+  };
+  $('.profile-page .tabs.primary, .profile-page .user-nav .nav').dropdownnav();
+};
+
+(function($) {
+  $.fn.dropdownnav = function(options) {
+
+    var defaults = $.extend({
+      maxNumber: 4,
+      classes: this.attr('class'),
+      moreText : 'more',
+      moreIcon : 'icon icon-plus'
+    });
+    var settings = $.extend( true, {}, defaults, options ),
+        indexedNumber = settings.maxNumber - 1;
+
+    return this.each(function() {
+      if ($(this).children().length > settings.maxNumber ) {
+        var $wrapper = $('<ul />')
+            .css({'clear':'none','float':'left','overflow':'visible'})
+            .addClass(settings.classes);
+        $(this).css({'float':'left'}).after($wrapper).addClass('processed').parent().addClass('clearfix').css({'overflow':'visible'});
+        $($wrapper).prepend('<li class="dropdown"><a href="" class="dropdown-toggle" id="dropdownnav1" data-toggle="dropdown">' + settings.moreText + ' <span class="' + settings.moreIcon + '"></a><ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownnav1"></ul></li>');
+        $(this).children('li:gt(' + indexedNumber + ')').each(function () {
+          $('.dropdown-menu').append(this);
+        });
+        $(this).children('li').slice(settings.maxNumber).remove();
+      }
+    });
+
+  }
+}(jQuery));
+;
+[

@@ -1,0 +1,12 @@
+
+   /Subtype /Image
+   /BitsPerComponent 1
+   /Width 590
+   /Height 44
+   /Filter /FlateDecode
+   /Decode [1 0 ]
+   /ImageMask true
+   /Length 375
+>>
+stream
+x^

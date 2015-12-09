@@ -1,0 +1,586 @@
+2985389119,-3.19873516601144,0.849824398130579));
+#1605=CARTESIAN_POINT($,(0.891156896768991,3.3479596138189,0.374999999999999));
+#1606=CARTESIAN_POINT($,(4.42343075679388,-1.63052885735727,1.625));
+#1607=CARTESIAN_POINT($,(0.88710501451639,0.761180794912463,0.849824398130579));
+#1608=CARTESIAN_POINT($,(3.00407014610881,-3.19873516601144,0.849824398130579));
+#1609=CARTESIAN_POINT($,(3.91840726030891,-4.62057577729844,0.579839285714287));
+#1610=CARTESIAN_POINT($,(1.58407014610881,-3.19873516601144,0.849824398130579));
+#1611=CARTESIAN_POINT($,(2.49840726030891,-3.41057577729844,0.374999999999999));
+#1612=CARTESIAN_POINT($,(3.00343075679388,-1.63052885735727,1.625));
+#1613=CARTESIAN_POINT($,(-0.34159273969109,-4.62057577729844,0.579839285714287));
+#1614=CARTESIAN_POINT($,(5.97987324841609,-0.0288339485090601,1.125));
+#1615=CARTESIAN_POINT($,(-0.0720330421656985,0.667006592072395,1.61925949185996));
+#1616=CARTESIAN_POINT($,(-4.49106529311901,-0.679721257183347,2.03172448031309));
+#1617=CARTESIAN_POINT($,(6.485,-3.825,-0.417784622154292));
+#1618=CARTESIAN_POINT($,(-1.25656924320612,-1.63052885735727,1.625));
+#1619=CARTESIAN_POINT($,(-1.76159273969109,-4.62057577729844,0.579839285714287));
+#1620=CARTESIAN_POINT($,(-4.82632145957697,-4.61301526015668,0.561999999999936));
+#1621=CARTESIAN_POINT($,(6.485,3.725,-0.417784622154292));
+#1622=CARTESIAN_POINT($,(-0.34159273969109,-3.41057577729844,0.374999999999999));
+#1623=CARTESIAN_POINT($,(-1.76159273969109,-3.41057577729844,0.374999999999999));
+#1624=CARTESIAN_POINT($,(0.651023087412859,1.96486681913468,0.324999999999999));
+#1625=CARTESIAN_POINT($,(-2.34148938979132,4.395,0.877299999999999));
+#1626=CARTESIAN_POINT($,(2.54115689676899,3.3479596138189,0.374999999999999));
+#1627=CARTESIAN_POINT($,(0.907156896768984,4.5579596138189,0.579839285714287));
+#1628=CARTESIAN_POINT($,(1.5779669578343,0.667006592072395,1.61925949185996));
+#1629=CARTESIAN_POINT($,(-4.80632145957697,-3.41301526015668,0.374999999999999));
+#1630=CARTESIAN_POINT($,(1.07840726030891,-4.62057577729844,0.579839285714287));
+#1631=CARTESIAN_POINT($,(4.42407014610881,-3.19873516601144,0.849824398130579));
+#1632=CARTESIAN_POINT($,(3.2279669578343,0.667006592072395,1.61925949185996));
+#1633=CARTESIAN_POINT($,(1.07840726030891,-3.41057577729844,0.374999999999999));
+#1634=CARTESIAN_POINT($,(2.30102308741286,1.96486681913468,0.324999999999999));
+#1635=CARTESIAN_POINT($,(-3.79543955588709,4.5476038559021,0.561999999999936));
+#1636=CARTESIAN_POINT($,(2.49840726030891,-4.62057577729844,0.579839285714287));
+#1637=CARTESIAN_POINT($,(3.91840726030891,-3.41057577729844,0.374999999999999));
+#1638=CARTESIAN_POINT($,(1.58343075679388,-1.63052885735727,1.625));
+#1639=CARTESIAN_POINT($,(0.16407014610881,-3.19873516601144,0.849824398130579));
+#1640=CARTESIAN_POINT($,(-3.8074395558871,3.34760385590209,0.374999999999999));
+#1641=CARTESIAN_POINT($,(-2.1603977834704,0.405389194353195,1.625));
+#1642=CARTESIAN_POINT($,(-4.78680921440637,1.39372023105448,1.595));
+#1643=CARTESIAN_POINT($,(0.125920067068235,-0.0334837333618074,0.174999999999999));
+#1644=CARTESIAN_POINT($,(3.95102308741286,1.96486681913468,0.324999999999999));
+#1645=CARTESIAN_POINT($,(4.20715689676898,4.5579596138189,0.579839285714287));
+#1646=CARTESIAN_POINT($,(2.53710501451639,0.761180794912463,0.849824398130579));
+#1647=CARTESIAN_POINT($,(-4.28930383903901,-1.63268054368566,1.625));
+#1648=CARTESIAN_POINT($,(4.19115689676899,3.3479596138189,0.374999999999999));
+#1649=CARTESIAN_POINT($,(2.55715689676898,4.55795961381889,0.579839285714287));
+#1650=CARTESIAN_POINT($,(3.91840726030891,-4.62057577729846,0.579839285714287));
+#1651=CARTESIAN_POINT($,(2.49840726030891,-3.41057577729846,0.374999999999999));
+#1652=CARTESIAN_POINT($,(-0.34159273969109,-4.62057577729846,0.579839285714287));
+#1653=CARTESIAN_POINT($,(-0.34159273969109,-3.41057577729846,0.374999999999999));
+#1654=CARTESIAN_POINT($,(2.54115689676899,3.3479596138189,0.374999999999999));
+#1655=CARTESIAN_POINT($,(1.07840726030891,-4.62057577729846,0.579839285714287));
+#1656=CARTESIAN_POINT($,(1.07840726030891,-3.41057577729846,0.374999999999999));
+#1657=CARTESIAN_POINT($,(2.49840726030891,-4.62057577729846,0.579839285714287));
+#1658=CARTESIAN_POINT($,(3.91840726030891,-3.41057577729846,0.374999999999999));
+#1659=CARTESIAN_POINT($,(4.20715689676898,4.55795961381889,0.579839285714287));
+#1660=CARTESIAN_POINT($,(4.18710501451639,0.761180794912463,0.96272819374055));
+#1661=CARTESIAN_POINT($,(3.00407014610881,-3.19873516601144,0.96272819374055));
+#1662=CARTESIAN_POINT($,(1.58407014610881,-3.19873516601144,0.96272819374055));
+#1663=CARTESIAN_POINT($,(4.42407014610881,-3.19873516601144,0.96272819374055));
+#1664=CARTESIAN_POINT($,(0.16407014610881,-3.19873516601144,0.96272819374055));
+#1665=CARTESIAN_POINT($,(2.53710501451639,0.761180794912463,0.96272819374055));
+#1666=ANGLEUV(0.785398163397448);
+#1667=ANGLEUV(1.5707963267949);
+#1668=ANGLEUV(0.);
+#1669=ANGLEUV(4.71238898038469);
+#1670=HATCHSEGMENT(#1666,#1518,0.,0.125,#1517);
+#1671=HATCHPATTERN('ANSI31',
+'ANSI31 (Iron BrickStone), ANSI Iron, Brick, Stone masonry',(#1670));
+#1672=HATCHPATTERNPAIR('Hatch Pattern',#1671);
+#1673=FONTDESCRIPTION('Arial',12.,0,0,.F.,.F.,.F.,1,0);
+#1674=FONTDESCRIPTION('Arial',12.,0,0,.F.,.F.,.F.,1,0);
+#1675=FONTDESCRIPTION('Arial',16.,0,0,.F.,.F.,.F.,1,0);
+#1676=FONTDESCRIPTION('Arial',16.,0,0,.F.,.F.,.F.,1,0);
+#1677=FONTDESCRIPTION('Arial',16.,0,0,.F.,.F.,.F.,1,0);
+#1678=FONTDESCRIPTION('Arial',16.,0,0,.F.,.F.,.F.,1,0);
+#1679=FONTDESCRIPTION('Arial',16.,0,0,.F.,.F.,.F.,1,0);
+#1680=FONTDESCRIPTIONPAIR('Dimension Text Font',#1673);
+#1681=FONTDESCRIPTIONPAIR('Tolerance Font',#1674);
+#1682=FONTDESCRIPTIONPAIR('Detail View Font',#1675);
+#1683=FONTDESCRIPTIONPAIR('Section View Font',#1676);
+#1684=FONTDESCRIPTIONPAIR('View Scale Note Font',#1677);
+#1685=FONTDESCRIPTIONPAIR('Detail View Annotation Font',#1678);
+#1686=FONTDESCRIPTIONPAIR('Section View Annotation Font',#1679);
+#1687=BOOLEANVALUEPAIR('Text Size In Points',.F.);
+#1688=BOOLEANVALUEPAIR('Show Dimension Units',.F.);
+#1689=BOOLEANVALUEPAIR('Show Leading Zero',.T.);
+#1690=BOOLEANVALUEPAIR('Trailing Zeros Status',.F.);
+#1691=BOOLEANVALUEPAIR('Use Adaptive Meshing',.F.);
+#1692=BOOLEANVALUEPAIR('Use Density Material',.T.);
+#1693=BOOLEANVALUEPAIR('Apply Material to Part Data',.T.);
+#1694=BOOLEANVALUEPAIR('Show Dual Dimensions',.F.);
+#1695=BOOLEANVALUEPAIR('Dual Show Leading Zero',.F.);
+#1696=BOOLEANVALUEPAIR('Dual Trailing Zeros Status',.T.);
+#1697=BOOLEANVALUEPAIR('Show Equations',.F.);
+#1698=BOOLEANVALUEPAIR('Enable Circular Center Line Dimension',.T.);
+#1699=BOOLEANVALUEPAIR(
+'Show Circular Center Line Dimension As Diametric',.F.);
+#1700=BOOLEANVALUEPAIR('BAM_CoarseDisplay',.T.);
+#1701=BOOLEANVALUEPAIR('BAM_SimplifiedMeshes',.F.);
+#1702=BOOLEANVALUEPAIR('BAM_RemoveDetails',.T.);
+#1703=BOOLEANVALUEPAIR('BAM_RemoveEdges',.T.);
+#1704=BOOLEANVALUEPAIR('BAM_MousePause',.T.);
+#1705=BOOLEANVALUEPAIR('Dimension Show Parenthesis',.F.);
+#1706=BOOLEANVALUEPAIR('Browser Properties\\Browser Is Maximized',.T.);
+#1707=BOOLEANVALUEPAIR('Browser Properties\\Browser Explorer Is Visible',
+ .T.);
+#1708=BOOLEANVALUEPAIR('viewMode',.F.);
+#1709=BOOLEANVALUEPAIR('Show Pitch Circle Diameters',.T.);
+#1710=BOOLEANVALUEPAIR('Show Tangent Center Marks',.F.);
+#1711=BOOLEANVALUEPAIR('Show Linear Pattern Centers',.T.);
+#1712=BOOLEANVALUEPAIR('Rotate Linear Pattern Centers',.T.);
+#1713=REALVALUEPAIR('Distance Increment V7',0.01);
+#1714=REALVALUEPAIR('Angle Increments',0.0174532925199433);
+#1715=REALVALUEPAIR('Auto Explode Distance',0.1);
+#1716=REALVALUEPAIR('Text Size',8.25);
+#1717=REALVALUEPAIR('Density',0.00784);
+#1718=REALVALUEPAIR('Arrow Length',1.524);
+#1719=REALVALUEPAIR('Arrow Width',0.635);
+#1720=REALVALUEPAIR('Arrow Second Length',1.524);
+#1721=REALVALUEPAIR('Arrow Second Width',0.635);
+#1722=REALVALUEPAIR('Dimension Line Overshoot',6.35);
+#1723=REALVALUEPAIR('Extention Gap',1.5875);
+#1724=REALVALUEPAIR('Extention Overshoot',1.5875);
+#1725=REALVALUEPAIR('Shoulder Length',6.35);
+#1726=REALVALUEPAIR('Text Gap',1.5875);
+#1727=REALVALUEPAIR('Annotation Arrow Length',1.524);
+#1728=REALVALUEPAIR('Aannotation Arrow Width',0.635);
+#1729=REALVALUEPAIR('Tolerance Lower Value',0.);
+#1730=REALVALUEPAIR('Tolerance Lower Angle Value',0.);
+#1731=REALVALUEPAIR('Tolerance Upper Value',0.);
+#1732=REALVALUEPAIR('Tolerance Upper Angle Value',0.);
+#1733=REALVALUEPAIR('Hatching Scale',1.);
+#1734=REALVALUEPAIR('Hatching Angle',0.);
+#1735=REALVALUEPAIR('Browser Properties\\Browser Height',1.);
+#1736=REALVALUEPAIR('Browser Properties\\Browser Width',1.);
+#1737=REALVALUEPAIR('Browser Properties\\Browser Location X',0.);
+#1738=REALVALUEPAIR('Browser Properties\\Browser Location Y',0.);
+#1739=REALVALUEPAIR('Broken View Annotation Offset',2.54);
+#1740=REALVALUEPAIR('Broken View Gap Width',7.62);
+#1741=REALVALUEPAIR('Hatching Start Offset',0.);
+#1742=MEASUREMENTSEGMENTFORMAT(10.,.F.,.T.,1,'','','mm',1,2,0,1.,2,.T.);
+#1743=MEASUREMENTSEGMENTFORMAT(10.,.F.,.T.,1,'','','mm',1,2,0,1.,2,.T.);
+#1744=MEASUREMENTSEGMENTFORMAT(1.,.F.,.T.,1,'','','\X2\02DA\X0\',1,2,0,0.0174532925199433,
+2,.F.);
+#1745=MEASUREMENTSEGMENTFORMAT(10.,.F.,.T.,1,'','','mm',1,3,0,1.,1,.F.);
+#1746=MEASUREMENTFORMAT((#1742),'','',0,.F.);
+#1747=MEASUREMENTFORMAT((#1743),'','',0,.F.);
+#1748=MEASUREMENTFORMAT((#1744),'','',0,.F.);
+#1749=MEASUREMENTFORMAT((#1745),'','',0,.F.);
+#1750=MEASUREMENTFORMATPAIR('Distance Format',#1746);
+#1751=MEASUREMENTFORMATPAIR('Volume Format',#1747);
+#1752=MEASUREMENTFORMATPAIR('Angle Format',#1748);
+#1753=MEASUREMENTFORMATPAIR('Dual Distance Format',#1749);
+#1754=STRINGVALUEPAIR('name','SC20-V3');
+#1755=STRINGVALUEPAIR('description','');
+#1756=STRINGVALUEPAIR('number','');
+#1757=STRINGVALUEPAIR('Version_Comment','');
+#1758=STRINGVALUEPAIR('Default Units','cm');
+#1759=STRINGVALUEPAIR('Density Material Name',
+'Carbon Steel(0.40% C)      ');
+#1760=STRINGVALUEPAIR('Diameter Symbol','\X2\2205\X0\');
+#1761=STRINGVALUEPAIR('Radius Symbol','R');
+#1762=STRINGVALUEPAIR('THRU Symbol','THRU');
+#1763=STRINGVALUEPAIR('MIN Symbol','MIN');
+#1764=STRINGVALUEPAIR('MAX Symbol','MAX');
+#1765=STRINGVALUEPAIR('Default Dimension Style Name','Default');
+#1766=STRINGVALUEPAIR('Hatch Category','Material');
+#1767=STRINGVALUEPAIR('snapshot','unknown');
+#1768=STRINGVALUEPAIR('__MinorVersionNumber','1');
+#1769=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/Tornillo_PD|DE
+D3A8B2-339C-4D13-B860-A267431C1A45||1|3','');
+#1770=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/Led_5mm_corto|47223C04-10CC-4F6C-B2F
+2-4CB4C1F4BBCF||1|4','');
+#1771=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/TS-6x6-WP|F95149F0-6F9D-4BB7-8AB0-7C
+68FC59EBFF||1|1','');
+#1772=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/Opto-triac|720BBE84-F2D2-47C0-989E-E
+FBED83725EE||1|2','');
+#1773=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/PIC16F883|74354301-9F67-40FD-9346-93
+1DB564D9B5||1|4','');
+#1774=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/Cuerpo Chillem
+i R840T|3DC91598-44D8-489A-A7E9-361D36BD57BC||1|9','');
+#1775=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/7 Segmentos led|A163141F-F955-43D2-A
+6E5-D59649BDD592||1|2','');
+#1776=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/TO92|597D5CFA-CFFD-4A20-A538-9B0C0D0
+0A829||1|3','');
+#1777=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Conectores MSTBA
+ - Hembra/1757019|60C22730-9B5F-44AA-8FCA-2A6419867FF6||1|3','');
+#1778=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/Jumper_3_pin|5C0D00CC-1037-454A-BD5B
+-0B2B03DAE13E||1|2','');
+#1779=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/JUMPER|9213B170-CDC4-4818-8786-D725C
+6F524FB||1|1','');
+#1780=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/Base Chillemi 
+R840T|72C06ECA-B90B-4C71-BF9B-5504EFDFF15A||1|4','');
+#1781=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/Capacitor 4700x25V-SR - (16x25)|74A2
+EE71-814B-4B2C-BA9E-917D790A5CCE||1|2','');
+#1782=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/Transformadores/Cobsil 522
+101|DA82A5F4-1F9C-45C2-91FF-3DDA31F4E884||1|4','');
+#1783=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/Terminales/Terminales pre-
+aislados/CON-B20|26BB7383-FC98-4863-81A7-A97B1FA158E9||1|1','');
+#1784=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/Partes/Termina
+l FastOn 90\X\BA|8959D791-6F8A-49EA-B7E9-CED38A0CEF0E||7|2','');
+#1785=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/LM358 - DIP8|E7151C65-FAB8-4BB6-AA82
+-3C3ED694D18D||1|3','');
+#1786=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Conectores MSTBA
+ - Hembra/1757022|E9B7F47D-88F5-4605-9778-3F759098ED02||1|5','');
+#1787=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/Partes/DIP-Swi
+tch|A2108D49-DE87-4B50-B1A0-9D182F3DE25F||1|1','');
+#1788=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/LED-D3R|1A532A6D-252E-46FB-AF2A-5BF6
+D99FB79A||1|2','');
+#1789=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/PR2W10|AC66619F-AFBF-4DCE-971B-64840
+186CA2E||1|2','');
+#1790=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/Frente Chillem
+i R840T|C4CBC4E7-9525-4C14-99D4-7B0CEEEE718C||1|12','');
+#1791=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Electronica/HJR-3FF-XXVDC|B411D82E-153F-49A1-95C
+3-4722113B582F||1|2','');
+#1792=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Conectores MSTBA
+ - Macho/1754436|AE88BE23-3A04-4419-86C1-5E6854BDE9AF||1|3','');
+#1793=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/Traba Riel PD1
+0|473A8DF0-1208-4D00-AA0E-9648A16EB05E||1|4','');
+#1794=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Conectores MSTBA
+ - Macho/1754452|D1B62187-CB00-4C34-AF31-039F9A85520F||1|2','');
+#1795=STRINGVALUEPAIR(
+'constituents\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-F99D11709725" 
+Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Documents/CAD/Tecnit
+ower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/Partes/pLACA|8
+24030F9-B9E3-415A-83C9-D22AC14B3787||1|5','');
+#1796=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/
+Tornillo_PD|DED3A8B2-339C-4D13-B860-A267431C1A45||1|3','1');
+#1797=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/Led_5mm_corto|47223C04
+-10CC-4F6C-B2F2-4CB4C1F4BBCF||1|4','1');
+#1798=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/TS-6x6-WP|F95149F0-6F9
+D-4BB7-8AB0-7C68FC59EBFF||1|1','1');
+#1799=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/Opto-triac|720BBE84-F2
+D2-47C0-989E-EFBED83725EE||1|2','1');
+#1800=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/PIC16F883|74354301-9F6
+7-40FD-9346-931DB564D9B5||1|4','1');
+#1801=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/
+Cuerpo Chillemi R840T|3DC91598-44D8-489A-A7E9-361D36BD57BC||1|9','1');
+#1802=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/7 Segmentos led|A16314
+1F-F955-43D2-A6E5-D59649BDD592||1|2','1');
+#1803=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/TO92|597D5CFA-CFFD-4A2
+0-A538-9B0C0D00A829||1|3','1');
+#1804=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Co
+nectores MSTBA - Hembra/1757019|60C22730-9B5F-44AA-8FCA-2A6419867FF6||1
+|3','1');
+#1805=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/Jumper_3_pin|5C0D00CC-
+1037-454A-BD5B-0B2B03DAE13E||1|2','1');
+#1806=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/JUMPER|9213B170-CDC4-4
+818-8786-D725C6F524FB||1|1','1');
+#1807=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/
+Base Chillemi R840T|72C06ECA-B90B-4C71-BF9B-5504EFDFF15A||1|4','1');
+#1808=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/Capacitor 4700x25V-SR 
+- (16x25)|74A2EE71-814B-4B2C-BA9E-917D790A5CCE||1|2','1');
+#1809=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/Transformado
+res/Cobsil 522101|DA82A5F4-1F9C-45C2-91FF-3DDA31F4E884||1|4','1');
+#1810=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/Terminales/T
+erminales pre-aislados/CON-B20|26BB7383-FC98-4863-81A7-A97B1FA158E9||1|
+1','1');
+#1811=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/
+Partes/Terminal FastOn 90\X\BA|8959D791-6F8A-49EA-B7E9-CED38A0CEF0E||7|
+2','1');
+#1812=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/LM358 - DIP8|E7151C65-
+FAB8-4BB6-AA82-3C3ED694D18D||1|3','1');
+#1813=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Co
+nectores MSTBA - Hembra/1757022|E9B7F47D-88F5-4605-9778-3F759098ED02||1
+|5','1');
+#1814=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/
+Partes/DIP-Switch|A2108D49-DE87-4B50-B1A0-9D182F3DE25F||1|1','1');
+#1815=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/LED-D3R|1A532A6D-252E-
+46FB-AF2A-5BF6D99FB79A||1|2','1');
+#1816=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/PR2W10|AC66619F-AFBF-4
+DCE-971B-64840186CA2E||1|2','1');
+#1817=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/
+Frente Chillemi R840T|C4CBC4E7-9525-4C14-99D4-7B0CEEEE718C||1|12','1');
+#1818=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Electronica/HJR-3FF-XXVDC|B411D82E
+-153F-49A1-95C3-4722113B582F||1|2','1');
+#1819=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Co
+nectores MSTBA - Macho/1754436|AE88BE23-3A04-4419-86C1-5E6854BDE9AF||1|
+3','1');
+#1820=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/PD05/Partes/
+Traba Riel PD10|473A8DF0-1208-4D00-AA0E-9648A16EB05E||1|4','1');
+#1821=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/CAD Proveedores/Planos Phoenix Contact/Co
+nectores MSTBA - Macho/1754452|D1B62187-CB00-4C34-AF31-039F9A85520F||1|
+2','1');
+#1822=STRINGVALUEPAIR(
+'__ConstituentMinorVersions\\<Repository Guid="CC3D4A9F-1B2A-4B08-82DA-
+F99D11709725" Name="C" V3Name="" Type="File"/>:/Users/Eduardo-PC/Docume
+nts/CAD/Tecnitower/Biblioteca/Alibre/Accesorios_electricos/Desarrollos/
+Partes/pLACA|824030F9-B9E3-415A-83C9-D22AC14B3787||1|5','1');
+#1823=STRINGVALUEPAIR('stepFileVersion','PRODUCTVERSION 15,0,2,15088');
+#1824=STRINGVALUEPAIR('View Scale Note Caption','SCALE');
+#1825=STRINGVALUEPAIR('View Scale Note Separator',':');
+#1826=INTEGERVALUEPAIR('subType',2);
+#1827=INTEGERVALUEPAIR('secureObjectType',2);
+#1828=INTEGERVALUEPAIR('Locale ID',1033);
+#1829=INTEGERVALUEPAIR('Country Code',1);
+#1830=INTEGERVALUEPAIR('codepage',1252);
+#1831=INTEGERVALUEPAIR('EnableAdvancedRendering',1);
+#1832=INTEGERVALUEPAIR('Distance Units',0);
+#1833=INTEGERVALUEPAIR('Angle Units',0);
+#1834=INTEGERVALUEPAIR('Mass Units',0);
+#1835=INTEGERVALUEPAIR('Segments Per Circle',24);
+#1836=INTEGERVALUEPAIR('Density Mass Units',401);
+#1837=INTEGERVALUEPAIR('Density Distance Units',201);
+#1838=INTEGERVALUEPAIR('Dual Distance Units',0);
+#1839=INTEGERVALUEPAIR('Dual Placement',1);
+#1840=INTEGERVALUEPAIR('Default Dimension Style Id',0);
+#1841=INTEGERVALUEPAIR('Arrow Style',0);
+#1842=INTEGERVALUEPAIR('Arrow Second Style',0);
+#1843=INTEGERVALUEPAIR('Dimension Annotation Placement',0);
+#1844=INTEGERVALUEPAIR('Dimension Line Placement',0);
+#1845=INTEGERVALUEPAIR('Diametric Dimension Option',0);
+#1846=INTEGERVALUEPAIR('Chamfer Dimension Format Key',0);
+#1847=INTEGERVALUEPAIR('Chamfer Dimension Separator Key',0);
+#1848=INTEGERVALUEPAIR('Chamfer Dimension Annotation Placement Key',0);
+#1849=INTEGERVALUEPAIR('Annotation Arrow Style',0);
+#1850=INTEGERVALUEPAIR('BAM_PauseLength',100);
+#1851=INTEGERVALUEPAIR('Face Color',-1776412);
+#1852=INTEGERVALUEPAIR('Edge Color',-13158601);
+#1853=INTEGERVALUEPAIR('Face Reflectivity',0);
+#1854=INTEGERVALUEPAIR('Distance Precision',2);
+#1855=INTEGERVALUEPAIR('Segment Format',0);
+#1856=INTEGERVALUEPAIR('Angle Precision',2);
+#1857=INTEGERVALUEPAIR('Tolerance Type',0);
+#1858=INTEGERVALUEPAIR('Dual Distance Precision',3);
+#1859=INTEGERVALUEPAIR('Dual Angle Untis',3);
+#1860=INTEGERVALUEPAIR('Dual Angle Precision',2);
+#1861=INTEGERVALUEPAIR('Hatching Color',-16777216);
+#1862=INTEGERVALUEPAIR('Hatching Line Weight',1);
+#1863=INTEGERVALUEPAIR('Browser Properties\\Browser Split Width',192);
+#1864=INTEGERVALUEPAIR('Intersection Decorator Layer ID',1);
+#1865=INTEGERVALUEPAIR('Intersection Decorator Shape',3);
+#1866=INTEGERVALUEPAIR('Annotation Font Color',0);
+#1867=INTEGERVALUEPAIR('Datum Target Arrow Style',21);
+#1868=INTEGERVALUEPAIR('PCD Representation ID',1);
+#1869=INTEGERVALUEPAIR('PCD Layer ID',1);
+#1870=INTEGERVALUEPAIR('Linear Pattern Centers ID',1);
+#1871=PROFILE((#1826,#1754,#1755,#1756,#1757,#1827,#1828,#1829,#1830,#1831,
+#1758,#1750,#1751,#1752,#1832,#1833,#1713,#1714,#1715,#1716,#1687,#1688,
+#1689,#1690,#1834,#1691,#1835,#1717,#1836,#1837,#1692,#1759,#1693,#1694,
+#1838,#1695,#1696,#1839,#1753,#1760,#1761,#1762,#1763,#1764,#1680,#1765,
+#1840,#1718,#1841,#1719,#1720,#1842,#1721,#1843,#1844,#1722,#1723,#1724,
+#1725,#1697,#1726,#1845,#1698,#1699,#1846,#1847,#1848,#1849,#1727,#1728,
+#1700,#1701,#1702,#1703,#1704,#1850,#1851,#1852,#1853,#1854,#1855,#1856,
+#1705,#1729,#1730,#1857,#1731,#1732,#1681,#1858,#1859,#1860,#1672,#1766,
+#1733,#1734,#1861,#1862,#1735,#1736,#1737,#1738,#1706,#1863,#1707,#1767,
+#1516,#1708,#933,#1768,#1769,#1770,#1771,#1772,#1773,#1774,#1775,#1776,#1777,
+#1778,#1779,#1780,#1781,#1782,#1783,#1784,#1785,#1786,#1787,#1788,#1789,
+#1790,#1791,#1792,#1793,#1794,#1795,#1796,#1797,#1798,#1799,#1800,#1801,
+#1802,#1803,#1804,#1805,#1806,#1807,#1808,#1809,#1810,#1811,#1812,#1813,
+#1814,#1815,#1816,#1817,#1818,#1819,#1820,#1821,#1822,#1823,#1864,#1865,
+#1866,#1867,#1682,#1683,#1739,#1740,#1709,#1868,#1869,#1710,#1711,#1712,
+#1870,#1684,#1824,#1825,#1741,#1685,#1686));
+#1872=PROFILE(());
+#1873=PROFILE(());
+#1874=PROFILE(());
+#1875=PROFILE(());
+#1876=PROFILE(());
+#1877=PROFILE(());
+#1878=PROFILE(());
+#1879=PROFILE(());
+#1880=PROFILE(());
+#1881=PROFILE(());
+#1882=PROFILE(());
+#1883=PROFILE(());
+#1884=PROFILE(());
+#1885=PROFILE(());
+#1886=PROFILE(());
+#1887=PROFILE(());
+#1888=PROFILE(());
+#1889=PROFILE(());
+#1890=PROFILE(());
+#1891=PROFILE(());
+#1892=PROFILE(());
+#1893=PROFILE(());
+#1894=PROFILE(());
+#1895=PROFILE(());
+#1896=PROFILE(());
+#1897=PROFILE(());
+#1898=PROFILE(());
+#1899=PROFILE(());
+#1900=PROFILE(());
+#1901=PROFILE(());
+#1902=PROFILE(());
+#1903=PROFILE(());
+#1904=PROFILE(());
+#1905=PROFILE(());
+#1906=PROFILE(());
+#1907=PROFILE(());
+#1908=PROFILE(());
+#1909=PROFILE(());
+#1910=PROFILE(());
+#1911=PROFILE(());
+#1912=PROFILE(());
+#1913=PROFILE(());
+#1914=PROFILE(());
+#1915=PROFILE(());
+#1916=PROFILE(());
+#1917=PROFILE(());
+#1918=PROFILE(());
+#1919=PROFILE(());
+#1920=PROFILE(());
+#1921=PROFILE(());
+#1922=PROFILE(());
+#1923=PROFILE(());
+#1924=PROFILE(());
+#1925=PROFILE(());
+#1926=PROFILE(());
+#1927=PROFILE(());
+#1928=PROFILE(());
+#1929=PROFILE(());
+#1930=PROFILE(());
+#1931=PROFILE(());
+#1932=PROFILE(());
+#1933=PROFILE(());
+#1934=PROFILE(());
+#1935=PROFILE(());
+#1936=PROFILE(());
+#1937=PROFILE(());
+#1938=PROFILE(());
+#1939=PROFILE(());
+#1940=PROFILE(());
+#1941=PROFILE(());
+#1942=PROFILE(());
+#1943=PROFILE(());
+#1944=DESIGNWORKSPACE(#1871,1,$,#931,$);
+#1945=SCHEMAVERSION('PRODUCTVERSION 15,0,2,15088',$);
+ENDSEC;
+END-ISO-10303-21;

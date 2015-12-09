@@ -1,0 +1,722 @@
+<?xml version="1.0"?>
+<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1449088954000">
+  <emItems>
+      <emItem  blockID="i58" id="webmaster@buzzzzvideos.info">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i71" id="youtube@2youtube.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i640" id="jid0-l9BxpNUhx1UUgRfKigWzSfrZqAc@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i527" id="/^({bfec236d-e122-4102-864f-f5f19d897f5e}|{3f842035-47f4-4f10-846b-6199b07f09b8}|{92ed4bbd-83f2-4c70-bb4e-f8d3716143fe})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i105" id="{95ff02bc-ffc6-45f0-a5c8-619b8226a9de}">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i994" id="addonhack@mozilla.kewis.ch">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i400" id="{dd6b651f-dfb9-4142-b0bd-09912ad22674}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i488" id="jid1-4P0kohSJxU1qGg@jetpack">
+                        <versionRange  minVersion="1.2.50" maxVersion="1.2.50" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i578" id="jid1-XLjasWL55iEE1Q@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i529" id="/^(torntv@torntv\.com|trtv3@trtv\.com|torntv2@torntv\.com|e2fd07a6-e282-4f2e-8965-85565fcb6384@b69158e6-3c3b-476c-9d98-ae5838c5b707\.com)$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i792" id="{8f894ed3-0bf2-498e-a103-27ef6e88899f}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i64" id="royal@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i72" os="WINNT" id="{4ED1F68A-5463-4931-9384-8FFF5ED91D92}">
+                        <versionRange  minVersion="3.4.1" maxVersion="3.4.1.194" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i862" id="{CA8C84C6-3918-41b1-BE77-049B2BDD887C}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i430" id="1chtw@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i238" id="/^pink@.*\.info$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="18.0" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i630" id="webbooster@iminent.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i582" id="discoverypro@discoverypro.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i670" id="/^({ad9a41d2-9a49-4fa6-a79e-71a0785364c8})|(ffxtlbr@mysearchdial\.com)$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1058" id="amo-validator-bypass@example.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i140" id="mozillahmpg@mozilla.org">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i500" id="{2aab351c-ad56-444c-b935-38bffe18ad26}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i364" id="{FE1DEEEA-DB6D-44b8-83F0-34FC0F9D1052}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i467" id="plugin@analytic-s.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i5" id="support@daemon-tools.cc">
+                        <versionRange  minVersion=" " maxVersion="1.0.0.5">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i590" id="{94cd2cc3-083f-49ba-a218-4cda4b4829fd}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i800" id="{424b0d11-e7fe-4a04-b7df-8f2c77f58aaf}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i926" id="{B1FC07E1-E05B-4567-8891-E63FBE545BA8}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="39.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i62" id="jid0-EcdqvFOgWLKHNJPuqAnawlykCGZ@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i624" id="/^({b95faac1-a3d7-4d69-8943-ddd5a487d966}|{ecce0073-a837-45a2-95b9-600420505f7e}|{2713b394-286f-4d7c-89ea-4174eeab9f5a}|{da7a20cf-bef4-4342-ad78-0240fdf87055})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i472" id="linksicle@linksicle.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i66" id="youtubeer@youtuber.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i672" id="/^(saamazon@mybrowserbar\.com)|(saebay@mybrowserbar\.com)$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i668" id="/^(matchersite(pro(srcs?)?)?\@matchersite(pro(srcs?)?)?\.com)|((pro)?sitematcher(_srcs?|pro|site|sitesrc|-generic)?\@(pro)?sitematcher(_srcs?|pro|site|sitesrc|-generic)?\.com)$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i526" id="/^({83a8ce1b-683c-4784-b86d-9eb601b59f38}|{ef1feedd-d8da-4930-96f1-0a1a598375c6}|{79ff1aae-701f-4ca5-aea3-74b3eac6f01b}|{8a184644-a171-4b05-bc9a-28d75ffc9505}|{bc09c55d-0375-4dcc-836e-0e3c8addfbda}|{cef81415-2059-4dd5-9829-1aef3cf27f4f})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1040" id="frhegnejkgner@grhjgewfewf.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i98" id="youtubeeing@youtuberie.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i442" id="pennerdu@faceobooks.ws">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i39" id="{c2d64ff7-0ab8-4263-89c9-ea3b0f8f050c}">
+                        <versionRange  minVersion="0.1" maxVersion="4.3.1.00" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i93" id="{68b8676b-99a5-46d1-b390-22411d8bcd61}">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i858" id="fftoolbar2014@etech.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i854" id="/^(7tG@zEb\.net|ru@gfK0J\.edu)$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i850" id="P2@D.edu">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i554" id="lightningnewtab@gmail.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i348" id="{13c9f1f9-2322-4d5c-81df-6d4bf8476ba4}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i972" id="831778-poidjao88DASfsAnindsd@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i352" id="vpyekkifgv@vpyekkifgv.org">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i258" id="helperbar@helperbar.com">
+                        <versionRange  minVersion="0" maxVersion="1.0" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i642" id="{bee6eb20-01e0-ebd1-da83-080329fb9a3a}">
+                        <versionRange  minVersion="40.10.1" maxVersion="44.10.1" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i447" id="{B18B1E5C-4D81-11E1-9C00-AFEB4824019B}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i914" id="{0153E448-190B-4987-BDE1-F256CADA672F}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="39.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i678" id="{C4A4F5A0-4B89-4392-AFAC-D58010E349AF}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i916" os="WINNT" id="{97E22097-9A2F-45b1-8DAF-36AD648C7EF4}">
+                        <versionRange  minVersion="0" maxVersion="15.0.5" severity="1">
+                    </versionRange>
+                                <versionRange  minVersion="0" maxVersion="*" severity="3">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="39.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i620" id="{21EAF666-26B3-4A3C-ABD0-CA2F5A326744}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i988" id="{b12785f5-d8d0-4530-a3ea-5c4263b85bef}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i376" id="{9e09ac65-43c0-4b9d-970f-11e2e9616c55}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i482" id="brasilescapeeight@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i17" id="{3252b9ae-c69a-4eaf-9502-dc9c1f6c009e}">
+                        <versionRange  minVersion="2.2" maxVersion="2.2">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i446" id="{E90FA778-C2B7-41D0-9FA9-3FEC1CA54D66}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i507" id="4zffxtbr-bs@VideoDownloadConverter_4z.com">
+                        <versionRange  minVersion="0" maxVersion="5.75.3.25126" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i7" id="{2224e955-00e9-4613-a844-ce69fccaae91}">
+                          <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i722" id="{9802047e-5a84-4da3-b103-c55995d147d1}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i778" id="{f2456568-e603-43db-8838-ffa7c4a685c7}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i52" id="ff-ext@youtube">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i966" id="{5C655500-E712-41e7-9349-CE462F844B19}">
+                        <versionRange  minVersion="0" maxVersion="1.0.1-signed" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1050" id="87aukfkausiopoawjsuifhasefgased278djasi@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i504" id="aytac@abc.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i808" id="{c96d1ae6-c4cf-4984-b110-f5f561b33b5a}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i453" id="/^brasilescape.*\@facebook\.com$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i308" id="9518042e-7ad6-4dac-b377-056e28d00c8f@f1cc0a13-4df1-4d66-938f-088db8838882.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i560" id="adsremoval@adsremoval.net">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1038" id="344141-fasf9jas08hasoiesj9ia8ws@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1056" id="{82AF8DCA-6DE9-405D-BD5E-43525BDAD38A}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="43.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i344" id="lrcsTube@hansanddeta.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i748" id="{32da2f20-827d-40aa-a3b4-2fc4a294352e}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i404" id="{a9bb9fa0-4122-4c75-bd9a-bc27db3f9155}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i83" id="flash@adobee.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i766" id="/^[a-z0-9]+@foxysecure[a-z0-9]*\.com$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i196" id="info@wxdownloadmanager.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i570" id="jid1-vW9nopuIAJiRHw@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i547" id="{87934c42-161d-45bc-8cef-ef18abe2a30c}">
+                        <versionRange  minVersion="0" maxVersion="3.7.9999999999" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i216" id="fdm_ffext@freedownloadmanager.org">
+                        <versionRange  minVersion="1.0" maxVersion="1.3.1">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="3.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                                <versionRange  minVersion="1.5.7.5" maxVersion="1.5.7.5" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i990" id="youtubeunblocker@unblocker.yt">
+                        <versionRange  minVersion="43.4.1" maxVersion="77.5.1" severity="3">
+                    </versionRange>
+                                <versionRange  minVersion="0" maxVersion="0.6.16" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i576" id="newmoz@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i424" id="{C7AE725D-FA5C-4027-BB4C-787EF9F8248A}">
+                        <versionRange  minVersion="0" maxVersion="1.0.0.2" severity="1">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="23.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i3" id="langpack-vi-VN@firefox.mozilla.org">
+                        <versionRange  minVersion="2.0" maxVersion="2.0">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1036" id="HxLVJK1ioigz9WEWo8QgCs3evE7uW6LEExAniBGG@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i586" id="jid1-0xtMKhXFEs4jIg@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i744" id="{84a93d51-b7a9-431e-8ff8-d60e5d7f5df1}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i848" id="bcVX5@nQm9l.org">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1034" id="a88a77ahjjfjakckmmabsy278djasi@jetpack">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i431" id="chinaescapeone@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i806" id="{d9284e50-81fc-11da-a72b-0800200c9a66}">
+                        <versionRange  minVersion="0" maxVersion="7.7.34" severity="1">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="34.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i469" id="OKitSpace@OKitSpace.es">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i439" id="{d2cf9842-af95-48cd-b873-bfbb48cd7f5e}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i346" id="{a6e67e6f-8615-4fe0-a599-34a73fc3fba5}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i220" id="pricepeep@getpricepeep.com">
+                        <versionRange  minVersion="0" maxVersion="2.1.0.19.99" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i768" id="{f2548724-373f-45fe-be6a-3a85e87b7711}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i172" id="info@bflix.info">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i517" id="/^({16e193c8-1706-40bf-b6f3-91403a9a22be}|{284fed43-2e13-4afe-8aeb-50827d510e20}|{5e3cc5d8-ed11-4bed-bc47-35b4c4bc1033}|{7429e64a-1fd4-4112-a186-2b5630816b91}|{8c9980d7-0f09-4459-9197-99b3e559660c}|{8f1d9545-0bb9-4583-bb3c-5e1ac1e2920c})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i882" id="69ffxtbr@PackageTracer_69.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i356" id="{341f4dac-1966-47ff-aacf-0ce175f1498a}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i888" id="istart_ffnt@gmail.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+                  <pref>browser.startup.homepage</pref>
+                  <pref>browser.search.defaultenginename</pref>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i165" id="{EEF73632-A085-4fd3-A778-ECD82C8CB297}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i742" id="{f894a29a-f065-40c3-bb19-da6057778493}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="1">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i489" id="astrovia@facebook.com">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i541" id="/^({988919ff-0cd8-4d0c-bc7e-60d55a49eb64}|{494b9726-9084-415c-a499-68c07e187244}|{55b95864-3251-45e9-bb30-1a82589aaff1}|{eef3855c-fc2d-41e6-8d91-d368f51b3055}|{90a1b331-c2b4-4933-9f63-ba7b84d60d58}|{d2cf9842-af95-48cd-b873-bfbb48cd7f5e})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i68" id="flashupdate@adobe.com">
+                        <versionRange  minVersion="0" maxVersion="*">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i45" id="{22119944-ED35-4ab1-910B-E619EA06A115}">
+                        <versionRange  minVersion="0.1" maxVersion="7.6.1">
+                      <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
+                              <versionRange  minVersion="8.0a1" maxVersion="*" />
+                          </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i380" id="{cc8f597b-0765-404e-a575-82aefbd81daf}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i378" id="{a7aae4f0-bc2e-a0dd-fb8d-68ce32c9261f}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i784" id="{41e5ef7a-171d-4ab5-8351-951c65a29908}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i374" id="update@firefox.com">

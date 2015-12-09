@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" open-window-count="0" score="1" last-seen="1449229791"/>
+    <application id="eeschema.desktop" open-window-count="0" score="638" last-seen="1448887109"/>
+    <application id="synaptic.desktop" open-window-count="0" score="88" last-seen="1448964620"/>
+    <application id="gnome-calculator.desktop" open-window-count="0" score="40" last-seen="1448972645"/>
+    <application id="iceweasel.desktop" open-window-count="1" score="14136" last-seen="1449231407"/>
+    <application id="org.gnome.Nautilus.desktop" open-window-count="1" score="103" last-seen="1449231442"/>
+    <application id="eog.desktop" open-window-count="0" score="3" last-seen="1449229267"/>
+    <application id="gnome-privacy-panel.desktop" open-window-count="0" score="0" last-seen="0"/>
+    <application id="gnome-klotski.desktop" open-window-count="0" score="11" last-seen="1448846825"/>
+    <application id="gnome-terminal.desktop" open-window-count="0" score="1232" last-seen="1449183415"/>
+    <application id="libreoffice-calc.desktop" open-window-count="0" score="153" last-seen="1449231244"/>
+    <application id="evince.desktop" open-window-count="0" score="35" last-seen="1449231425"/>
+    <application id="pcbnew.desktop" open-window-count="0" score="1842" last-seen="1448998661"/>
+    <application id="dia.desktop" open-window-count="1" score="79" last-seen="1449230398"/>
+    <application id="kicad.desktop" open-window-count="0" score="3483" last-seen="1449184041"/>
+    <application id="libreoffice-writer.desktop" open-window-count="0" score="2" last-seen="1449227417"/>
+    <application id="libreoffice-impress.desktop" open-window-count="0" score="31" last-seen="1449229691"/>
+  </context>
+</application-state>

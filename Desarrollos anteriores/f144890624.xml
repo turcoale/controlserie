@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/amid/WiFi.svg" added="2015-11-23T23:38:35Z" modified="2015-11-23T23:38:38Z" visited="2015-11-23T23:38:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/svg+xml"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;eog %U&apos;" modified="2015-11-23T23:38:35Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-11-23T23:38:38Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/noname.pro" added="2015-11-24T00:23:58Z" modified="2015-11-24T00:49:27Z" visited="2015-11-24T00:23:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-11-24T00:49:27Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/virtualbox-5.0_5.0.10-104061~Debian~jessie_amd64.deb" added="2015-11-25T11:32:58Z" modified="2015-11-25T11:32:58Z" visited="2015-11-25T11:32:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-deb"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-25T11:32:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/FANMONO.pro" added="2015-11-25T12:33:43Z" modified="2015-12-03T22:55:17Z" visited="2015-11-25T12:33:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-kicad-project"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-03T22:55:17Z" count="13"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/FANMONO.sch" added="2015-11-25T12:35:02Z" modified="2015-12-01T14:09:31Z" visited="2015-11-25T12:35:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-kicad-schematic"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-01T14:09:31Z" count="18"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/FANMONO.kicad_pcb" added="2015-11-25T12:39:54Z" modified="2015-12-01T13:19:28Z" visited="2015-11-25T12:39:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-01T13:19:28Z" count="28"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/switcher.pro" added="2015-11-25T13:07:25Z" modified="2015-12-03T22:55:29Z" visited="2015-11-25T13:07:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-kicad-project"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-03T22:55:29Z" count="15"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/switcher.kicad_pcb" added="2015-11-25T13:07:28Z" modified="2015-12-03T23:02:07Z" visited="2015-11-25T13:07:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-03T23:02:07Z" count="22"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/Swicher.sch" added="2015-11-25T13:12:33Z" modified="2015-11-30T01:11:57Z" visited="2015-11-25T13:12:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-kicad-schematic"/>
+        <bookmark:applications>
+          <bookmark:application name="eeschema" exec="&apos;eeschema %u&apos;" modified="2015-11-30T01:11:57Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/Catalogo_web.pdf" added="2015-11-25T15:28:28Z" modified="2015-11-25T15:28:28Z" visited="2015-11-25T15:28:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-25T15:28:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/Catalogo_web.pdf" added="2015-11-25T15:28:33Z" modified="2015-11-25T15:28:33Z" visited="2015-11-25T15:28:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-25T15:28:33Z" count="1"/>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-11-25T15:28:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/Catalogo_web(1).pdf" added="2015-11-25T15:30:04Z" modified="2015-11-25T15:30:04Z" visited="2015-11-25T15:30:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-25T15:30:04Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/componentes.xls" added="2015-11-30T11:32:04Z" modified="2015-11-30T12:08:31Z" visited="2015-11-30T11:32:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-30T11:45:59Z" count="2"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-11-30T12:08:31Z" count="8"/>
+          <bookmark:application name="nautilus" exec="&apos;libreoffice --calc %U&apos;" modified="2015-11-30T11:53:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/TECNITOWER%20S.A.2015-11-25.pdf" added="2015-11-30T11:39:16Z" modified="2015-11-30T11:39:16Z" visited="2015-11-30T11:39:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-11-30T11:39:16Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/componentes.xls" added="2015-11-30T11:46:20Z" modified="2015-11-30T11:46:23Z" visited="2015-11-30T11:46:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-11-30T11:46:23Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/componentes-1.xls" added="2015-11-30T11:51:35Z" modified="2015-11-30T11:51:50Z" visited="2015-11-30T11:51:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-30T11:51:35Z" count="1"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-11-30T11:51:50Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/componentes(1).xls" added="2015-11-30T11:51:55Z" modified="2015-11-30T14:05:40Z" visited="2015-11-30T11:51:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-30T11:51:55Z" count="1"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-11-30T14:05:40Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/ListadocomponentesArlex.xls" added="2015-11-30T11:54:28Z" modified="2015-11-30T11:54:28Z" visited="2015-11-30T11:54:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-30T11:54:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/FANMONO.net" added="2015-11-30T12:26:15Z" modified="2015-11-30T14:47:48Z" visited="2015-11-30T12:26:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-11-30T14:47:48Z" count="5"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2015-11-30T12:58:25Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/placa0.1-2015-11-30.zip" added="2015-11-30T13:18:11Z" modified="2015-11-30T13:25:48Z" visited="2015-11-30T13:18:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-11-30T13:18:11Z" count="1"/>
+          <bookmark:application name="Archive Manager" exec="&apos;file-roller %u&apos;" modified="2015-11-30T13:25:48Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2015-11-30T13:25:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas" added="2015-11-30T13:25:56Z" modified="2015-11-30T13:25:56Z" visited="2015-11-30T13:25:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Archive Manager" exec="&apos;file-roller %u&apos;" modified="2015-11-30T13:25:56Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/placa0.1/placa0.1din(14).pro" added="2015-11-30T13:27:02Z" modified="2015-11-30T13:28:55Z" visited="2015-11-30T13:27:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-kicad-project"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-11-30T13:28:55Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/placa0.1/placa0(10)(2).kicad_pcb" added="2015-11-30T13:27:18Z" modified="2015-11-30T13:27:18Z" visited="2015-11-30T13:27:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-11-30T13:27:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/placa0.1/placa0(10).kicad_pcb" added="2015-11-30T13:27:29Z" modified="2015-11-30T13:27:29Z" visited="2015-11-30T13:27:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-11-30T13:27:29Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Descargas/placa0.1/placa0(11).kicad_pcb" added="2015-11-30T13:27:37Z" modified="2015-11-30T13:27:37Z" visited="2015-11-30T13:27:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-11-30T13:27:37Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/chillemi.kicad_pcb" added="2015-11-30T13:28:12Z" modified="2015-11-30T13:34:49Z" visited="2015-11-30T13:28:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-11-30T13:34:49Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Escritorio/LANDE_B.jpg" added="2015-12-01T00:48:56Z" modified="2015-12-01T00:52:46Z" visited="2015-12-01T00:48:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-12-01T00:52:46Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/pr.kicad_pcb" added="2015-12-01T13:14:50Z" modified="2015-12-01T19:35:45Z" visited="2015-12-01T13:14:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="kicad" exec="&apos;kicad %u&apos;" modified="2015-12-01T13:14:50Z" count="1"/>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-12-01T19:35:45Z" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/monofan/pr.dsn" added="2015-12-01T14:46:08Z" modified="2015-12-01T14:46:08Z" visited="2015-12-01T14:46:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="pcbnew" exec="&apos;pcbnew %u&apos;" modified="2015-12-01T14:46:08Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/switcher-B_Cu.pdf" added="2015-12-03T23:01:15Z" modified="2015-12-03T23:01:15Z" visited="2015-12-03T23:01:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-03T23:01:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/switcher-B_SilkS.pdf" added="2015-12-03T23:02:42Z" modified="2015-12-03T23:02:42Z" visited="2015-12-03T23:02:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-03T23:02:42Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/switcher-F_SilkS.pdf" added="2015-12-03T23:03:01Z" modified="2015-12-03T23:03:01Z" visited="2015-12-03T23:03:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-03T23:03:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/control1.0/switcher-B_Cu.pdf" added="2015-12-03T23:06:03Z" modified="2015-12-03T23:06:03Z" visited="2015-12-03T23:06:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-12-03T23:06:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/switcher/control1.0/switcher-F_Cu.pdf" added="2015-12-03T23:06:03Z" modified="2015-12-03T23:06:03Z" visited="2015-12-03T23:06:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-12-03T23:06:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/Normas%20ISA%20S5-25.pps" added="2015-12-04T11:11:09Z" modified="2015-12-04T11:47:35Z" visited="2015-12-04T11:11:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-powerpoint"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-12-04T11:47:33Z" count="2"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-12-04T11:47:35Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Costos%20SC10.xls" added="2015-12-04T11:40:00Z" modified="2015-12-04T11:40:08Z" visited="2015-12-04T11:40:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;libreoffice --calc %U&apos;" modified="2015-12-04T11:40:00Z" count="1"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-12-04T11:40:08Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/SC20-V3.jpg" added="2015-12-04T11:40:28Z" modified="2015-12-04T11:40:29Z" visited="2015-12-04T11:40:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;eog %U&apos;" modified="2015-12-04T11:40:28Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:29Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/2014-10-29%2019.43.40.jpg" added="2015-12-04T11:40:50Z" modified="2015-12-04T11:40:50Z" visited="2015-12-04T11:40:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:50Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/2014-10-29%2019.44.12.jpg" added="2015-12-04T11:40:53Z" modified="2015-12-04T11:40:53Z" visited="2015-12-04T11:40:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:53Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06573.JPG" added="2015-12-04T11:40:54Z" modified="2015-12-04T11:40:54Z" visited="2015-12-04T11:40:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:54Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06573-1.jpg" added="2015-12-04T11:40:56Z" modified="2015-12-04T11:40:56Z" visited="2015-12-04T11:40:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:56Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06574.JPG" added="2015-12-04T11:40:58Z" modified="2015-12-04T11:40:58Z" visited="2015-12-04T11:40:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06575.JPG" added="2015-12-04T11:40:59Z" modified="2015-12-04T11:40:59Z" visited="2015-12-04T11:40:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:40:59Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06576.JPG" added="2015-12-04T11:41:00Z" modified="2015-12-04T11:41:00Z" visited="2015-12-04T11:41:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:41:00Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06577.JPG" added="2015-12-04T11:41:02Z" modified="2015-12-04T11:41:02Z" visited="2015-12-04T11:41:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:41:02Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06578.JPG" added="2015-12-04T11:41:04Z" modified="2015-12-04T11:41:04Z" visited="2015-12-04T11:41:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:41:04Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Fotos/DSC06578-1.jpg" added="2015-12-04T11:41:05Z" modified="2015-12-04T11:41:05Z" visited="2015-12-04T11:41:05Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2015-12-04T11:41:05Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Placa_SC20.pdf" added="2015-12-04T11:41:29Z" modified="2015-12-04T12:23:16Z" visited="2015-12-04T11:41:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T12:23:16Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Algoritmo%20SC20.pdf" added="2015-12-04T11:43:17Z" modified="2015-12-04T11:43:17Z" visited="2015-12-04T11:43:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T11:43:17Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/Normas%20ISA%20S5-25-1.pps" added="2015-12-04T11:48:05Z" modified="2015-12-04T11:48:07Z" visited="2015-12-04T11:48:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-powerpoint"/>
+        <bookmark:applications>
+          <bookmark:application name="Iceweasel" exec="&apos;iceweasel %u&apos;" modified="2015-12-04T11:48:05Z" count="1"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-12-04T11:48:07Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Entradas%20y%20salidas-V2.xls" added="2015-12-04T12:01:11Z" modified="2015-12-04T12:01:12Z" visited="2015-12-04T12:01:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.ms-excel"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;libreoffice --calc %U&apos;" modified="2015-12-04T12:01:11Z" count="1"/>
+          <bookmark:application name="LibreOffice 5.0" exec="&apos;soffice %u&apos;" modified="2015-12-04T12:01:12Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Entradas%20y%20salidas-V2.pdf" added="2015-12-04T12:14:10Z" modified="2015-12-04T12:14:10Z" visited="2015-12-04T12:14:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T12:14:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/esquematico%20control%20de%20entradas-1.pdf" added="2015-12-04T12:14:57Z" modified="2015-12-04T12:14:57Z" visited="2015-12-04T12:14:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T12:14:57Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Esquematico%20SC20.pdf" added="2015-12-04T12:16:51Z" modified="2015-12-04T12:16:51Z" visited="2015-12-04T12:16:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T12:16:51Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/amid/Documentos/Proyectos/Desarrollos/Placa_SC20-1S.pdf" added="2015-12-04T12:23:02Z" modified="2015-12-04T12:23:02Z" visited="2015-12-04T12:23:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Visor de documentos" exec="&apos;evince %u&apos;" modified="2015-12-04T12:23:02Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

@@ -1,0 +1,302 @@
+ = 177;
+ }
+}
+
+
+void BuscoFalla3 ()
+{
+ int cont;
+
+ if (ED3 == 0)
+ {
+ LED3 = 1;
+ cont = 0;
+ while ((cont < SegFalla) && (ED3 == 0))
+ {
+ cont ++;
+ delay_ms (1000);
+ }
+ if (cont == SegFalla)
+ {
+ SD1 = 0;
+ SD2 = 0;
+ ContFallasED3 ++;
+ }
+ else
+ LED3 = 0;
+ while ((ED3 == 0) && (ContFallasED3 < CantMaxFallas));
+ ContSegParada = 0;
+ if ( ( ContFallasED3 == CantMaxFallas ) && ( SegFallaED3 <= SegCantFallasMax ) )
+ {
+ SD1 = SD2 = 0;
+ ApagoFalsaFalla ();
+ while (1)
+ {
+ LED3 = 1 ;
+ BUZ = 1;
+ }
+ }
+ }
+
+ if (ED4 == 0)
+ {
+ LED4 = 1;
+ cont = 0;
+ while ((cont < SegFalla) && (ED4 == 0))
+ {
+ cont ++;
+ delay_ms (1000);
+ }
+ if (cont == SegFalla)
+ {
+ SD1 = 0;
+ SD2 = 0;
+ ContFallasED4 ++;
+ }
+ else
+ LED4 = 0;
+ while ((ED4 == 0) && (ContFallasED4 < CantMaxFallas));
+ ContSegParada = 0;
+ if ( ( ContFallasED4 == CantMaxFallas ) && ( SegFallaED4 <= SegCantFallasMax ) )
+ {
+ SD1 = SD2 = 0;
+ ApagoFalsaFalla ();
+ while (1)
+ {
+ LED4 = 1;
+ BUZ = 1;
+ }
+ }
+ }
+
+ if (ED5 == 0)
+ {
+ LED5 = 1;
+ cont = 0;
+ while ((cont < SegFalla) && (ED5 == 0))
+ {
+ cont ++;
+ delay_ms (1000);
+ }
+ if (cont == SegFalla)
+ {
+ SD1 = 0;
+ SD2 = 0;
+ ContFallasED5 ++;
+ }
+ else
+ LED5 = 0;
+ while ((ED5 == 0) && (ContFallasED5 < CantMaxFallas));
+ ContSegParada = 0;
+ if ( ( ContFallasED5 == CantMaxFallas ) && ( SegFallaED5 <= SegCantFallasMax ) )
+ {
+ SD1 = SD2 = 0;
+ ApagoFalsaFalla ();
+ while (1)
+ {
+ LED5 = 1;
+ BUZ = 1;
+ }
+ }
+ }
+
+ AD = ADC_Read(13);
+ if (AD < 613)
+ {
+ LEA1 = 1;
+ cont = 0;
+ while ((cont < SegFalla) && (AD < 613))
+ {
+ cont ++;
+ delay_ms (1000);
+ AD = ADC_Read (13);
+ }
+ if (cont == SegFalla)
+ {
+ SD1 = 0;
+ SD2 = 0;
+ ContFallasEA1 ++;
+ }
+ else
+ LEA1 = 0;
+ while ((AD < 613) && (ContFallasEA1 < CantMaxFallas))
+ {
+ AD = ADC_Read (13);
+ }
+ ContSegParada = 0;
+ if ( ( ContFallasEA1 == CantMaxFallas ) && ( SegFallaEA1 <= SegCantFallasMax ) )
+ {
+ SD1 = SD2 = 0;
+ ApagoFalsaFalla ();
+ while (1)
+ {
+ LEA1 = 1;
+ BUZ = 1;
+ }
+ }
+ }
+}
+
+
+void main()
+{
+ int cont;
+ char primeravez;
+
+ Config();
+
+ PortA = 0;
+ TrisA = 0b00000001;
+ PortB = 0;
+ TrisB = 0b00111111;
+ PortC = 0;
+ TrisC = 0b10000000;
+ PortE = 0;
+ TrisE = 0b00000001;
+
+ Ini();
+ primeravez = 1;
+
+ Bienvenida ();
+
+ while (1)
+ {
+
+ cont = 0;
+ while ((cont < 15) && (ED1 == 1))
+ {
+ cont ++;
+ delay_ms(2);
+ }
+ if (cont < 15)
+ {
+ LED1 = 1;
+ if (Pump == 0)
+ {
+ if (primeravez == 1)
+ {
+ SD2 = 1;
+ if (ED2 == 1)
+ SD1 = 1;
+ else
+ SD1 = 0;
+ cont = 0;
+ while ((cont < SegPumpDown) && (ED2 == 0))
+ {
+ cont ++;
+ delay_ms (1000);
+ }
+ if (cont < SegPumpDown && ED2 == 1)
+ SD1 = 1;
+ if (cont == SegPumpDown)
+ {
+ SD1 = SD2 = 0;
+ LED1 = 0;
+ BUZ = 1;
+ while (1)
+ {
+ LED1 = 1;
+ BUZ = 1;
+ delay_ms (250);
+ LED1 = 0;
+ BUZ = 1;
+ delay_ms (1000);
+ }
+ }
+ }
+ primeravez = 0;
+ }
+
+
+ if ( ContSegParada >= SegMaqParada )
+ {
+ SD1 = SD2 = 1;
+ ContSegParada = 200;
+ }
+
+ if (ED2 == 0)
+ {
+ LED2 = 1;
+ cont = 0;
+ while ((cont < SegFalla) && (ED2 == 0))
+ {
+ cont ++;
+ delay_ms (1000);
+ }
+ if (cont == SegFalla)
+ {
+ SD1 = 0;
+ SD2 = 0;
+ ContFallasED2 ++;
+ }
+ else
+ LED2 = 0;
+ while ((ED2 == 0) && (ContFallasED2 < CantMaxFallas));
+ ContSegParada = 0;
+ if ( ( ContFallasED2 == CantMaxFallas ) && ( SegFallaED2 <= SegCantFallasMax ) )
+ {
+ SD1 = SD2 = 0;
+ ApagoFalsaFalla ();
+ while (1)
+ {
+ LED2 = 1;
+ BUZ = 1;
+ }
+ }
+ }
+
+ BuscoFalla3 ();
+
+ }
+ else
+ {
+ primeravez = 1;
+ LED1 = 0;
+ if (Pump == 0)
+ {
+ SD2 = 0;
+ if (ED2 == 1)
+ {
+ cont45seg = 0;
+ while ((cont45seg < SegPumpDown) && (ED2 == 1))
+ {
+ BuscoFalla3();
+ if (ED1 == 0)
+ {
+ break;
+ }
+ }
+ if ((cont45seg == SegPumpDown) && (ED2 == 1))
+ {
+
+ SD1 = SD2 = 0;
+ LED1 = 0;
+ BUZ = 1;
+ while (1)
+ {
+ LED1 = 1;
+ BUZ = 1;
+ delay_ms (250);
+ LED1 = 0;
+ BUZ = 1;
+ delay_ms (250);
+ LED1 = 1;
+ BUZ = 1;
+ delay_ms (250);
+ LED1 = 0;
+ BUZ = 1;
+ delay_ms (2000);
+ }
+ }
+ }
+ SD1 = 0;
+ ContSegParada = 0;
+ }
+ else
+ {
+ SD1 = 0;
+ ContSegParada = 0;
+ }
+ }
+ }
+}

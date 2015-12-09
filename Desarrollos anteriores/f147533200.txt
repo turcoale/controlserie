@@ -1,0 +1,12 @@
+main
+	__CC2DW
+		____DoICP
+	Config
+	Ini
+	Bienvenida
+	ApagoFalsaFalla
+	BuscoFalla3
+		ApagoFalsaFalla
+		ADC_Read
+			Delay_22us
+interrupt

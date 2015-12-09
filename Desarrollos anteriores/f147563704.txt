@@ -1,0 +1,8 @@
+ OK
+Content-Type: image/jpeg
+Last-Modified: Tue, 24 Nov 2015 18:23:36 GMT
+Accept-Ranges: bytes
+Etag: "1ad7113ce526d11:0"
+Content-Length: 69482
+Expires: Wed, 02 Dec 2015 21:59:07 GMT
+Date: Thu, 26 Nov 2015 02:04:36 GMT

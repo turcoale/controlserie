@@ -1,0 +1,33 @@
+x+1, 0
+0x0072	0x00F0      	MOVWF      R0
+0x0073	0x3080      	MOVLW      128
+0x0074	0x062C      	XORWF      _SegFallaED3+1, 0
+0x0075	0x0270      	SUBWF      R0, 0
+0x0076	0x1D03      	BTFSS      STATUS, 2
+0x0077	0x287A      	GOTO       L__interrupt195
+0x0078	0x082B      	MOVF       _SegFallaED3, 0
+0x0079	0x0224      	SUBWF      _SegCantFallasMax, 0
+L__interrupt195:
+0x007A	0x1803      	BTFSC      STATUS, 0
+0x007B	0x2880      	GOTO       L_interrupt31
+;control de entradas v2.c,240 :: 		SegFallaED3 = 0; // reseteo contador fallas ED3
+0x007C	0x01AB      	CLRF       _SegFallaED3
+0x007D	0x01AC      	CLRF       _SegFallaED3+1
+;control de entradas v2.c,241 :: 		ContFallasED3 = 0;
+0x007E	0x01A9      	CLRF       _ContFallasED3
+;control de entradas v2.c,242 :: 		LED3 = 0;
+0x007F	0x1385      	BCF        PORTA, 7
+;control de entradas v2.c,243 :: 		}
+L_interrupt31:
+;control de entradas v2.c,244 :: 		}
+L_interrupt30:
+;control de entradas v2.c,246 :: 		if ( ContFallasED4 > 0) // hubo alguna falla en ED4 ?
+0x0080	0x0828      	MOVF       _ContFallasED4, 0
+0x0081	0x3C00      	SUBLW      0
+0x0082	0x1803      	BTFSC      STATUS, 0
+0x0083	0x2897      	GOTO       L_interrupt32
+;control de entradas v2.c,248 :: 		SegFallaED4 ++; // sumo un segundo al cont
+0x0084	0x0AB6      	INCF       _SegFallaED4, 1
+0x0085	0x1903      	BTFSC      STATUS, 2
+0x0086	0x0AB7      	INCF       _SegFallaED4+1, 1
+;control de entradas v2.c,249 :: 		if ( SegFallaED4 > SegCantFallasMax ) // pas

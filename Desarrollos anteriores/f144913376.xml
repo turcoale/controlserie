@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" open-window-count="0" score="1" last-seen="1449229791"/>
+    <application id="qutecom.desktop" open-window-count="0" score="2" last-seen="1449261415"/>
+    <application id="synaptic.desktop" open-window-count="0" score="0" last-seen="1449657613"/>
+    <application id="iceweasel.desktop" open-window-count="1" score="15461" last-seen="1449658506"/>
+    <application id="org.gnome.Nautilus.desktop" open-window-count="1" score="211" last-seen="1449658544"/>
+    <application id="eog.desktop" open-window-count="0" score="3" last-seen="1449229267"/>
+    <application id="gnome-terminal.desktop" open-window-count="2" score="1370" last-seen="1449658539"/>
+    <application id="libreoffice-calc.desktop" open-window-count="0" score="241" last-seen="1449240838"/>
+    <application id="evince.desktop" open-window-count="0" score="170" last-seen="1449241748"/>
+    <application id="dia.desktop" open-window-count="0" score="79" last-seen="1449230398"/>
+    <application id="kicad.desktop" open-window-count="0" score="3483" last-seen="1449184041"/>
+    <application id="libreoffice-writer.desktop" open-window-count="0" score="2" last-seen="1449227417"/>
+    <application id="libreoffice-impress.desktop" open-window-count="1" score="31" last-seen="1449658544"/>
+  </context>
+</application-state>

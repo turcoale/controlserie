@@ -1,0 +1,152 @@
+ada, 0: salida
+ PortC = 0;
+ TrisC = 0b10000000; // 1: entrada, 0: salida
+ PortE = 0;
+ TrisE = 0b00000001; // 1: entrada, 0: salida
+
+ Ini();
+ primeravez = 1;
+
+ Bienvenida ();
+
+ while (1)
+ {
+ 
+  cont = 0;
+  while ((cont < 15) && (ED1 == 1)) // veo si en ED1 hay 220V
+  {
+   cont ++;
+   delay_ms(2); // delay 2 mSeg
+  }
+  if (cont < 15) // hay 220V? = ED1 cerrada?
+  {
+   LED1 = 1; // prendo LED1
+   if (Pump == 0) // con Pump Down?
+   {
+    if (primeravez == 1)
+    {
+     SD2 = 1;
+     if (ED2 == 1)
+       SD1 = 1;
+     else
+        SD1 = 0;
+     cont = 0;
+     while ((cont < SegPumpDown) && (ED2 == 0)) // espero 45 Seg o que se cierre ED2
+     {
+      cont ++;
+      delay_ms (1000);
+     }
+     if (cont < SegPumpDown && ED2 == 1)
+        SD1 = 1;
+     if (cont == SegPumpDown) // pasaron 45 Seg y ED2 sigue abierta?
+     {
+      SD1 = SD2 = 0; // abro SD1 y SD2
+      LED1 = 0;
+      BUZ = 1; // cierro SD3 Alarma
+      while (1) // titla LED1 hasta Reset Manual: 1 Destello, 2 Seg Apagado
+      {
+       LED1 = 1;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (250);
+       LED1 = 0;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (1000);
+      }
+     }
+    }
+    primeravez = 0;
+   }
+   
+   // Sin Pump Down o secuencia de Pump Down correcta
+   if ( ContSegParada >= SegMaqParada ) // estuvo parada más de 3 Min?
+   {
+    SD1 = SD2 = 1; // cierro SD1
+    ContSegParada = 200; // Reset contador
+   }
+   
+   if (ED2 == 0) // ED2 abierta?
+   {
+    LED2 = 1; // enciendo LED2
+    cont = 0;
+    while ((cont < SegFalla) && (ED2 == 0)) // espero 10 Seg o que se cierre ED2
+    {
+     cont ++;
+     delay_ms (1000);
+    }
+    if (cont == SegFalla) // pasaron 10 Seg?
+    {
+     SD1 = 0; // abro SD1
+     SD2 = 0;
+     ContFallasED2 ++; // sumo 1 falla de ED2
+    }
+    else
+        LED2 = 0; // apago LED2 por falsa falla
+    while ((ED2 == 0) && (ContFallasED2 < CantMaxFallas)); // espero que pase la falla de ED2 o no sea la última
+    ContSegParada = 0; // empiezo a contar tiempo máquina parada
+    if ( ( ContFallasED2 == CantMaxFallas ) && ( SegFallaED2 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+    {
+     SD1 = SD2 = 0; // abro SD1 y SD2
+     ApagoFalsaFalla ();
+     while (1)
+     {
+      LED2 = 1; // enciende LED2 hasta Reset manual
+      BUZ = 1; // cierro SD3 Alarma
+     }
+    }
+   }
+   
+   BuscoFalla3 (); // reviso desde ED3 a EA1 por Fallas
+   
+  }
+  else // no hay 220V => ED1 abierta
+  {
+   primeravez = 1;
+   LED1 = 0;
+   if (Pump == 0) // con Pump Down?
+   {
+    SD2 = 0; // abro SD2
+    if (ED2 == 1) // ED2 cerrada?
+    {
+     cont45seg = 0;
+     while ((cont45seg < SegPumpDown) && (ED2 == 1)) // espero 45 Seg o que se abra ED2
+     {
+      BuscoFalla3(); // reviso desde ED3 a EA1 por fallas
+      if (ED1 == 0)
+      {
+       break;
+      }
+     }
+     if ((cont45seg == SegPumpDown) && (ED2 == 1)) // pasaron 45 Seg y ED2 sigue cerrada?
+     {
+      //BUZ = 1;
+      SD1 = SD2 = 0; // abro SD1 y SD2
+      LED1 = 0;
+      BUZ = 1; // cierro SD3 Alarma*/
+      while (1) // titila LED1 hasta Reset Manual: 2 Destellos, 2 Seg Apagado
+      {
+       LED1 = 1;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (250);
+       LED1 = 0;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (250);
+       LED1 = 1;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (250);
+       LED1 = 0;
+       BUZ = 1; // cierro SD3 Alarma
+       delay_ms (2000);
+      }
+     }
+    }
+    SD1 = 0;
+    ContSegParada = 0;
+   }
+   else
+   {
+    SD1 = 0;
+    ContSegParada = 0;
+   }
+  }
+ }
+}

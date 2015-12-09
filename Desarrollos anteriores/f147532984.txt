@@ -1,0 +1,370 @@
+3_cont_L0+1, 0
+0x0255	0x00F0      	MOVWF      R0
+0x0256	0x3080      	MOVLW      128
+0x0257	0x0270      	SUBWF      R0, 0
+0x0258	0x1D03      	BTFSS      STATUS, 2
+0x0259	0x2A5C      	GOTO       L__BuscoFalla3216
+0x025A	0x0823      	MOVF       _SegFalla, 0
+0x025B	0x0245      	SUBWF      BuscoFalla3_cont_L0, 0
+L__BuscoFalla3216:
+0x025C	0x1803      	BTFSC      STATUS, 0
+0x025D	0x2A84      	GOTO       L_BuscoFalla391
+0x025E	0x3080      	MOVLW      128
+0x025F	0x0639      	XORWF      _AD+1, 0
+0x0260	0x00F0      	MOVWF      R0
+0x0261	0x3080      	MOVLW      128
+0x0262	0x3A02      	XORLW      2
+0x0263	0x0270      	SUBWF      R0, 0
+0x0264	0x1D03      	BTFSS      STATUS, 2
+0x0265	0x2A68      	GOTO       L__BuscoFalla3217
+0x0266	0x3065      	MOVLW      101
+0x0267	0x0238      	SUBWF      _AD, 0
+L__BuscoFalla3217:
+0x0268	0x1803      	BTFSC      STATUS, 0
+0x0269	0x2A84      	GOTO       L_BuscoFalla391
+L__BuscoFalla3169:
+;control de entradas v2.c,392 :: 		cont ++;
+0x026A	0x0AC5      	INCF       BuscoFalla3_cont_L0, 1
+0x026B	0x1903      	BTFSC      STATUS, 2
+0x026C	0x0AC6      	INCF       BuscoFalla3_cont_L0+1, 1
+;control de entradas v2.c,393 :: 		delay_ms (1000);
+0x026D	0x300B      	MOVLW      11
+0x026E	0x00FB      	MOVWF      R11
+0x026F	0x3026      	MOVLW      38
+0x0270	0x00FC      	MOVWF      R12
+0x0271	0x305D      	MOVLW      93
+0x0272	0x00FD      	MOVWF      R13
+L_BuscoFalla394:
+0x0273	0x0BFD      	DECFSZ     R13, 1
+0x0274	0x2A73      	GOTO       L_BuscoFalla394
+0x0275	0x0BFC      	DECFSZ     R12, 1
+0x0276	0x2A73      	GOTO       L_BuscoFalla394
+0x0277	0x0BFB      	DECFSZ     R11, 1
+0x0278	0x2A73      	GOTO       L_BuscoFalla394
+0x0279	0x0000      	NOP
+0x027A	0x0000      	NOP
+;control de entradas v2.c,394 :: 		AD = ADC_Read (13); // leo A/D
+0x027B	0x300D      	MOVLW      13
+0x027C	0x00C7      	MOVWF      FARG_ADC_Read_channel
+0x027D	0x20DA      	CALL       _ADC_Read
+0x027E	0x0870      	MOVF       R0, 0
+0x027F	0x1283      	BCF        STATUS, 5
+0x0280	0x00B8      	MOVWF      _AD
+0x0281	0x0871      	MOVF       R0+1, 0
+0x0282	0x00B9      	MOVWF      _AD+1
+;control de entradas v2.c,395 :: 		}
+0x0283	0x2A53      	GOTO       L_BuscoFalla390
+L_BuscoFalla391:
+;control de entradas v2.c,396 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+0x0284	0x3000      	MOVLW      0
+0x0285	0x0646      	XORWF      BuscoFalla3_cont_L0+1, 0
+0x0286	0x1D03      	BTFSS      STATUS, 2
+0x0287	0x2A8A      	GOTO       L__BuscoFalla3218
+0x0288	0x0823      	MOVF       _SegFalla, 0
+0x0289	0x0645      	XORWF      BuscoFalla3_cont_L0, 0
+L__BuscoFalla3218:
+0x028A	0x1D03      	BTFSS      STATUS, 2
+0x028B	0x2A90      	GOTO       L_BuscoFalla395
+;control de entradas v2.c,398 :: 		SD1 = 0; // abro SD1
+0x028C	0x1107      	BCF        PORTC, 2
+;control de entradas v2.c,399 :: 		SD2 = 0;
+0x028D	0x1187      	BCF        PORTC, 3
+;control de entradas v2.c,400 :: 		ContFallasEA1 ++; // sumo 1 falla de EA1
+0x028E	0x0AAA      	INCF       _ContFallasEA1, 1
+;control de entradas v2.c,401 :: 		}
+0x028F	0x2A91      	GOTO       L_BuscoFalla396
+L_BuscoFalla395:
+;control de entradas v2.c,403 :: 		LEA1 = 0; // apago LEA1 por falsa falla
+0x0290	0x1386      	BCF        PORTB, 7
+L_BuscoFalla396:
+;control de entradas v2.c,404 :: 		while ((AD < 613) && (ContFallasEA1 < CantMaxFallas)) // espero que pase la falla de EA1 o no sea la última
+L_BuscoFalla397:
+0x0291	0x3080      	MOVLW      128
+0x0292	0x0639      	XORWF      _AD+1, 0
+0x0293	0x00F0      	MOVWF      R0
+0x0294	0x3080      	MOVLW      128
+0x0295	0x3A02      	XORLW      2
+0x0296	0x0270      	SUBWF      R0, 0
+0x0297	0x1D03      	BTFSS      STATUS, 2
+0x0298	0x2A9B      	GOTO       L__BuscoFalla3219
+0x0299	0x3065      	MOVLW      101
+0x029A	0x0238      	SUBWF      _AD, 0
+L__BuscoFalla3219:
+0x029B	0x1803      	BTFSC      STATUS, 0
+0x029C	0x2AAA      	GOTO       L_BuscoFalla398
+0x029D	0x0826      	MOVF       _CantMaxFallas, 0
+0x029E	0x022A      	SUBWF      _ContFallasEA1, 0
+0x029F	0x1803      	BTFSC      STATUS, 0
+0x02A0	0x2AAA      	GOTO       L_BuscoFalla398
+L__BuscoFalla3168:
+;control de entradas v2.c,406 :: 		AD = ADC_Read (13); // leo A/D
+0x02A1	0x300D      	MOVLW      13
+0x02A2	0x00C7      	MOVWF      FARG_ADC_Read_channel
+0x02A3	0x20DA      	CALL       _ADC_Read
+0x02A4	0x0870      	MOVF       R0, 0
+0x02A5	0x1283      	BCF        STATUS, 5
+0x02A6	0x00B8      	MOVWF      _AD
+0x02A7	0x0871      	MOVF       R0+1, 0
+0x02A8	0x00B9      	MOVWF      _AD+1
+;control de entradas v2.c,407 :: 		}
+0x02A9	0x2A91      	GOTO       L_BuscoFalla397
+L_BuscoFalla398:
+;control de entradas v2.c,408 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+0x02AA	0x01B5      	CLRF       _ContSegParada
+;control de entradas v2.c,409 :: 		if ( ( ContFallasEA1 == CantMaxFallas ) && ( SegFallaEA1 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+0x02AB	0x082A      	MOVF       _ContFallasEA1, 0
+0x02AC	0x0626      	XORWF      _CantMaxFallas, 0
+0x02AD	0x1D03      	BTFSS      STATUS, 2
+0x02AE	0x2AC5      	GOTO       L_BuscoFalla3103
+0x02AF	0x3080      	MOVLW      128
+0x02B0	0x0625      	XORWF      _SegCantFallasMax+1, 0
+0x02B1	0x00F0      	MOVWF      R0
+0x02B2	0x3080      	MOVLW      128
+0x02B3	0x063B      	XORWF      _SegFallaEA1+1, 0
+0x02B4	0x0270      	SUBWF      R0, 0
+0x02B5	0x1D03      	BTFSS      STATUS, 2
+0x02B6	0x2AB9      	GOTO       L__BuscoFalla3220
+0x02B7	0x083A      	MOVF       _SegFallaEA1, 0
+0x02B8	0x0224      	SUBWF      _SegCantFallasMax, 0
+L__BuscoFalla3220:
+0x02B9	0x1C03      	BTFSS      STATUS, 0
+0x02BA	0x2AC5      	GOTO       L_BuscoFalla3103
+L__BuscoFalla3167:
+;control de entradas v2.c,411 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+0x02BB	0x1187      	BCF        PORTC, 3
+0x02BC	0x1987      	BTFSC      PORTC, 3
+0x02BD	0x2AC0      	GOTO       L__BuscoFalla3221
+0x02BE	0x1107      	BCF        PORTC, 2
+0x02BF	0x2AC1      	GOTO       L__BuscoFalla3222
+L__BuscoFalla3221:
+0x02C0	0x1507      	BSF        PORTC, 2
+L__BuscoFalla3222:
+;control de entradas v2.c,412 :: 		ApagoFalsaFalla ();
+0x02C1	0x20FC      	CALL       _ApagoFalsaFalla
+;control de entradas v2.c,413 :: 		while (1)
+L_BuscoFalla3104:
+;control de entradas v2.c,415 :: 		LEA1 = 1; // enciende LEA1 hasta Reset manual
+0x02C2	0x1786      	BSF        PORTB, 7
+;control de entradas v2.c,416 :: 		BUZ = 1; // cierro SD3 Alarma
+0x02C3	0x1407      	BSF        PORTC, 0
+;control de entradas v2.c,417 :: 		}
+0x02C4	0x2AC2      	GOTO       L_BuscoFalla3104
+;control de entradas v2.c,418 :: 		}
+L_BuscoFalla3103:
+;control de entradas v2.c,419 :: 		}
+L_BuscoFalla389:
+;control de entradas v2.c,420 :: 		}
+L_end_BuscoFalla3:
+0x02C5	0x0008      	RETURN
+; end of _BuscoFalla3
+___CC2DW:
+;__Lib_System.c,134 :: 		
+;__Lib_System.c,137 :: 		
+_CC2D_Loop1:
+;__Lib_System.c,139 :: 		
+0x02C6	0x2118      	CALL       _____DoICP
+0x02C7	0x118A      	BCF        PCLATH, 3
+0x02C8	0x120A      	BCF        PCLATH, 4
+;__Lib_System.c,141 :: 		
+0x02C9	0x0080      	MOVWF      INDF
+;__Lib_System.c,142 :: 		
+0x02CA	0x0A84      	INCF       FSR, 1
+;__Lib_System.c,143 :: 		
+0x02CB	0x0ABE      	INCF       ___DoICPAddr, 1
+;__Lib_System.c,145 :: 		
+0x02CC	0x1903      	BTFSC      STATUS, 2
+;__Lib_System.c,146 :: 		
+0x02CD	0x0ABF      	INCF       ___DoICPAddr+1, 1
+;__Lib_System.c,147 :: 		
+0x02CE	0x03F0      	DECF       R0, 1
+;__Lib_System.c,149 :: 		
+0x02CF	0x1D03      	BTFSS      STATUS, 2
+;__Lib_System.c,150 :: 		
+0x02D0	0x2AC6      	GOTO       _CC2D_Loop1
+;__Lib_System.c,152 :: 		
+L_end___CC2DW:
+0x02D1	0x0008      	RETURN
+; end of ___CC2DW
+_Bienvenida:
+;control de entradas v2.c,54 :: 		void Bienvenida ()
+;control de entradas v2.c,56 :: 		LED1 = 1;
+0x02D2	0x1283      	BCF        STATUS, 5
+0x02D3	0x1303      	BCF        STATUS, 6
+0x02D4	0x1607      	BSF        PORTC, 4
+;control de entradas v2.c,57 :: 		delay_ms(50);
+0x02D5	0x3082      	MOVLW      130
+0x02D6	0x00FC      	MOVWF      R12
+0x02D7	0x30DD      	MOVLW      221
+0x02D8	0x00FD      	MOVWF      R13
+L_Bienvenida0:
+0x02D9	0x0BFD      	DECFSZ     R13, 1
+0x02DA	0x2AD9      	GOTO       L_Bienvenida0
+0x02DB	0x0BFC      	DECFSZ     R12, 1
+0x02DC	0x2AD9      	GOTO       L_Bienvenida0
+0x02DD	0x0000      	NOP
+0x02DE	0x0000      	NOP
+;control de entradas v2.c,58 :: 		LED2 = 1;
+0x02DF	0x1687      	BSF        PORTC, 5
+;control de entradas v2.c,59 :: 		delay_ms(50);
+0x02E0	0x3082      	MOVLW      130
+0x02E1	0x00FC      	MOVWF      R12
+0x02E2	0x30DD      	MOVLW      221
+0x02E3	0x00FD      	MOVWF      R13
+L_Bienvenida1:
+0x02E4	0x0BFD      	DECFSZ     R13, 1
+0x02E5	0x2AE4      	GOTO       L_Bienvenida1
+0x02E6	0x0BFC      	DECFSZ     R12, 1
+0x02E7	0x2AE4      	GOTO       L_Bienvenida1
+0x02E8	0x0000      	NOP
+0x02E9	0x0000      	NOP
+;control de entradas v2.c,60 :: 		LED3 = 1;
+0x02EA	0x1785      	BSF        PORTA, 7
+;control de entradas v2.c,61 :: 		delay_ms(50);
+0x02EB	0x3082      	MOVLW      130
+0x02EC	0x00FC      	MOVWF      R12
+0x02ED	0x30DD      	MOVLW      221
+0x02EE	0x00FD      	MOVWF      R13
+L_Bienvenida2:
+0x02EF	0x0BFD      	DECFSZ     R13, 1
+0x02F0	0x2AEF      	GOTO       L_Bienvenida2
+0x02F1	0x0BFC      	DECFSZ     R12, 1
+0x02F2	0x2AEF      	GOTO       L_Bienvenida2
+0x02F3	0x0000      	NOP
+0x02F4	0x0000      	NOP
+;control de entradas v2.c,62 :: 		LED4 = 1;
+0x02F5	0x1705      	BSF        PORTA, 6
+;control de entradas v2.c,63 :: 		delay_ms(50);
+0x02F6	0x3082      	MOVLW      130
+0x02F7	0x00FC      	MOVWF      R12
+0x02F8	0x30DD      	MOVLW      221
+0x02F9	0x00FD      	MOVWF      R13
+L_Bienvenida3:
+0x02FA	0x0BFD      	DECFSZ     R13, 1
+0x02FB	0x2AFA      	GOTO       L_Bienvenida3
+0x02FC	0x0BFC      	DECFSZ     R12, 1
+0x02FD	0x2AFA      	GOTO       L_Bienvenida3
+0x02FE	0x0000      	NOP
+0x02FF	0x0000      	NOP
+;control de entradas v2.c,64 :: 		LED5 = 1;
+0x0300	0x1706      	BSF        PORTB, 6
+;control de entradas v2.c,65 :: 		delay_ms(50);
+0x0301	0x3082      	MOVLW      130
+0x0302	0x00FC      	MOVWF      R12
+0x0303	0x30DD      	MOVLW      221
+0x0304	0x00FD      	MOVWF      R13
+L_Bienvenida4:
+0x0305	0x0BFD      	DECFSZ     R13, 1
+0x0306	0x2B05      	GOTO       L_Bienvenida4
+0x0307	0x0BFC      	DECFSZ     R12, 1
+0x0308	0x2B05      	GOTO       L_Bienvenida4
+0x0309	0x0000      	NOP
+0x030A	0x0000      	NOP
+;control de entradas v2.c,66 :: 		LEA1 = 1;
+0x030B	0x1786      	BSF        PORTB, 7
+;control de entradas v2.c,67 :: 		delay_ms(50);
+0x030C	0x3082      	MOVLW      130
+0x030D	0x00FC      	MOVWF      R12
+0x030E	0x30DD      	MOVLW      221
+0x030F	0x00FD      	MOVWF      R13
+L_Bienvenida5:
+0x0310	0x0BFD      	DECFSZ     R13, 1
+0x0311	0x2B10      	GOTO       L_Bienvenida5
+0x0312	0x0BFC      	DECFSZ     R12, 1
+0x0313	0x2B10      	GOTO       L_Bienvenida5
+0x0314	0x0000      	NOP
+0x0315	0x0000      	NOP
+;control de entradas v2.c,69 :: 		LED1 = 0;
+0x0316	0x1207      	BCF        PORTC, 4
+;control de entradas v2.c,70 :: 		delay_ms(50);
+0x0317	0x3082      	MOVLW      130
+0x0318	0x00FC      	MOVWF      R12
+0x0319	0x30DD      	MOVLW      221
+0x031A	0x00FD      	MOVWF      R13
+L_Bienvenida6:
+0x031B	0x0BFD      	DECFSZ     R13, 1
+0x031C	0x2B1B      	GOTO       L_Bienvenida6
+0x031D	0x0BFC      	DECFSZ     R12, 1
+0x031E	0x2B1B      	GOTO       L_Bienvenida6
+0x031F	0x0000      	NOP
+0x0320	0x0000      	NOP
+;control de entradas v2.c,71 :: 		LED2 = 0;
+0x0321	0x1287      	BCF        PORTC, 5
+;control de entradas v2.c,72 :: 		delay_ms(50);
+0x0322	0x3082      	MOVLW      130
+0x0323	0x00FC      	MOVWF      R12
+0x0324	0x30DD      	MOVLW      221
+0x0325	0x00FD      	MOVWF      R13
+L_Bienvenida7:
+0x0326	0x0BFD      	DECFSZ     R13, 1
+0x0327	0x2B26      	GOTO       L_Bienvenida7
+0x0328	0x0BFC      	DECFSZ     R12, 1
+0x0329	0x2B26      	GOTO       L_Bienvenida7
+0x032A	0x0000      	NOP
+0x032B	0x0000      	NOP
+;control de entradas v2.c,73 :: 		LED3 = 0;
+0x032C	0x1385      	BCF        PORTA, 7
+;control de entradas v2.c,74 :: 		delay_ms(50);
+0x032D	0x3082      	MOVLW      130
+0x032E	0x00FC      	MOVWF      R12
+0x032F	0x30DD      	MOVLW      221
+0x0330	0x00FD      	MOVWF      R13
+L_Bienvenida8:
+0x0331	0x0BFD      	DECFSZ     R13, 1
+0x0332	0x2B31      	GOTO       L_Bienvenida8
+0x0333	0x0BFC      	DECFSZ     R12, 1
+0x0334	0x2B31      	GOTO       L_Bienvenida8
+0x0335	0x0000      	NOP
+0x0336	0x0000      	NOP
+;control de entradas v2.c,75 :: 		LED4 = 0;
+0x0337	0x1305      	BCF        PORTA, 6
+;control de entradas v2.c,76 :: 		delay_ms(50);
+0x0338	0x3082      	MOVLW      130
+0x0339	0x00FC      	MOVWF      R12
+0x033A	0x30DD      	MOVLW      221
+0x033B	0x00FD      	MOVWF      R13
+L_Bienvenida9:
+0x033C	0x0BFD      	DECFSZ     R13, 1
+0x033D	0x2B3C      	GOTO       L_Bienvenida9
+0x033E	0x0BFC      	DECFSZ     R12, 1
+0x033F	0x2B3C      	GOTO       L_Bienvenida9
+0x0340	0x0000      	NOP
+0x0341	0x0000      	NOP
+;control de entradas v2.c,77 :: 		LED5 = 0;
+0x0342	0x1306      	BCF        PORTB, 6
+;control de entradas v2.c,78 :: 		delay_ms(50);
+0x0343	0x3082      	MOVLW      130
+0x0344	0x00FC      	MOVWF      R12
+0x0345	0x30DD      	MOVLW      221
+0x0346	0x00FD      	MOVWF      R13
+L_Bienvenida10:
+0x0347	0x0BFD      	DECFSZ     R13, 1
+0x0348	0x2B47      	GOTO       L_Bienvenida10
+0x0349	0x0BFC      	DECFSZ     R12, 1
+0x034A	0x2B47      	GOTO       L_Bienvenida10
+0x034B	0x0000      	NOP
+0x034C	0x0000      	NOP
+;control de entradas v2.c,79 :: 		LEA1 = 0;
+0x034D	0x1386      	BCF        PORTB, 7
+;control de entradas v2.c,80 :: 		delay_ms(50);
+0x034E	0x3082      	MOVLW      130
+0x034F	0x00FC      	MOVWF      R12
+0x0350	0x30DD      	MOVLW      221
+0x0351	0x00FD      	MOVWF      R13
+L_Bienvenida11:
+0x0352	0x0BFD      	DECFSZ     R13, 1
+0x0353	0x2B52      	GOTO       L_Bienvenida11
+0x0354	0x0BFC      	DECFSZ     R12, 1
+0x0355	0x2B52      	GOTO       L_Bienvenida11
+0x0356	0x0000      	NOP
+0x0357	0x0000      	NOP
+;control de entradas v2.c,81 :: 		}
+L_end_Bienvenida:
+0x0358	0x0008      	RETURN
+; end of _Bienvenida
+_Config:
+;control de entradas v2.c,98 :: 		void Config ()
+;control de entradas v2.c,100 :: 		ANSEL = 0x00;
+0x0359	0x1683      	BSF        STATUS, 5
+0x035A	0x1703      	BSF        STATUS, 6
+0x035B	0x0188      	CLRF       ANSEL
+;control de entradas v2.c,101 :: 		ANSELH = 0b00100000; // RB5 anal

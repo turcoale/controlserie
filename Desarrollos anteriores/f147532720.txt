@@ -1,0 +1,93 @@
+; // enciendo LED3
+    cont = 0;
+    while ((cont < SegFalla) && (ED3 == 0)) // espero 10 Seg o que se cierre ED3
+    {
+     cont ++;
+     delay_ms (1000);
+    }
+    if (cont == SegFalla) // pasaron 10 Seg?
+    {
+     SD1 = 0; // abro SD1
+     SD2 = 0;
+     ContFallasED3 ++; // sumo 1 falla de ED3
+    }
+    else
+        LED3 = 0; // apago LED3 por falsa falla
+    while ((ED3 == 0) && (ContFallasED3 < CantMaxFallas)); // espero que pase la falla de ED3 o no sea la última
+    ContSegParada = 0; // empiezo a contar tiempo máquina parada
+    if ( ( ContFallasED3 == CantMaxFallas ) && ( SegFallaED3 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+    {
+     SD1 = SD2 = 0; // abro SD1 y SD2
+     ApagoFalsaFalla ();
+     while (1)
+     {
+      LED3 = 1 ; // enciende LED3 hasta Reset manual
+      BUZ = 1; // cierro SD3 Alarma
+     }
+    }
+   }
+
+   if (ED4 == 0) // ED4 abierta?
+   {
+    LED4 = 1; // enciendo LED4
+    cont = 0;
+    while ((cont < SegFalla) && (ED4 == 0)) // espero 10 Seg o que se cierre ED4
+    {
+     cont ++;
+     delay_ms (1000);
+    }
+    if (cont == SegFalla) // pasaron 10 Seg?
+    {
+     SD1 = 0; // abro SD1
+     SD2 = 0;
+     ContFallasED4 ++; // sumo 1 falla de ED4
+    }
+    else
+        LED4 = 0; // apago LED4 por falsa falla
+    while ((ED4 == 0) && (ContFallasED4 < CantMaxFallas)); // espero que pase la falla de ED4 o no sea la última
+    ContSegParada = 0; // empiezo a contar tiempo máquina parada
+    if ( ( ContFallasED4 == CantMaxFallas ) && ( SegFallaED4 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+    {
+     SD1 = SD2 = 0; // abro SD1 y SD2
+     ApagoFalsaFalla ();
+     while (1)
+     {
+      LED4 = 1; // enciende LED4 hasta Reset manual
+      BUZ = 1; // cierro SD3 Alarma
+     }
+    }
+   }
+
+   if (ED5 == 0) // ED5 abierta?
+   {
+    LED5 = 1; // enciendo LED5
+    cont = 0;
+    while ((cont < SegFalla) && (ED5 == 0)) // espero 10 Seg o que se cierre ED5
+    {
+     cont ++;
+     delay_ms (1000);
+    }
+    if (cont == SegFalla) // pasaron 10 Seg?
+    {
+     SD1 = 0; // abro SD1
+     SD2 = 0;
+     ContFallasED5 ++; // sumo 1 falla de ED5
+    }
+    else
+        LED5 = 0; // apago LED5 por falsa falla
+    while ((ED5 == 0) && (ContFallasED5 < CantMaxFallas)); // espero que pase la falla de ED5 o no sea la última
+    ContSegParada = 0; // empiezo a contar tiempo máquina parada
+    if ( ( ContFallasED5 == CantMaxFallas ) && ( SegFallaED5 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+    {
+     SD1 = SD2 = 0; // abro SD1 y SD2
+     ApagoFalsaFalla ();
+     while (1)
+     {
+      LED5 = 1; // enciende LED5 hasta Reset manual
+      BUZ = 1; // cierro SD3 Alarma
+     }
+    }
+   }
+
+   AD = ADC_Read(13); // leo A/D
+   if (AD < 613) // 3V ~= 105

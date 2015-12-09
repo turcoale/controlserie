@@ -1,0 +1,421 @@
+ntradas v2.c,273 :: 		SegFallaEA1 = 0; // reseteo contador fallas EA1
+	CLRF       _SegFallaEA1+0
+	CLRF       _SegFallaEA1+1
+;control de entradas v2.c,274 :: 		ContFallasEA1 = 0;
+	CLRF       _ContFallasEA1+0
+;control de entradas v2.c,275 :: 		LEA1 = 0;
+	BCF        PORTB+0, 7
+;control de entradas v2.c,276 :: 		}
+L_interrupt37:
+;control de entradas v2.c,277 :: 		}
+L_interrupt36:
+;control de entradas v2.c,279 :: 		}
+L_interrupt24:
+;control de entradas v2.c,281 :: 		INTCON.TMR0IF = 0; // clear the flag
+	BCF        INTCON+0, 2
+;control de entradas v2.c,282 :: 		INTCON.TMR0IE = 1; // reenable the interrupt
+	BSF        INTCON+0, 5
+;control de entradas v2.c,283 :: 		TMR0 = 177; // reset the timer preset count
+	MOVLW      177
+	MOVWF      TMR0+0
+;control de entradas v2.c,284 :: 		}
+L_interrupt17:
+;control de entradas v2.c,285 :: 		}
+L_end_interrupt:
+L__interrupt192:
+	MOVF       ___savePCLATH+0, 0
+	MOVWF      PCLATH+0
+	SWAPF      ___saveSTATUS+0, 0
+	MOVWF      STATUS+0
+	SWAPF      R15+0, 1
+	SWAPF      R15+0, 0
+	RETFIE
+; end of _interrupt
+
+_BuscoFalla3:
+
+;control de entradas v2.c,288 :: 		void BuscoFalla3 ()
+;control de entradas v2.c,292 :: 		if (ED3 == 0) // ED3 abierta?
+	BTFSC      PORTB+0, 2
+	GOTO       L_BuscoFalla338
+;control de entradas v2.c,294 :: 		LED3 = 1; // enciendo LED3
+	BSF        PORTA+0, 7
+;control de entradas v2.c,295 :: 		cont = 0;
+	CLRF       BuscoFalla3_cont_L0+0
+	CLRF       BuscoFalla3_cont_L0+1
+;control de entradas v2.c,296 :: 		while ((cont < SegFalla) && (ED3 == 0)) // espero 10 Seg o que se cierre ED3
+L_BuscoFalla339:
+	MOVLW      128
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3200
+	MOVF       _SegFalla+0, 0
+	SUBWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3200:
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla340
+	BTFSC      PORTB+0, 2
+	GOTO       L_BuscoFalla340
+L__BuscoFalla3178:
+;control de entradas v2.c,298 :: 		cont ++;
+	INCF       BuscoFalla3_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       BuscoFalla3_cont_L0+1, 1
+;control de entradas v2.c,299 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_BuscoFalla343:
+	DECFSZ     R13+0, 1
+	GOTO       L_BuscoFalla343
+	DECFSZ     R12+0, 1
+	GOTO       L_BuscoFalla343
+	DECFSZ     R11+0, 1
+	GOTO       L_BuscoFalla343
+	NOP
+	NOP
+;control de entradas v2.c,300 :: 		}
+	GOTO       L_BuscoFalla339
+L_BuscoFalla340:
+;control de entradas v2.c,301 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+	MOVLW      0
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3201
+	MOVF       _SegFalla+0, 0
+	XORWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3201:
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla344
+;control de entradas v2.c,303 :: 		SD1 = 0; // abro SD1
+	BCF        PORTC+0, 2
+;control de entradas v2.c,304 :: 		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,305 :: 		ContFallasED3 ++; // sumo 1 falla de ED3
+	INCF       _ContFallasED3+0, 1
+;control de entradas v2.c,306 :: 		}
+	GOTO       L_BuscoFalla345
+L_BuscoFalla344:
+;control de entradas v2.c,308 :: 		LED3 = 0; // apago LED3 por falsa falla
+	BCF        PORTA+0, 7
+L_BuscoFalla345:
+;control de entradas v2.c,309 :: 		while ((ED3 == 0) && (ContFallasED3 < CantMaxFallas)); // espero que pase la falla de ED3 o no sea la última
+L_BuscoFalla346:
+	BTFSC      PORTB+0, 2
+	GOTO       L_BuscoFalla347
+	MOVF       _CantMaxFallas+0, 0
+	SUBWF      _ContFallasED3+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla347
+L__BuscoFalla3177:
+	GOTO       L_BuscoFalla346
+L_BuscoFalla347:
+;control de entradas v2.c,310 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,311 :: 		if ( ( ContFallasED3 == CantMaxFallas ) && ( SegFallaED3 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+	MOVF       _ContFallasED3+0, 0
+	XORWF      _CantMaxFallas+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla352
+	MOVLW      128
+	XORWF      _SegCantFallasMax+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORWF      _SegFallaED3+1, 0
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3202
+	MOVF       _SegFallaED3+0, 0
+	SUBWF      _SegCantFallasMax+0, 0
+L__BuscoFalla3202:
+	BTFSS      STATUS+0, 0
+	GOTO       L_BuscoFalla352
+L__BuscoFalla3176:
+;control de entradas v2.c,313 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__BuscoFalla3203
+	BCF        PORTC+0, 2
+	GOTO       L__BuscoFalla3204
+L__BuscoFalla3203:
+	BSF        PORTC+0, 2
+L__BuscoFalla3204:
+;control de entradas v2.c,314 :: 		ApagoFalsaFalla ();
+	CALL       _ApagoFalsaFalla+0
+;control de entradas v2.c,315 :: 		while (1)
+L_BuscoFalla353:
+;control de entradas v2.c,317 :: 		LED3 = 1 ; // enciende LED3 hasta Reset manual
+	BSF        PORTA+0, 7
+;control de entradas v2.c,318 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,319 :: 		}
+	GOTO       L_BuscoFalla353
+;control de entradas v2.c,320 :: 		}
+L_BuscoFalla352:
+;control de entradas v2.c,321 :: 		}
+L_BuscoFalla338:
+;control de entradas v2.c,323 :: 		if (ED4 == 0) // ED4 abierta?
+	BTFSC      PORTB+0, 3
+	GOTO       L_BuscoFalla355
+;control de entradas v2.c,325 :: 		LED4 = 1; // enciendo LED4
+	BSF        PORTA+0, 6
+;control de entradas v2.c,326 :: 		cont = 0;
+	CLRF       BuscoFalla3_cont_L0+0
+	CLRF       BuscoFalla3_cont_L0+1
+;control de entradas v2.c,327 :: 		while ((cont < SegFalla) && (ED4 == 0)) // espero 10 Seg o que se cierre ED4
+L_BuscoFalla356:
+	MOVLW      128
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3205
+	MOVF       _SegFalla+0, 0
+	SUBWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3205:
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla357
+	BTFSC      PORTB+0, 3
+	GOTO       L_BuscoFalla357
+L__BuscoFalla3175:
+;control de entradas v2.c,329 :: 		cont ++;
+	INCF       BuscoFalla3_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       BuscoFalla3_cont_L0+1, 1
+;control de entradas v2.c,330 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_BuscoFalla360:
+	DECFSZ     R13+0, 1
+	GOTO       L_BuscoFalla360
+	DECFSZ     R12+0, 1
+	GOTO       L_BuscoFalla360
+	DECFSZ     R11+0, 1
+	GOTO       L_BuscoFalla360
+	NOP
+	NOP
+;control de entradas v2.c,331 :: 		}
+	GOTO       L_BuscoFalla356
+L_BuscoFalla357:
+;control de entradas v2.c,332 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+	MOVLW      0
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3206
+	MOVF       _SegFalla+0, 0
+	XORWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3206:
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla361
+;control de entradas v2.c,334 :: 		SD1 = 0; // abro SD1
+	BCF        PORTC+0, 2
+;control de entradas v2.c,335 :: 		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,336 :: 		ContFallasED4 ++; // sumo 1 falla de ED4
+	INCF       _ContFallasED4+0, 1
+;control de entradas v2.c,337 :: 		}
+	GOTO       L_BuscoFalla362
+L_BuscoFalla361:
+;control de entradas v2.c,339 :: 		LED4 = 0; // apago LED4 por falsa falla
+	BCF        PORTA+0, 6
+L_BuscoFalla362:
+;control de entradas v2.c,340 :: 		while ((ED4 == 0) && (ContFallasED4 < CantMaxFallas)); // espero que pase la falla de ED4 o no sea la última
+L_BuscoFalla363:
+	BTFSC      PORTB+0, 3
+	GOTO       L_BuscoFalla364
+	MOVF       _CantMaxFallas+0, 0
+	SUBWF      _ContFallasED4+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla364
+L__BuscoFalla3174:
+	GOTO       L_BuscoFalla363
+L_BuscoFalla364:
+;control de entradas v2.c,341 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,342 :: 		if ( ( ContFallasED4 == CantMaxFallas ) && ( SegFallaED4 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+	MOVF       _ContFallasED4+0, 0
+	XORWF      _CantMaxFallas+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla369
+	MOVLW      128
+	XORWF      _SegCantFallasMax+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORWF      _SegFallaED4+1, 0
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3207
+	MOVF       _SegFallaED4+0, 0
+	SUBWF      _SegCantFallasMax+0, 0
+L__BuscoFalla3207:
+	BTFSS      STATUS+0, 0
+	GOTO       L_BuscoFalla369
+L__BuscoFalla3173:
+;control de entradas v2.c,344 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__BuscoFalla3208
+	BCF        PORTC+0, 2
+	GOTO       L__BuscoFalla3209
+L__BuscoFalla3208:
+	BSF        PORTC+0, 2
+L__BuscoFalla3209:
+;control de entradas v2.c,345 :: 		ApagoFalsaFalla ();
+	CALL       _ApagoFalsaFalla+0
+;control de entradas v2.c,346 :: 		while (1)
+L_BuscoFalla370:
+;control de entradas v2.c,348 :: 		LED4 = 1; // enciende LED4 hasta Reset manual
+	BSF        PORTA+0, 6
+;control de entradas v2.c,349 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,350 :: 		}
+	GOTO       L_BuscoFalla370
+;control de entradas v2.c,351 :: 		}
+L_BuscoFalla369:
+;control de entradas v2.c,352 :: 		}
+L_BuscoFalla355:
+;control de entradas v2.c,354 :: 		if (ED5 == 0) // ED5 abierta?
+	BTFSC      PORTB+0, 4
+	GOTO       L_BuscoFalla372
+;control de entradas v2.c,356 :: 		LED5 = 1; // enciendo LED5
+	BSF        PORTB+0, 6
+;control de entradas v2.c,357 :: 		cont = 0;
+	CLRF       BuscoFalla3_cont_L0+0
+	CLRF       BuscoFalla3_cont_L0+1
+;control de entradas v2.c,358 :: 		while ((cont < SegFalla) && (ED5 == 0)) // espero 10 Seg o que se cierre ED5
+L_BuscoFalla373:
+	MOVLW      128
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3210
+	MOVF       _SegFalla+0, 0
+	SUBWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3210:
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla374
+	BTFSC      PORTB+0, 4
+	GOTO       L_BuscoFalla374
+L__BuscoFalla3172:
+;control de entradas v2.c,360 :: 		cont ++;
+	INCF       BuscoFalla3_cont_L0+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       BuscoFalla3_cont_L0+1, 1
+;control de entradas v2.c,361 :: 		delay_ms (1000);
+	MOVLW      11
+	MOVWF      R11+0
+	MOVLW      38
+	MOVWF      R12+0
+	MOVLW      93
+	MOVWF      R13+0
+L_BuscoFalla377:
+	DECFSZ     R13+0, 1
+	GOTO       L_BuscoFalla377
+	DECFSZ     R12+0, 1
+	GOTO       L_BuscoFalla377
+	DECFSZ     R11+0, 1
+	GOTO       L_BuscoFalla377
+	NOP
+	NOP
+;control de entradas v2.c,362 :: 		}
+	GOTO       L_BuscoFalla373
+L_BuscoFalla374:
+;control de entradas v2.c,363 :: 		if (cont == SegFalla) // pasaron 10 Seg?
+	MOVLW      0
+	XORWF      BuscoFalla3_cont_L0+1, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3211
+	MOVF       _SegFalla+0, 0
+	XORWF      BuscoFalla3_cont_L0+0, 0
+L__BuscoFalla3211:
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla378
+;control de entradas v2.c,365 :: 		SD1 = 0; // abro SD1
+	BCF        PORTC+0, 2
+;control de entradas v2.c,366 :: 		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,367 :: 		ContFallasED5 ++; // sumo 1 falla de ED5
+	INCF       _ContFallasED5+0, 1
+;control de entradas v2.c,368 :: 		}
+	GOTO       L_BuscoFalla379
+L_BuscoFalla378:
+;control de entradas v2.c,370 :: 		LED5 = 0; // apago LED5 por falsa falla
+	BCF        PORTB+0, 6
+L_BuscoFalla379:
+;control de entradas v2.c,371 :: 		while ((ED5 == 0) && (ContFallasED5 < CantMaxFallas)); // espero que pase la falla de ED5 o no sea la última
+L_BuscoFalla380:
+	BTFSC      PORTB+0, 4
+	GOTO       L_BuscoFalla381
+	MOVF       _CantMaxFallas+0, 0
+	SUBWF      _ContFallasED5+0, 0
+	BTFSC      STATUS+0, 0
+	GOTO       L_BuscoFalla381
+L__BuscoFalla3171:
+	GOTO       L_BuscoFalla380
+L_BuscoFalla381:
+;control de entradas v2.c,372 :: 		ContSegParada = 0; // empiezo a contar tiempo máquina parada
+	CLRF       _ContSegParada+0
+;control de entradas v2.c,373 :: 		if ( ( ContFallasED5 == CantMaxFallas ) && ( SegFallaED5 <= SegCantFallasMax ) ) // hubo 7 fallas en menos de 1 hora ?
+	MOVF       _ContFallasED5+0, 0
+	XORWF      _CantMaxFallas+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L_BuscoFalla386
+	MOVLW      128
+	XORWF      _SegCantFallasMax+1, 0
+	MOVWF      R0+0
+	MOVLW      128
+	XORWF      _SegFallaED5+1, 0
+	SUBWF      R0+0, 0
+	BTFSS      STATUS+0, 2
+	GOTO       L__BuscoFalla3212
+	MOVF       _SegFallaED5+0, 0
+	SUBWF      _SegCantFallasMax+0, 0
+L__BuscoFalla3212:
+	BTFSS      STATUS+0, 0
+	GOTO       L_BuscoFalla386
+L__BuscoFalla3170:
+;control de entradas v2.c,375 :: 		SD1 = SD2 = 0; // abro SD1 y SD2
+	BCF        PORTC+0, 3
+	BTFSC      PORTC+0, 3
+	GOTO       L__BuscoFalla3213
+	BCF        PORTC+0, 2
+	GOTO       L__BuscoFalla3214
+L__BuscoFalla3213:
+	BSF        PORTC+0, 2
+L__BuscoFalla3214:
+;control de entradas v2.c,376 :: 		ApagoFalsaFalla ();
+	CALL       _ApagoFalsaFalla+0
+;control de entradas v2.c,377 :: 		while (1)
+L_BuscoFalla387:
+;control de entradas v2.c,379 :: 		LED5 = 1; // enciende LED5 hasta Reset manual
+	BSF        PORTB+0, 6
+;control de entradas v2.c,380 :: 		BUZ = 1; // cierro SD3 Alarma
+	BSF        PORTC+0, 0
+;control de entradas v2.c,381 :: 		}
+	GOTO       L_BuscoFalla387
+;control de entradas v2.c,382 :: 		}
+L_BuscoFalla386:
+;control de entradas v2.c,383 :: 		}
+L_BuscoFalla372:
+;control de entradas v2.c,385 :: 		AD = ADC_Read(13); // leo A/D
+	MOVLW      13
+	MOVWF      FARG_ADC_Read_channel+0
+	CALL       _ADC_Read+0
+	MOVF       R0+0, 0
+	MOVWF      _AD+0
+	MOVF       R0+1, 0
+	MOVWF      _AD+1
+;control de entradas v2.c,386 :: 		if (AD < 613) // 3V ~= 105

@@ -1,0 +1,140 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "d:\librerias-orcad\capture\cd40xx.olb"
+        (Type "Schematic Library"))
+      (File "d:\librerias-orcad\capture\componentes hechos.olb"
+        (Type "Schematic Library"))
+      (File "d:\librerias-orcad\capture\conversores ad.olb"
+        (Type "Schematic Library"))
+      (File "d:\librerias-orcad\capture\display.olb"
+        (Type "Schematic Library"))
+      (File "d:\librerias-orcad\capture\micros.olb"
+        (Type "Schematic Library"))
+      (File "d:\librerias-orcad\capture\operacionales.olb"
+        (Type "Schematic Library")))
+    (File ".\control de entradas.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify)
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}")
+    (Netlist_TAB "5")
+    (LAYOUT_Netlist_File "CONTROL DE ENTRADAS.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (TRUE)
+    (LAYOUT_Units "0")
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE))
+  (Folder "Outputs"
+    (File
+       "D:\ProyEctos\Eduardo Tabisi\Placa control de entradas\V1.3\Design\control de entradas.mnl"
+      (Type "LAYOUT Netlist File"))
+    (File ".\control de entradas.mnl"
+      (Type "LAYOUT Netlist File")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (RESISTOR
+      (FullPartName "RESISTOR.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (LM358_2
+      (FullPartName "LM358_2.Normal")
+      (LibraryName "D:\LIBRERIAS-ORCAD\CAPTURE\COMPONENTES HECHOS.OLB")
+      (DeviceIndex "0"))
+    (LM358
+      (FullPartName "LM358.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\OPAMP.OLB")
+      (DeviceIndex "0"))
+    ("CAP NP"
+      (FullPartName "CAP NP.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (CON3
+      (FullPartName "CON3.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (DIODE
+      (FullPartName "DIODE.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (4N35
+      (FullPartName "4N35.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("Tact Switch"
+      (FullPartName "Tact Switch.Normal")
+      (LibraryName "D:\LIBRERIAS-ORCAD\CAPTURE\COMPONENTES HECHOS.OLB")
+      (DeviceIndex "0"))
+    (CON6AP
+      (FullPartName "CON6AP.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (CON5
+      (FullPartName "CON5.Normal")
+      (LibraryName "E:\ELECTRONICA\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (CON4
+      (FullPartName "CON4.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("SW DIP-3"
+      (FullPartName "SW DIP-3.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("SW PUSHBUTTON-SPST"
+      (FullPartName "SW PUSHBUTTON-SPST.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("SW DIP-2"
+      (FullPartName "SW DIP-2.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (PIC167f883
+      (FullPartName "PIC167f883.Normal")
+      (LibraryName "D:\LIBRERIAS-ORCAD\CAPTURE\MICROS.OLB")
+      (DeviceIndex "0"))
+    (PIC16f88
+      (FullPartName "PIC16f88.Normal")
+      (LibraryName "D:\LIBRERIAS-ORCAD\CAPTURE\MICROS.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 0 651 -4 -26 0 1276 0 647"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -26 198 1280 225 678")
+        (Scroll "0 0")
+        (Zoom "37")
+        (Occurrence "/"))
+      (Path
+         "D:\PROYECTOS\EDUARDO TABISI\PLACA CONTROL DE ENTRADAS\V1.5\DESIGN\CONTROL DE ENTRADAS.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "Control de entradas"))))

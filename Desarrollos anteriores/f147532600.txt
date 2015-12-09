@@ -1,0 +1,167 @@
+ de entradas v2.c,133 :: 		INTCON.GIE = 1;           // bit7 global interrupt enable
+	BSF        INTCON+0, 7
+;control de entradas v2.c,134 :: 		}
+L_end_Config:
+	RETURN
+; end of _Config
+
+_Ini:
+
+;control de entradas v2.c,137 :: 		void Ini ()
+;control de entradas v2.c,139 :: 		LED1 = 1;
+	BSF        PORTC+0, 4
+;control de entradas v2.c,140 :: 		LED2 = 0;
+	BCF        PORTC+0, 5
+;control de entradas v2.c,141 :: 		LED3 = 0;
+	BCF        PORTA+0, 7
+;control de entradas v2.c,142 :: 		LED4 = 0;
+	BCF        PORTA+0, 6
+;control de entradas v2.c,143 :: 		LED5 = 0;
+	BCF        PORTB+0, 6
+;control de entradas v2.c,144 :: 		LEA1 = 0;
+	BCF        PORTB+0, 7
+;control de entradas v2.c,145 :: 		SD1 = 0;
+	BCF        PORTC+0, 2
+;control de entradas v2.c,146 :: 		SD2 = 0;
+	BCF        PORTC+0, 3
+;control de entradas v2.c,147 :: 		BUZ = 0;
+	BCF        PORTC+0, 0
+;control de entradas v2.c,149 :: 		ContmSeg = 0;
+	CLRF       _ContmSeg+0
+;control de entradas v2.c,150 :: 		ContSegParada = 200;
+	MOVLW      200
+	MOVWF      _ContSegParada+0
+;control de entradas v2.c,151 :: 		cont45seg = 0;
+	CLRF       _cont45seg+0
+;control de entradas v2.c,153 :: 		ContFallasED1 = 0;
+	CLRF       _ContFallasED1+0
+;control de entradas v2.c,154 :: 		ContFallasED2 = 0;
+	CLRF       _ContFallasED2+0
+;control de entradas v2.c,155 :: 		ContFallasED3 = 0;
+	CLRF       _ContFallasED3+0
+;control de entradas v2.c,156 :: 		ContFallasED4 = 0;
+	CLRF       _ContFallasED4+0
+;control de entradas v2.c,157 :: 		ContFallasED5 = 0;
+	CLRF       _ContFallasED5+0
+;control de entradas v2.c,158 :: 		ContFallasEA1 = 0;
+	CLRF       _ContFallasEA1+0
+;control de entradas v2.c,159 :: 		SegFallaED1 = 0;
+	CLRF       _SegFallaED1+0
+	CLRF       _SegFallaED1+1
+;control de entradas v2.c,160 :: 		SegFallaED2 = 0;
+	CLRF       _SegFallaED2+0
+	CLRF       _SegFallaED2+1
+;control de entradas v2.c,161 :: 		SegFallaED3 = 0;
+	CLRF       _SegFallaED3+0
+	CLRF       _SegFallaED3+1
+;control de entradas v2.c,162 :: 		SegFallaED4 = 0;
+	CLRF       _SegFallaED4+0
+	CLRF       _SegFallaED4+1
+;control de entradas v2.c,163 :: 		SegFallaED5 = 0;
+	CLRF       _SegFallaED5+0
+	CLRF       _SegFallaED5+1
+;control de entradas v2.c,164 :: 		SegFallaEA1 = 0;
+	CLRF       _SegFallaEA1+0
+	CLRF       _SegFallaEA1+1
+;control de entradas v2.c,166 :: 		}
+L_end_Ini:
+	RETURN
+; end of _Ini
+
+_interrupt:
+	MOVWF      R15+0
+	SWAPF      STATUS+0, 0
+	CLRF       STATUS+0
+	MOVWF      ___saveSTATUS+0
+	MOVF       PCLATH+0, 0
+	MOVWF      ___savePCLATH+0
+	CLRF       PCLATH+0
+
+;control de entradas v2.c,169 :: 		void interrupt ()
+;control de entradas v2.c,171 :: 		if (INTCON.TMR0IF ==1) // timer 0 interrupt flag
+	BTFSS      INTCON+0, 2
+	GOTO       L_interrupt17
+;control de entradas v2.c,174 :: 		ContmSeg ++;
+	INCF       _ContmSeg+0, 1
+;control de entradas v2.c,176 :: 		if ( ContmSeg == 50 ) // 500 mSeg
+	MOVF       _ContmSeg+0, 0
+	XORLW      50
+	BTFSS      STATUS+0, 2
+	GOTO       L_interrupt18
+;control de entradas v2.c,178 :: 		if ( ContFallasED2 > 0) // hay por lo menos una falla de ED2?
+	MOVF       _ContFallasED2+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt19
+;control de entradas v2.c,180 :: 		LED2 = ~ LED2; // titila LED2
+	MOVLW      32
+	XORWF      PORTC+0, 1
+;control de entradas v2.c,181 :: 		}
+L_interrupt19:
+;control de entradas v2.c,183 :: 		if ( ContFallasED3 > 0) // hay por lo menos una falla de ED3?
+	MOVF       _ContFallasED3+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt20
+;control de entradas v2.c,185 :: 		LED3 = ~ LED3; // titila LED3
+	MOVLW      128
+	XORWF      PORTA+0, 1
+;control de entradas v2.c,186 :: 		}
+L_interrupt20:
+;control de entradas v2.c,188 :: 		if ( ContFallasED4 > 0) // hay por lo menos una falla de ED4?
+	MOVF       _ContFallasED4+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt21
+;control de entradas v2.c,190 :: 		LED4 = ~ LED4; // titila LED4
+	MOVLW      64
+	XORWF      PORTA+0, 1
+;control de entradas v2.c,191 :: 		}
+L_interrupt21:
+;control de entradas v2.c,193 :: 		if ( ContFallasED5 > 0) // hay por lo menos una falla de ED5?
+	MOVF       _ContFallasED5+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt22
+;control de entradas v2.c,195 :: 		LED5 = ~ LED5; // titila LED5
+	MOVLW      64
+	XORWF      PORTB+0, 1
+;control de entradas v2.c,196 :: 		}
+L_interrupt22:
+;control de entradas v2.c,198 :: 		if ( ContFallasEA1 > 0) // hay por lo menos una falla de EA1?
+	MOVF       _ContFallasEA1+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt23
+;control de entradas v2.c,200 :: 		LEA1 = ~ LEA1; // titila LEA1
+	MOVLW      128
+	XORWF      PORTB+0, 1
+;control de entradas v2.c,201 :: 		}
+L_interrupt23:
+;control de entradas v2.c,203 :: 		}
+L_interrupt18:
+;control de entradas v2.c,205 :: 		if ( ContmSeg == 100 ) // 1 segundo
+	MOVF       _ContmSeg+0, 0
+	XORLW      100
+	BTFSS      STATUS+0, 2
+	GOTO       L_interrupt24
+;control de entradas v2.c,207 :: 		ContmSeg = 0; // reinicio contador milisegundos
+	CLRF       _ContmSeg+0
+;control de entradas v2.c,208 :: 		cont45seg ++;
+	INCF       _cont45seg+0, 1
+;control de entradas v2.c,210 :: 		if ( SD1 == 0 ) // está la máquina parada ?
+	BTFSC      PORTC+0, 2
+	GOTO       L_interrupt25
+;control de entradas v2.c,211 :: 		ContSegParada ++;
+	INCF       _ContSegParada+0, 1
+L_interrupt25:
+;control de entradas v2.c,213 :: 		if ( ContFallasED1 > 0) // hubo alguna falla en ED1 ?
+	MOVF       _ContFallasED1+0, 0
+	SUBLW      0
+	BTFSC      STATUS+0, 0
+	GOTO       L_interrupt26
+;control de entradas v2.c,215 :: 		SegFallaED1 ++; // sumo un segundo al cont
+	INCF       _SegFallaED1+0, 1
+	BTFSC      STATUS+0, 2
+	INCF       _SegFallaED1+1, 1
+;control de entradas v2.c,216 :: 		if ( SegFallaED1 > SegCantFallasMax ) // pas
