@@ -1,0 +1,5 @@
+Data:1 < ADDXPR ONLY_ADD_IF_NEW "controlserie.c::value1"
+Data:2 < ADDXPR ONLY_ADD_IF_NEW "value"
+Data:2 < ADDXPR ONLY_ADD_IF_NEW "value1"
+Data:2 < ADDXPR ONLY_ADD_IF_NEW "value2"
+Data:2 < ADDXPR ONLY_ADD_IF_NEW "value3"
