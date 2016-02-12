@@ -3,12 +3,12 @@
   (general
     (links 0)
     (no_connects 112)
-    (area 85.924999 36.924999 223.075001 120.075001)
+    (area 40.099999 36.999999 215.400001 113.500001)
     (thickness 1.6)
-    (drawings 4)
+    (drawings 0)
     (tracks 0)
     (zones 0)
-    (modules 61)
+    (modules 57)
     (nets 58)
   )
 
@@ -216,7 +216,7 @@
   )
 
   (module locales:C1V5 (layer F.Cu) (tedit 564E0361) (tstamp 56BB5C83)
-    (at 268.356674 71.056674)
+    (at 189.586674 75.686674)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /566EBE38)
@@ -242,7 +242,7 @@
   )
 
   (module locales:C1 (layer F.Cu) (tedit 564E0249) (tstamp 56BB5C89)
-    (at 350.172401 79.572)
+    (at 182.452401 81.032)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /566EBE39)
@@ -269,7 +269,7 @@
   )
 
   (module locales:C1 (layer F.Cu) (tedit 564E0249) (tstamp 56BB5C8F)
-    (at 336.412401 93.912)
+    (at 199.332401 57.182)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /566EBE31)
@@ -296,7 +296,7 @@
   )
 
   (module locales:C1V5 (layer F.Cu) (tedit 564E0361) (tstamp 56BB5C95)
-    (at 359.846674 64.446674)
+    (at 161.216674 98.386674)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /56706391)
@@ -322,7 +322,7 @@
   )
 
   (module locales:C1 (layer F.Cu) (tedit 564E0249) (tstamp 56BB5C9B)
-    (at 327.862401 97.702)
+    (at 211.882401 40.802)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /567264F4)
@@ -349,7 +349,7 @@
   )
 
   (module locales:C1V8 (layer F.Cu) (tedit 564E030C) (tstamp 56BB5CA1)
-    (at 364.595601 57.275601)
+    (at 169.185601 92.895601)
     (path /566EBE4E)
     (fp_text reference C6 (at 0 2.032) (layer F.SilkS)
       (effects (font (size 1.016 0.889) (thickness 0.2032)))
@@ -373,7 +373,7 @@
   )
 
   (module locales:C1 (layer F.Cu) (tedit 564E0249) (tstamp 56BB5CA7)
-    (at 344.007028 79.572)
+    (at 155.137028 106.302)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /566EBE50)
@@ -400,7 +400,7 @@
   )
 
   (module locales:C1 (layer F.Cu) (tedit 564E0249) (tstamp 56BB5CAD)
-    (at 353.767028 70.472)
+    (at 183.507028 75.912)
     (descr "Condensateur e = 1 pas")
     (tags C)
     (path /566EBE51)
@@ -427,7 +427,7 @@
   )
 
   (module Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10 (layer F.Cu) (tedit 552FFCCE) (tstamp 56BB5CB3)
-    (at 302.16949 90.74354)
+    (at 191.18949 50.17354)
     (descr "Diode, DO-41, SOD81, Horizontal, RM 10mm,")
     (tags "Diode, DO-41, SOD81, Horizontal, RM 10mm, 1N4007, SB140,")
     (path /56705099)
@@ -458,7 +458,7 @@
   )
 
   (module locales:Bridge-rond (layer F.Cu) (tedit 509FCDA8) (tstamp 56BB5CBB)
-    (at 308.519551 78.554)
+    (at 135.699551 96.924)
     (path /566EBE4D)
     (fp_text reference D2 (at 11.43 -5.08) (layer F.SilkS)
       (effects (font (thickness 0.3048)))
@@ -489,7 +489,7 @@
   )
 
   (module LEDs:LED-5MM (layer F.Cu) (tedit 5570F7EA) (tstamp 56BB5CC1)
-    (at 364.545001 38.162)
+    (at 191.715001 58.742)
     (descr "LED 5mm round vertical")
     (tags "LED 5mm round vertical")
     (path /566F0815)
@@ -519,7 +519,7 @@
   )
 
   (module LEDs:LED-5MM (layer F.Cu) (tedit 5570F7EA) (tstamp 56BB5CC7)
-    (at 346.095001 59.352)
+    (at 204.265001 42.362)
     (descr "LED 5mm round vertical")
     (tags "LED 5mm round vertical")
     (path /566F3DFF)
@@ -549,7 +549,7 @@
   )
 
   (module LEDs:LED-5MM (layer F.Cu) (tedit 5570F7EA) (tstamp 56BB5CCD)
-    (at 364.675001 28.062)
+    (at 150.685001 95.182)
     (descr "LED 5mm round vertical")
     (tags "LED 5mm round vertical")
     (path /566F419C)
@@ -579,7 +579,7 @@
   )
 
   (module Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10 (layer F.Cu) (tedit 552FFCCE) (tstamp 56BB5CD3)
-    (at 348.16949 45.72354)
+    (at 191.18949 41.98354)
     (descr "Diode, DO-41, SOD81, Horizontal, RM 10mm,")
     (tags "Diode, DO-41, SOD81, Horizontal, RM 10mm, 1N4007, SB140,")
     (path /566F0F53)
@@ -610,7 +610,7 @@
   )
 
   (module Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10 (layer F.Cu) (tedit 552FFCCE) (tstamp 56BB5CD9)
-    (at 322.97949 76.43354)
+    (at 178.63949 59.19354)
     (descr "Diode, DO-41, SOD81, Horizontal, RM 10mm,")
     (tags "Diode, DO-41, SOD81, Horizontal, RM 10mm, 1N4007, SB140,")
     (path /566F3DF6)
@@ -641,7 +641,7 @@
   )
 
   (module Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10 (layer F.Cu) (tedit 552FFCCE) (tstamp 56BB5CDF)
-    (at 333.01949 58.97354)
+    (at 178.63949 51.00354)
     (descr "Diode, DO-41, SOD81, Horizontal, RM 10mm,")
     (tags "Diode, DO-41, SOD81, Horizontal, RM 10mm, 1N4007, SB140,")
     (path /566F4193)
@@ -672,7 +672,7 @@
   )
 
   (module Fuse_Holders_and_Fuses:Fuseholder5x20_horiz_SemiClosed_Casing10x25mm (layer F.Cu) (tedit 0) (tstamp 56BB5CE5)
-    (at 298.35099 55.945)
+    (at 99.80099 85.645)
     (descr "Fuseholder, 5x20, Semi closed, horizontal, Casing 10x25mm,")
     (tags "Fuseholder, 5x20, Semi closed, horizontal, Casing 10x25mm, Sicherungshalter, halbgeschlossen,")
     (path /56BB7093)
@@ -708,7 +708,7 @@
   )
 
   (module Housings_DIP:DIP-4_W7.62mm_LongPads (layer F.Cu) (tedit 54130A77) (tstamp 56BB5CED)
-    (at 315.747381 92.405)
+    (at 171.007381 69.045)
     (descr "4-lead dip package, row spacing 7.62 mm (300 mils), longer pads")
     (tags "dil dip 2.54 300")
     (path /566EBE60)
@@ -744,7 +744,7 @@
   )
 
   (module Connect:PINHEAD1-2 (layer F.Cu) (tedit 0) (tstamp 56BB5CF3)
-    (at 337.533571 76.525)
+    (at 166.953571 81.265)
     (path /5671EEC8)
     (attr virtual)
     (fp_text reference JP2 (at 0 -3.9) (layer F.SilkS)
@@ -765,7 +765,7 @@
   )
 
   (module Relays_ThroughHole:Relay_SANYOU_SRD_Series_Form_C (layer F.Cu) (tedit 5418D3EA) (tstamp 56BB5CFC)
-    (at 287.52 75.265)
+    (at 234.7 51.8)
     (descr "relay, Sanyou SRD series Form C")
     (path /566EF0CA)
     (fp_text reference K1 (at 8.1 9.2) (layer F.SilkS)
@@ -815,7 +815,7 @@
   )
 
   (module Relays_ThroughHole:Relay_SANYOU_SRD_Series_Form_C (layer F.Cu) (tedit 5418D3EA) (tstamp 56BB5D05)
-    (at 313.25 61.575)
+    (at 234.4 22)
     (descr "relay, Sanyou SRD series Form C")
     (path /566F3E0C)
     (fp_text reference K2 (at 8.1 9.2) (layer F.SilkS)
@@ -865,7 +865,7 @@
   )
 
   (module Relays_ThroughHole:Relay_SANYOU_SRD_Series_Form_C (layer F.Cu) (tedit 5418D3EA) (tstamp 56BB5D0E)
-    (at 267.25 89.845)
+    (at 237.2 84.3)
     (descr "relay, Sanyou SRD series Form C")
     (path /566F41A9)
     (fp_text reference K3 (at 8.1 9.2) (layer F.SilkS)
@@ -915,7 +915,7 @@
   )
 
   (module Pin_Headers:Pin_Header_Straight_2x03 (layer F.Cu) (tedit 54EA0A4B) (tstamp 56BB5D18)
-    (at 273.175001 38.275)
+    (at 172.915001 52.545)
     (descr "Through hole pin header")
     (tags "pin header")
     (path /566EBE34)
@@ -958,7 +958,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_10 (layer F.Cu) (tedit 54529F6D) (tstamp 56BB5D30)
-    (at 255.013501 27.995001)
+    (at 111.613501 42.295001)
     (path /567235F8)
     (attr virtual)
     (fp_text reference P2 (at 0 -2) (layer F.SilkS)
@@ -1256,7 +1256,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_3 (layer F.Cu) (tedit 5456428C) (tstamp 56BB5D3A)
-    (at 293.333501 90.423501)
+    (at 110.253501 102.783501)
     (path /567039ED)
     (attr virtual)
     (fp_text reference P3 (at -2.5 -2) (layer F.SilkS)
@@ -1352,7 +1352,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_2 (layer F.Cu) (tedit 564EF862) (tstamp 56BB5D40)
-    (at 355.311 27.983501)
+    (at 178.581 42.283501)
     (path /566EBE85)
     (attr virtual)
     (fp_text reference P4 (at 0 -2) (layer F.SilkS)
@@ -1414,7 +1414,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_2 (layer F.Cu) (tedit 564EF862) (tstamp 56BB5D46)
-    (at 336.833501 67.463501)
+    (at 158.643501 81.223501)
     (path /56725065)
     (attr virtual)
     (fp_text reference P5 (at 0 -2) (layer F.SilkS)
@@ -1476,7 +1476,7 @@
   )
 
   (module Connect:PINHEAD1-3 (layer F.Cu) (tedit 0) (tstamp 56BB5D4D)
-    (at 363.605001 48.125)
+    (at 184.315001 67.625)
     (path /566FEA46)
     (attr virtual)
     (fp_text reference P6 (at 0.05 -3.8) (layer F.SilkS)
@@ -1499,7 +1499,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_3 (layer F.Cu) (tedit 5456428C) (tstamp 56BB5D57)
-    (at 339.333501 50.253501)
+    (at 243.6 67.3)
     (path /566F1A21)
     (attr virtual)
     (fp_text reference P7 (at -2.5 -2) (layer F.SilkS)
@@ -1595,7 +1595,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_3 (layer F.Cu) (tedit 5456428C) (tstamp 56BB5D61)
-    (at 339.043501 41.233501)
+    (at 240.8 34.9)
     (path /566F3DEA)
     (attr virtual)
     (fp_text reference P8 (at -2.5 -2) (layer F.SilkS)
@@ -1691,7 +1691,7 @@
   )
 
   (module locales:PHOENIX_MSTBA2,54-G_3 (layer F.Cu) (tedit 5456428C) (tstamp 56BB5D6B)
-    (at 355.183501 37.003501)
+    (at 245.6 97.5)
     (path /566F4187)
     (attr virtual)
     (fp_text reference P9 (at -2.5 -2) (layer F.SilkS)
@@ -1787,7 +1787,7 @@
   )
 
   (module TO_SOT_Packages_THT:TO-92_Molded_Narrow_Oval (layer F.Cu) (tedit 54F24320) (tstamp 56BB5D72)
-    (at 329.245 90.225)
+    (at 206.815 55.105)
     (descr "TO-92 leads molded, narrow, oval pads, drill 0.8mm (see NXP sot054_po.pdf)")
     (tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
     (path /566EE6BB)
@@ -1818,7 +1818,7 @@
   )
 
   (module TO_SOT_Packages_THT:TO-92_Molded_Narrow_Oval (layer F.Cu) (tedit 54F24320) (tstamp 56BB5D79)
-    (at 337.795 86.435)
+    (at 192.675 68.905)
     (descr "TO-92 leads molded, narrow, oval pads, drill 0.8mm (see NXP sot054_po.pdf)")
     (tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
     (path /566F3E20)
@@ -1849,7 +1849,7 @@
   )
 
   (module TO_SOT_Packages_THT:TO-92_Molded_Narrow_Oval (layer F.Cu) (tedit 54F24320) (tstamp 56BB5D80)
-    (at 346.215 72.095)
+    (at 174.425 84.555)
     (descr "TO-92 leads molded, narrow, oval pads, drill 0.8mm (see NXP sot054_po.pdf)")
     (tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
     (path /566F41BD)
@@ -1880,7 +1880,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5D86)
-    (at 244.1185 100.091001)
+    (at 145.0885 108.301001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /5671FC61)
@@ -1910,7 +1910,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5D8C)
-    (at 253.5285 100.091001)
+    (at 153.6685 101.511001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /5670F7AE)
@@ -1940,7 +1940,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5D92)
-    (at 290.5285 95.751001)
+    (at 174.8585 75.561001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /5670EDA4)
@@ -1970,7 +1970,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5D98)
-    (at 290.5285 98.331001)
+    (at 207.2485 48.691001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /56713BB6)
@@ -2000,7 +2000,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5D9E)
-    (at 290.5285 100.911001)
+    (at 160.1185 94.291001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /56713C9F)
@@ -2030,7 +2030,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DA4)
-    (at 299.9385 95.751001)
+    (at 160.1185 91.711001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /5672389A)
@@ -2060,7 +2060,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DAA)
-    (at 234.7085 100.091001)
+    (at 107.4485 95.531001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566EBE32)
@@ -2090,7 +2090,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DB0)
-    (at 299.9385 100.911001)
+    (at 107.4485 108.111001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /56704219)
@@ -2120,7 +2120,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DB6)
-    (at 351.6785 50.521001)
+    (at 137.7485 105.721001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /56704308)
@@ -2150,7 +2150,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DBC)
-    (at 326.4885 81.231001)
+    (at 116.8585 108.111001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /5670885F)
@@ -2180,7 +2180,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DC2)
-    (at 355.5285 54.201001)
+    (at 126.2685 108.111001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /56724D64)
@@ -2210,7 +2210,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DC8)
-    (at 326.4885 83.811001)
+    (at 158.3385 86.551001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566F0774)
@@ -2240,7 +2240,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DCE)
-    (at 309.3485 98.921001)
+    (at 135.6785 108.301001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566EE77E)
@@ -2270,7 +2270,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DD4)
-    (at 355.5285 56.781001)
+    (at 147.1585 105.721001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566F3E05)
@@ -2300,7 +2300,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DDA)
-    (at 355.5285 59.361001)
+    (at 126.8585 75.491001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566F3E1A)
@@ -2330,7 +2330,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DE0)
-    (at 346.6485 65.681001)
+    (at 174.8585 78.141001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566F41A2)
@@ -2360,7 +2360,7 @@
   )
 
   (module Discret:R3 (layer F.Cu) (tedit 0) (tstamp 56BB5DE6)
-    (at 299.9385 98.331001)
+    (at 160.1185 89.131001)
     (descr "Resitance 3 pas")
     (tags R)
     (path /566F41B7)
@@ -2390,7 +2390,7 @@
   )
 
   (module Buttons_Switches_ThroughHole:SW_PUSH-12mm (layer F.Cu) (tedit 53FD9538) (tstamp 56BB5DEE)
-    (at 339.604 29.625001)
+    (at 94.674 100.865001)
     (path /5671D6F5)
     (fp_text reference SW1 (at 0 -0.762) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2419,7 +2419,7 @@
   )
 
   (module locales:TFCOBSIL2209VCA200mA (layer F.Cu) (tedit 564DDC24) (tstamp 56BB5DF6)
-    (at 247.775001 83.525001)
+    (at 109.8 64.2)
     (path /56BBA6A9)
     (fp_text reference T1 (at 0 1) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2448,7 +2448,7 @@
   )
 
   (module Housings_DIP:DIP-20_W7.62mm_LongPads (layer F.Cu) (tedit 54130A77) (tstamp 56BB5E0E)
-    (at 275.927381 53.545)
+    (at 141.447381 43.645)
     (descr "20-lead dip package, row spacing 7.62 mm (300 mils), longer pads")
     (tags "dil dip 2.54 300")
     (path /566EBE3A)
@@ -2517,7 +2517,7 @@
   )
 
   (module TO_SOT_Packages_THT:TO-220_Neutral123_Horizontal (layer F.Cu) (tedit 0) (tstamp 56BB5F08)
-    (at 325.929001 46.4262)
+    (at 127.759001 69.7762)
     (descr "TO-220, Neutral, Horizontal,")
     (tags "TO-220, Neutral, Horizontal,")
     (path /566EBE3C)
@@ -2551,7 +2551,7 @@
   )
 
   (module locales:COBSIL380vca9vca200ma (layer F.Cu) (tedit 56B21397) (tstamp 56BB6486)
-    (at 250.600001 50.150001)
+    (at 60.7 55.1)
     (fp_text reference REF** (at 0 1) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
@@ -2577,7 +2577,7 @@
   )
 
   (module locales:Sparkfun7segserial (layer F.Cu) (tedit 56BB561B) (tstamp 56BB6487)
-    (at 300.220001 35.100001)
+    (at 195.3 101.4)
     (fp_text reference REF** (at 0 1) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
@@ -2595,66 +2595,5 @@
     (pad 4 thru_hole circle (at 14.5 -9) (size 1.66116 1.66116) (drill 1.27) (layers *.Cu *.Mask F.SilkS))
     (pad 5 thru_hole circle (at 14.5 9) (size 1.66116 1.66116) (drill 1.27) (layers *.Cu *.Mask F.SilkS))
   )
-
-  (module Connect:1pin (layer F.Cu) (tedit 0) (tstamp 56BF7E5C)
-    (at 218 42)
-    (descr "module 1 pin (ou trou mecanique de percage)")
-    (tags DEV)
-    (fp_text reference REF** (at 0 -3.048) (layer F.SilkS)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value 1pin (at 0 2.794) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_circle (center 0 0) (end 0 -2.286) (layer F.SilkS) (width 0.15))
-    (pad 1 thru_hole circle (at 0 0) (size 4.064 4.064) (drill 3.048) (layers *.Cu *.Mask F.SilkS))
-  )
-
-  (module Connect:1pin (layer F.Cu) (tedit 0) (tstamp 56BF7E67)
-    (at 91 42)
-    (descr "module 1 pin (ou trou mecanique de percage)")
-    (tags DEV)
-    (fp_text reference REF** (at 0 -3.048) (layer F.SilkS)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value 1pin (at 0 2.794) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_circle (center 0 0) (end 0 -2.286) (layer F.SilkS) (width 0.15))
-    (pad 1 thru_hole circle (at 0 0) (size 4.064 4.064) (drill 3.048) (layers *.Cu *.Mask F.SilkS))
-  )
-
-  (module Connect:1pin (layer F.Cu) (tedit 0) (tstamp 56BF7E72)
-    (at 91 115)
-    (descr "module 1 pin (ou trou mecanique de percage)")
-    (tags DEV)
-    (fp_text reference REF** (at 0 -3.048) (layer F.SilkS)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value 1pin (at 0 2.794) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_circle (center 0 0) (end 0 -2.286) (layer F.SilkS) (width 0.15))
-    (pad 1 thru_hole circle (at 0 0) (size 4.064 4.064) (drill 3.048) (layers *.Cu *.Mask F.SilkS))
-  )
-
-  (module Connect:1pin (layer F.Cu) (tedit 0) (tstamp 56BF7E7D)
-    (at 218 115)
-    (descr "module 1 pin (ou trou mecanique de percage)")
-    (tags DEV)
-    (fp_text reference REF** (at 0 -3.048) (layer F.SilkS)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value 1pin (at 0 2.794) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_circle (center 0 0) (end 0 -2.286) (layer F.SilkS) (width 0.15))
-    (pad 1 thru_hole circle (at 0 0) (size 4.064 4.064) (drill 3.048) (layers *.Cu *.Mask F.SilkS))
-  )
-
-  (gr_line (start 86 120) (end 86 37) (angle 90) (layer Edge.Cuts) (width 0.15))
-  (gr_line (start 223 120) (end 86 120) (angle 90) (layer Edge.Cuts) (width 0.15))
-  (gr_line (start 223 37) (end 223 120) (angle 90) (layer Edge.Cuts) (width 0.15))
-  (gr_line (start 86 37) (end 223 37) (angle 90) (layer Edge.Cuts) (width 0.15))
 
 )
